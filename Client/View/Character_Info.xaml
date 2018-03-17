@@ -34,7 +34,7 @@
 
         <Label Grid.ColumnSpan="3" Grid.RowSpan="15">
             <Label.Background>
-                <ImageBrush ImageSource="D:\VSProjects\FamilyTree\ClientWindow\View\Resources\bg_darkwood_2.jpg"></ImageBrush>
+                <ImageBrush ImageSource="Resources\bg_darkwood_2.jpg"></ImageBrush>
             </Label.Background>
         </Label>
 
@@ -42,7 +42,7 @@
         
         <Label Grid.Column="1">
             <Label.Background>
-                <ImageBrush ImageSource="D:\VSProjects\FamilyTree\ClientWindow\View\Resources\Rurick.PNG"></ImageBrush>
+                <ImageBrush ImageSource="Resources\Rurick.PNG"></ImageBrush>
             </Label.Background>
         </Label>
 

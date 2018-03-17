@@ -1,0 +1,714 @@
+USE [FamilyTree]
+GO
+/****** Object:  Table [dbo].[AccessLevel]    Script Date: 17.03.2018 18:23:58 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[AccessLevel](
+	[type] [varchar](20) NOT NULL,
+ CONSTRAINT [PK_ACCESSLEVEL] PRIMARY KEY CLUSTERED 
+(
+	[type] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Character]    Script Date: 17.03.2018 18:23:59 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Character](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[creator] [int] NOT NULL,
+ CONSTRAINT [PK_CHARACTER] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CharacterBiography]    Script Date: 17.03.2018 18:23:59 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CharacterBiography](
+	[characterId] [int] NULL,
+	[biography] [varchar](max) NOT NULL,
+	[changeId] [int] NOT NULL,
+ CONSTRAINT [PK_CHARACTERBIOGRAPHY] PRIMARY KEY CLUSTERED 
+(
+	[changeId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CharacterBirthCountry]    Script Date: 17.03.2018 18:23:59 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CharacterBirthCountry](
+	[characterId] [int] NULL,
+	[country] [varchar](30) NOT NULL,
+	[changeId] [int] NOT NULL,
+ CONSTRAINT [PK_CHARACTERBIRTHCOUNTRY] PRIMARY KEY CLUSTERED 
+(
+	[changeId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CharacterBirthDate]    Script Date: 17.03.2018 18:23:59 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CharacterBirthDate](
+	[characterId] [int] NULL,
+	[birthDate] [date] NOT NULL,
+	[changeId] [int] NOT NULL,
+ CONSTRAINT [PK_CHARACTERBIRTHDATE] PRIMARY KEY CLUSTERED 
+(
+	[changeId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CharacterBirthPlace]    Script Date: 17.03.2018 18:23:59 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CharacterBirthPlace](
+	[characterId] [int] NULL,
+	[place] [varchar](30) NOT NULL,
+	[changeId] [int] NOT NULL,
+ CONSTRAINT [PK_CHARACTERBIRTHPLACE] PRIMARY KEY CLUSTERED 
+(
+	[changeId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CharacterDeathCountry]    Script Date: 17.03.2018 18:23:59 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CharacterDeathCountry](
+	[characterId] [int] NULL,
+	[country] [varchar](30) NOT NULL,
+	[changeId] [int] NOT NULL,
+ CONSTRAINT [PK_CHARACTERDEATHCOUNTRY] PRIMARY KEY CLUSTERED 
+(
+	[changeId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CharacterDeathDate]    Script Date: 17.03.2018 18:23:59 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CharacterDeathDate](
+	[characterId] [int] NULL,
+	[deathDate] [date] NOT NULL,
+	[changeId] [int] NOT NULL,
+ CONSTRAINT [PK_CHARACTERDEATHDATE] PRIMARY KEY CLUSTERED 
+(
+	[changeId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CharacterDeathPlace]    Script Date: 17.03.2018 18:23:59 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CharacterDeathPlace](
+	[characterId] [int] NULL,
+	[place] [varchar](30) NOT NULL,
+	[changeId] [int] NOT NULL,
+ CONSTRAINT [PK_CHARACTERDEATHPLACE] PRIMARY KEY CLUSTERED 
+(
+	[changeId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CharacterFirstName]    Script Date: 17.03.2018 18:23:59 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CharacterFirstName](
+	[characterId] [int] NULL,
+	[firstName] [varchar](50) NOT NULL,
+	[changeId] [int] NOT NULL,
+ CONSTRAINT [PK_CHARACTERFIRSTNAME] PRIMARY KEY CLUSTERED 
+(
+	[changeId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CharacterLastName]    Script Date: 17.03.2018 18:23:59 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CharacterLastName](
+	[characterId] [int] NULL,
+	[lastName] [varchar](50) NOT NULL,
+	[changeId] [int] NOT NULL,
+ CONSTRAINT [PK_CHARACTERLASTNAME] PRIMARY KEY CLUSTERED 
+(
+	[changeId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CharacterLivingCountry]    Script Date: 17.03.2018 18:23:59 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CharacterLivingCountry](
+	[charcaterId] [int] NULL,
+	[country] [varchar](30) NOT NULL,
+	[changeId] [int] NOT NULL,
+ CONSTRAINT [PK_CHARACTERLIVINGCOUNTRY] PRIMARY KEY CLUSTERED 
+(
+	[changeId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CharacterLivingPlace]    Script Date: 17.03.2018 18:23:59 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CharacterLivingPlace](
+	[characterId] [int] NULL,
+	[place] [varchar](30) NOT NULL,
+	[changeId] [int] NOT NULL,
+ CONSTRAINT [PK_CHARACTERLIVINGPLACE] PRIMARY KEY CLUSTERED 
+(
+	[changeId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CharacterNationality]    Script Date: 17.03.2018 18:23:59 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CharacterNationality](
+	[characterId] [int] NULL,
+	[nationality] [varchar](30) NOT NULL,
+	[changeId] [int] NOT NULL,
+ CONSTRAINT [PK_CHARACTERNATIONALITY] PRIMARY KEY CLUSTERED 
+(
+	[changeId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CharacterPhoto]    Script Date: 17.03.2018 18:23:59 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CharacterPhoto](
+	[characterId] [int] NULL,
+	[photo] [image] NOT NULL,
+	[changeId] [int] NOT NULL,
+ CONSTRAINT [PK_CHARACTERPHOTO] PRIMARY KEY CLUSTERED 
+(
+	[changeId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CharacterReligious]    Script Date: 17.03.2018 18:23:59 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CharacterReligious](
+	[characterId] [int] NULL,
+	[religious] [varchar](30) NOT NULL,
+	[changeId] [int] NOT NULL,
+ CONSTRAINT [PK_CHARACTERRELIGIOUS] PRIMARY KEY CLUSTERED 
+(
+	[changeId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CharacterSecondName]    Script Date: 17.03.2018 18:23:59 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CharacterSecondName](
+	[characterId] [int] NULL,
+	[secondName] [varchar](50) NOT NULL,
+	[changeId] [int] NOT NULL,
+ CONSTRAINT [PK_CHARACTERSECONDNAME] PRIMARY KEY CLUSTERED 
+(
+	[changeId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Country]    Script Date: 17.03.2018 18:23:59 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Country](
+	[name] [varchar](30) NOT NULL,
+ CONSTRAINT [PK_COUNTRY] PRIMARY KEY CLUSTERED 
+(
+	[name] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[House]    Script Date: 17.03.2018 18:23:59 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[House](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[name] [varchar](30) NOT NULL,
+	[houseKeeper] [int] NOT NULL,
+	[coatOfArms] [image] NULL,
+	[historyOfHouse] [varchar](max) NULL,
+ CONSTRAINT [PK_HOUSE] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[HouseCharacter]    Script Date: 17.03.2018 18:23:59 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[HouseCharacter](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[houseId] [int] NOT NULL,
+	[characterId] [int] NOT NULL,
+ CONSTRAINT [PK_HOUSECHARACTER] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Logs]    Script Date: 17.03.2018 18:24:00 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Logs](
+	[changeId] [int] IDENTITY(1,1) NOT NULL,
+	[userId] [int] NOT NULL,
+ CONSTRAINT [PK_LOGS] PRIMARY KEY CLUSTERED 
+(
+	[changeId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Nationality]    Script Date: 17.03.2018 18:24:00 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Nationality](
+	[name] [varchar](30) NOT NULL,
+ CONSTRAINT [PK_NATIONALITY] PRIMARY KEY CLUSTERED 
+(
+	[name] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Place]    Script Date: 17.03.2018 18:24:00 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Place](
+	[name] [varchar](30) NOT NULL,
+ CONSTRAINT [PK_PLACE] PRIMARY KEY CLUSTERED 
+(
+	[name] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[RelativeCharacter]    Script Date: 17.03.2018 18:24:00 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[RelativeCharacter](
+	[characterId] [int] NOT NULL,
+	[targetId] [int] NOT NULL,
+	[type] [varchar](30) NOT NULL,
+ CONSTRAINT [PK_RELATIVECHARACTER] PRIMARY KEY CLUSTERED 
+(
+	[characterId] ASC,
+	[targetId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[RelativeType]    Script Date: 17.03.2018 18:24:00 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[RelativeType](
+	[type] [varchar](30) NOT NULL,
+ CONSTRAINT [PK_RELATIVETYPE] PRIMARY KEY CLUSTERED 
+(
+	[type] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Religious]    Script Date: 17.03.2018 18:24:00 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Religious](
+	[name] [varchar](30) NOT NULL,
+ CONSTRAINT [PK_RELIGIOUS] PRIMARY KEY CLUSTERED 
+(
+	[name] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[User]    Script Date: 17.03.2018 18:24:00 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[User](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[email] [varchar](40) NOT NULL,
+	[characterId] [int] NULL,
+	[password] [varchar](30) NOT NULL,
+	[phoneNumber] [varchar](20) NULL,
+	[lastLogIn] [datetime] NOT NULL,
+	[accessLevelType] [varchar](20) NOT NULL,
+ CONSTRAINT [PK_USER] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+INSERT [dbo].[AccessLevel] ([type]) VALUES (N'admin')
+GO
+INSERT [dbo].[AccessLevel] ([type]) VALUES (N'user')
+GO
+SET IDENTITY_INSERT [dbo].[Character] ON 
+GO
+INSERT [dbo].[Character] ([id], [creator]) VALUES (1, 2)
+GO
+SET IDENTITY_INSERT [dbo].[Character] OFF
+GO
+SET IDENTITY_INSERT [dbo].[House] ON 
+GO
+INSERT [dbo].[House] ([id], [name], [houseKeeper], [coatOfArms], [historyOfHouse]) VALUES (1, N'Rurikovich', 1, NULL, N'Ohuenniy rod drevnih pidarasov')
+GO
+SET IDENTITY_INSERT [dbo].[House] OFF
+GO
+SET IDENTITY_INSERT [dbo].[User] ON 
+GO
+INSERT [dbo].[User] ([id], [email], [characterId], [password], [phoneNumber], [lastLogIn], [accessLevelType]) VALUES (2, N'meiwek7@mail.ru', NULL, N'12345', NULL, CAST(N'1998-01-01T23:59:59.000' AS DateTime), N'admin')
+GO
+SET IDENTITY_INSERT [dbo].[User] OFF
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [UQ__User__AB6E6164FF3B5CDE]    Script Date: 17.03.2018 18:24:00 ******/
+ALTER TABLE [dbo].[User] ADD UNIQUE NONCLUSTERED 
+(
+	[email] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[Character]  WITH CHECK ADD  CONSTRAINT [Character_fk0] FOREIGN KEY([creator])
+REFERENCES [dbo].[User] ([id])
+GO
+ALTER TABLE [dbo].[Character] CHECK CONSTRAINT [Character_fk0]
+GO
+ALTER TABLE [dbo].[CharacterBiography]  WITH CHECK ADD  CONSTRAINT [CharacterBiography_fk0] FOREIGN KEY([characterId])
+REFERENCES [dbo].[Character] ([id])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[CharacterBiography] CHECK CONSTRAINT [CharacterBiography_fk0]
+GO
+ALTER TABLE [dbo].[CharacterBiography]  WITH CHECK ADD  CONSTRAINT [CharacterBiography_fk1] FOREIGN KEY([changeId])
+REFERENCES [dbo].[Logs] ([changeId])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[CharacterBiography] CHECK CONSTRAINT [CharacterBiography_fk1]
+GO
+ALTER TABLE [dbo].[CharacterBirthCountry]  WITH CHECK ADD  CONSTRAINT [CharacterBirthCountry_fk0] FOREIGN KEY([characterId])
+REFERENCES [dbo].[Character] ([id])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[CharacterBirthCountry] CHECK CONSTRAINT [CharacterBirthCountry_fk0]
+GO
+ALTER TABLE [dbo].[CharacterBirthCountry]  WITH CHECK ADD  CONSTRAINT [CharacterBirthCountry_fk1] FOREIGN KEY([country])
+REFERENCES [dbo].[Country] ([name])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[CharacterBirthCountry] CHECK CONSTRAINT [CharacterBirthCountry_fk1]
+GO
+ALTER TABLE [dbo].[CharacterBirthCountry]  WITH CHECK ADD  CONSTRAINT [CharacterBirthCountry_fk2] FOREIGN KEY([changeId])
+REFERENCES [dbo].[Logs] ([changeId])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[CharacterBirthCountry] CHECK CONSTRAINT [CharacterBirthCountry_fk2]
+GO
+ALTER TABLE [dbo].[CharacterBirthDate]  WITH CHECK ADD  CONSTRAINT [CharacterBirthDate_fk0] FOREIGN KEY([characterId])
+REFERENCES [dbo].[Character] ([id])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[CharacterBirthDate] CHECK CONSTRAINT [CharacterBirthDate_fk0]
+GO
+ALTER TABLE [dbo].[CharacterBirthDate]  WITH CHECK ADD  CONSTRAINT [CharacterBirthDate_fk1] FOREIGN KEY([changeId])
+REFERENCES [dbo].[Logs] ([changeId])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[CharacterBirthDate] CHECK CONSTRAINT [CharacterBirthDate_fk1]
+GO
+ALTER TABLE [dbo].[CharacterBirthPlace]  WITH CHECK ADD  CONSTRAINT [CharacterBirthPlace_fk0] FOREIGN KEY([characterId])
+REFERENCES [dbo].[Character] ([id])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[CharacterBirthPlace] CHECK CONSTRAINT [CharacterBirthPlace_fk0]
+GO
+ALTER TABLE [dbo].[CharacterBirthPlace]  WITH CHECK ADD  CONSTRAINT [CharacterBirthPlace_fk1] FOREIGN KEY([place])
+REFERENCES [dbo].[Place] ([name])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[CharacterBirthPlace] CHECK CONSTRAINT [CharacterBirthPlace_fk1]
+GO
+ALTER TABLE [dbo].[CharacterBirthPlace]  WITH CHECK ADD  CONSTRAINT [CharacterBirthPlace_fk2] FOREIGN KEY([changeId])
+REFERENCES [dbo].[Logs] ([changeId])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[CharacterBirthPlace] CHECK CONSTRAINT [CharacterBirthPlace_fk2]
+GO
+ALTER TABLE [dbo].[CharacterDeathCountry]  WITH CHECK ADD  CONSTRAINT [CharacterDeathCountry_fk0] FOREIGN KEY([characterId])
+REFERENCES [dbo].[Character] ([id])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[CharacterDeathCountry] CHECK CONSTRAINT [CharacterDeathCountry_fk0]
+GO
+ALTER TABLE [dbo].[CharacterDeathCountry]  WITH CHECK ADD  CONSTRAINT [CharacterDeathCountry_fk1] FOREIGN KEY([country])
+REFERENCES [dbo].[Country] ([name])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[CharacterDeathCountry] CHECK CONSTRAINT [CharacterDeathCountry_fk1]
+GO
+ALTER TABLE [dbo].[CharacterDeathCountry]  WITH CHECK ADD  CONSTRAINT [CharacterDeathCountry_fk2] FOREIGN KEY([changeId])
+REFERENCES [dbo].[Logs] ([changeId])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[CharacterDeathCountry] CHECK CONSTRAINT [CharacterDeathCountry_fk2]
+GO
+ALTER TABLE [dbo].[CharacterDeathDate]  WITH CHECK ADD  CONSTRAINT [CharacterDeathDate_fk0] FOREIGN KEY([characterId])
+REFERENCES [dbo].[Character] ([id])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[CharacterDeathDate] CHECK CONSTRAINT [CharacterDeathDate_fk0]
+GO
+ALTER TABLE [dbo].[CharacterDeathDate]  WITH CHECK ADD  CONSTRAINT [CharacterDeathDate_fk1] FOREIGN KEY([changeId])
+REFERENCES [dbo].[Logs] ([changeId])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[CharacterDeathDate] CHECK CONSTRAINT [CharacterDeathDate_fk1]
+GO
+ALTER TABLE [dbo].[CharacterDeathPlace]  WITH CHECK ADD  CONSTRAINT [CharacterDeathPlace_fk0] FOREIGN KEY([characterId])
+REFERENCES [dbo].[Character] ([id])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[CharacterDeathPlace] CHECK CONSTRAINT [CharacterDeathPlace_fk0]
+GO
+ALTER TABLE [dbo].[CharacterDeathPlace]  WITH CHECK ADD  CONSTRAINT [CharacterDeathPlace_fk1] FOREIGN KEY([place])
+REFERENCES [dbo].[Place] ([name])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[CharacterDeathPlace] CHECK CONSTRAINT [CharacterDeathPlace_fk1]
+GO
+ALTER TABLE [dbo].[CharacterDeathPlace]  WITH CHECK ADD  CONSTRAINT [CharacterDeathPlace_fk2] FOREIGN KEY([changeId])
+REFERENCES [dbo].[Logs] ([changeId])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[CharacterDeathPlace] CHECK CONSTRAINT [CharacterDeathPlace_fk2]
+GO
+ALTER TABLE [dbo].[CharacterFirstName]  WITH CHECK ADD  CONSTRAINT [CharacterFirstName_fk0] FOREIGN KEY([characterId])
+REFERENCES [dbo].[Character] ([id])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[CharacterFirstName] CHECK CONSTRAINT [CharacterFirstName_fk0]
+GO
+ALTER TABLE [dbo].[CharacterFirstName]  WITH CHECK ADD  CONSTRAINT [CharacterFirstName_fk1] FOREIGN KEY([changeId])
+REFERENCES [dbo].[Logs] ([changeId])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[CharacterFirstName] CHECK CONSTRAINT [CharacterFirstName_fk1]
+GO
+ALTER TABLE [dbo].[CharacterLastName]  WITH CHECK ADD  CONSTRAINT [CharacterLastName_fk0] FOREIGN KEY([characterId])
+REFERENCES [dbo].[Character] ([id])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[CharacterLastName] CHECK CONSTRAINT [CharacterLastName_fk0]
+GO
+ALTER TABLE [dbo].[CharacterLastName]  WITH CHECK ADD  CONSTRAINT [CharacterLastName_fk1] FOREIGN KEY([changeId])
+REFERENCES [dbo].[Logs] ([changeId])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[CharacterLastName] CHECK CONSTRAINT [CharacterLastName_fk1]
+GO
+ALTER TABLE [dbo].[CharacterLivingCountry]  WITH CHECK ADD  CONSTRAINT [CharacterLivingCountry_fk0] FOREIGN KEY([charcaterId])
+REFERENCES [dbo].[Character] ([id])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[CharacterLivingCountry] CHECK CONSTRAINT [CharacterLivingCountry_fk0]
+GO
+ALTER TABLE [dbo].[CharacterLivingCountry]  WITH CHECK ADD  CONSTRAINT [CharacterLivingCountry_fk1] FOREIGN KEY([country])
+REFERENCES [dbo].[Country] ([name])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[CharacterLivingCountry] CHECK CONSTRAINT [CharacterLivingCountry_fk1]
+GO
+ALTER TABLE [dbo].[CharacterLivingCountry]  WITH CHECK ADD  CONSTRAINT [CharacterLivingCountry_fk2] FOREIGN KEY([changeId])
+REFERENCES [dbo].[Logs] ([changeId])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[CharacterLivingCountry] CHECK CONSTRAINT [CharacterLivingCountry_fk2]
+GO
+ALTER TABLE [dbo].[CharacterLivingPlace]  WITH CHECK ADD  CONSTRAINT [CharacterLivingPlace_fk0] FOREIGN KEY([characterId])
+REFERENCES [dbo].[Character] ([id])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[CharacterLivingPlace] CHECK CONSTRAINT [CharacterLivingPlace_fk0]
+GO
+ALTER TABLE [dbo].[CharacterLivingPlace]  WITH CHECK ADD  CONSTRAINT [CharacterLivingPlace_fk1] FOREIGN KEY([place])
+REFERENCES [dbo].[Place] ([name])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[CharacterLivingPlace] CHECK CONSTRAINT [CharacterLivingPlace_fk1]
+GO
+ALTER TABLE [dbo].[CharacterLivingPlace]  WITH CHECK ADD  CONSTRAINT [CharacterLivingPlace_fk2] FOREIGN KEY([changeId])
+REFERENCES [dbo].[Logs] ([changeId])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[CharacterLivingPlace] CHECK CONSTRAINT [CharacterLivingPlace_fk2]
+GO
+ALTER TABLE [dbo].[CharacterNationality]  WITH CHECK ADD  CONSTRAINT [CharacterNationality_fk0] FOREIGN KEY([characterId])
+REFERENCES [dbo].[Character] ([id])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[CharacterNationality] CHECK CONSTRAINT [CharacterNationality_fk0]
+GO
+ALTER TABLE [dbo].[CharacterNationality]  WITH CHECK ADD  CONSTRAINT [CharacterNationality_fk1] FOREIGN KEY([nationality])
+REFERENCES [dbo].[Nationality] ([name])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[CharacterNationality] CHECK CONSTRAINT [CharacterNationality_fk1]
+GO
+ALTER TABLE [dbo].[CharacterNationality]  WITH CHECK ADD  CONSTRAINT [CharacterNationality_fk2] FOREIGN KEY([changeId])
+REFERENCES [dbo].[Logs] ([changeId])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[CharacterNationality] CHECK CONSTRAINT [CharacterNationality_fk2]
+GO
+ALTER TABLE [dbo].[CharacterPhoto]  WITH CHECK ADD  CONSTRAINT [CharacterPhoto_fk0] FOREIGN KEY([characterId])
+REFERENCES [dbo].[Character] ([id])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[CharacterPhoto] CHECK CONSTRAINT [CharacterPhoto_fk0]
+GO
+ALTER TABLE [dbo].[CharacterPhoto]  WITH CHECK ADD  CONSTRAINT [CharacterPhoto_fk1] FOREIGN KEY([changeId])
+REFERENCES [dbo].[Logs] ([changeId])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[CharacterPhoto] CHECK CONSTRAINT [CharacterPhoto_fk1]
+GO
+ALTER TABLE [dbo].[CharacterReligious]  WITH CHECK ADD  CONSTRAINT [CharacterReligious_fk0] FOREIGN KEY([characterId])
+REFERENCES [dbo].[Character] ([id])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[CharacterReligious] CHECK CONSTRAINT [CharacterReligious_fk0]
+GO
+ALTER TABLE [dbo].[CharacterReligious]  WITH CHECK ADD  CONSTRAINT [CharacterReligious_fk1] FOREIGN KEY([religious])
+REFERENCES [dbo].[Religious] ([name])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[CharacterReligious] CHECK CONSTRAINT [CharacterReligious_fk1]
+GO
+ALTER TABLE [dbo].[CharacterReligious]  WITH CHECK ADD  CONSTRAINT [CharacterReligious_fk2] FOREIGN KEY([changeId])
+REFERENCES [dbo].[Logs] ([changeId])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[CharacterReligious] CHECK CONSTRAINT [CharacterReligious_fk2]
+GO
+ALTER TABLE [dbo].[CharacterSecondName]  WITH CHECK ADD  CONSTRAINT [CharacterSecondName_fk0] FOREIGN KEY([characterId])
+REFERENCES [dbo].[Character] ([id])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[CharacterSecondName] CHECK CONSTRAINT [CharacterSecondName_fk0]
+GO
+ALTER TABLE [dbo].[CharacterSecondName]  WITH CHECK ADD  CONSTRAINT [CharacterSecondName_fk1] FOREIGN KEY([changeId])
+REFERENCES [dbo].[Logs] ([changeId])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[CharacterSecondName] CHECK CONSTRAINT [CharacterSecondName_fk1]
+GO
+ALTER TABLE [dbo].[House]  WITH CHECK ADD  CONSTRAINT [House_fk0] FOREIGN KEY([houseKeeper])
+REFERENCES [dbo].[Character] ([id])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[House] CHECK CONSTRAINT [House_fk0]
+GO
+ALTER TABLE [dbo].[HouseCharacter]  WITH CHECK ADD  CONSTRAINT [HouseCharacter_fk0] FOREIGN KEY([houseId])
+REFERENCES [dbo].[House] ([id])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[HouseCharacter] CHECK CONSTRAINT [HouseCharacter_fk0]
+GO
+ALTER TABLE [dbo].[HouseCharacter]  WITH CHECK ADD  CONSTRAINT [HouseCharacter_fk1] FOREIGN KEY([characterId])
+REFERENCES [dbo].[Character] ([id])
+GO
+ALTER TABLE [dbo].[HouseCharacter] CHECK CONSTRAINT [HouseCharacter_fk1]
+GO
+ALTER TABLE [dbo].[Logs]  WITH CHECK ADD  CONSTRAINT [Logs_fk0] FOREIGN KEY([userId])
+REFERENCES [dbo].[User] ([id])
+GO
+ALTER TABLE [dbo].[Logs] CHECK CONSTRAINT [Logs_fk0]
+GO
+ALTER TABLE [dbo].[RelativeCharacter]  WITH CHECK ADD  CONSTRAINT [RelativeCharacter_fk0] FOREIGN KEY([characterId])
+REFERENCES [dbo].[Character] ([id])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[RelativeCharacter] CHECK CONSTRAINT [RelativeCharacter_fk0]
+GO
+ALTER TABLE [dbo].[RelativeCharacter]  WITH CHECK ADD  CONSTRAINT [RelativeCharacter_fk1] FOREIGN KEY([targetId])
+REFERENCES [dbo].[Character] ([id])
+GO
+ALTER TABLE [dbo].[RelativeCharacter] CHECK CONSTRAINT [RelativeCharacter_fk1]
+GO
+ALTER TABLE [dbo].[RelativeCharacter]  WITH CHECK ADD  CONSTRAINT [RelativeCharacter_fk2] FOREIGN KEY([type])
+REFERENCES [dbo].[RelativeType] ([type])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[RelativeCharacter] CHECK CONSTRAINT [RelativeCharacter_fk2]
+GO
+ALTER TABLE [dbo].[User]  WITH CHECK ADD  CONSTRAINT [User_fk0] FOREIGN KEY([characterId])
+REFERENCES [dbo].[Character] ([id])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[User] CHECK CONSTRAINT [User_fk0]
+GO
+ALTER TABLE [dbo].[User]  WITH CHECK ADD  CONSTRAINT [User_fk1] FOREIGN KEY([accessLevelType])
+REFERENCES [dbo].[AccessLevel] ([type])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[User] CHECK CONSTRAINT [User_fk1]
+GO
