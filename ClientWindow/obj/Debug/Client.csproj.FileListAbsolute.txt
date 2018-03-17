@@ -1,0 +1,16 @@
+D:\VSProjects\FamilyTree\ClientWindow\bin\Debug\Client.exe.config
+D:\VSProjects\FamilyTree\ClientWindow\bin\Debug\Client.exe
+D:\VSProjects\FamilyTree\ClientWindow\bin\Debug\Client.pdb
+D:\VSProjects\FamilyTree\ClientWindow\obj\Debug\Client.csprojResolveAssemblyReference.cache
+D:\VSProjects\FamilyTree\ClientWindow\obj\Debug\View\MainWindow.g.cs
+D:\VSProjects\FamilyTree\ClientWindow\obj\Debug\App.g.cs
+D:\VSProjects\FamilyTree\ClientWindow\obj\Debug\Client_MarkupCompile.cache
+D:\VSProjects\FamilyTree\ClientWindow\obj\Debug\Client_MarkupCompile.lref
+D:\VSProjects\FamilyTree\ClientWindow\obj\Debug\View\MainWindow.baml
+D:\VSProjects\FamilyTree\ClientWindow\obj\Debug\Client.g.resources
+D:\VSProjects\FamilyTree\ClientWindow\obj\Debug\Client.Properties.Resources.resources
+D:\VSProjects\FamilyTree\ClientWindow\obj\Debug\Client.csproj.GenerateResource.Cache
+D:\VSProjects\FamilyTree\ClientWindow\obj\Debug\Client.exe
+D:\VSProjects\FamilyTree\ClientWindow\obj\Debug\Client.pdb
+D:\VSProjects\FamilyTree\ClientWindow\obj\Debug\View\Character_UserControl1.g.cs
+D:\VSProjects\FamilyTree\ClientWindow\obj\Debug\View\Character_UserControl1.baml

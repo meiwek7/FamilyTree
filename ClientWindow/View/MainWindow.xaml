@@ -4,10 +4,53 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Client"
+        xmlns:myCtrls="clr-namespace:Client"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Family Tree | Main Menu" Height="600" Width="1000" MinWidth="1000" MinHeight="600">
+    
+    
     <Grid>
-        <Label Content="MainWindow" HorizontalAlignment="Left" Margin="182,129,0,0" VerticalAlignment="Top"/>
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="60px"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition Height="50px"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition Width="0.7*"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.ColumnSpan="3" Grid.RowSpan="3" Grid.Row="0" Grid.Column="0">
+            <Label.Background>
+                <ImageBrush ImageSource="D:\VSProjects\FamilyTree\ClientWindow\View\Resources\bg_darkwood_2.jpg" ></ImageBrush>
+            </Label.Background>
+        </Label>
+
+        <Label Grid.ColumnSpan="3" Grid.RowSpan="3" Grid.Row="1" Grid.Column="0">
+            <Label.Background>
+                <ImageBrush ImageSource="D:\VSProjects\FamilyTree\ClientWindow\View\Resources\bg_1.jpg"></ImageBrush>
+            </Label.Background>
+        </Label>
+
+        <Label Grid.Row="0" Grid.Column="1">
+            <Label.Background>
+                <ImageBrush ImageSource="D:\VSProjects\FamilyTree\ClientWindow\View\Resources\family_tree.jpg"/>
+            </Label.Background>
+        </Label>
+
+
+
+
+
+        <Button Name="button_bloodline" Grid.Row="0" Grid.Column="0" FontSize="20" Height="35" Width="135">Родословная</Button>
+        <Button Name="button_log" Grid.Row="0" Grid.Column="2" FontSize="20" Height="35" Width="135">Записи</Button>
+        <Button Name="button_add" Grid.Row="3" Grid.Column="0" Height="35" Width="100" >Добавить</Button>
+        <Button Name="button_editing" Grid.Row="3" Grid.Column="1" Height="35" Width="100" >Редактировать</Button>
+        <Button Name="print" Grid.Row="3" Grid.Column="2" Height="35" Width="100" >Печать</Button>
 
     </Grid>
 </Window>

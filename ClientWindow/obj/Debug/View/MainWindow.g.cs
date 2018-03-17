@@ -41,7 +41,7 @@ namespace Client {
     public partial class MainWindow : System.Windows.Window, System.Windows.Markup.IComponentConnector {
         
         
-        #line 49 "..\..\..\View\MainWindow.xaml"
+        #line 48 "..\..\..\View\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button button_bloodline;
         
@@ -49,7 +49,7 @@ namespace Client {
         #line hidden
         
         
-        #line 50 "..\..\..\View\MainWindow.xaml"
+        #line 49 "..\..\..\View\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button button_log;
         
@@ -57,7 +57,7 @@ namespace Client {
         #line hidden
         
         
-        #line 51 "..\..\..\View\MainWindow.xaml"
+        #line 50 "..\..\..\View\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button button_add;
         
@@ -65,7 +65,7 @@ namespace Client {
         #line hidden
         
         
-        #line 52 "..\..\..\View\MainWindow.xaml"
+        #line 51 "..\..\..\View\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button button_editing;
         
@@ -73,7 +73,7 @@ namespace Client {
         #line hidden
         
         
-        #line 53 "..\..\..\View\MainWindow.xaml"
+        #line 52 "..\..\..\View\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button print;
         
