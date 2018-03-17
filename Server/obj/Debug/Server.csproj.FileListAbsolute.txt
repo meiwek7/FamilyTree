@@ -1,5 +1,0 @@
-D:\VSProjects\FamilyTree\Server\bin\Debug\Server.exe.config
-D:\VSProjects\FamilyTree\Server\bin\Debug\Server.exe
-D:\VSProjects\FamilyTree\Server\bin\Debug\Server.pdb
-D:\VSProjects\FamilyTree\Server\obj\Debug\Server.exe
-D:\VSProjects\FamilyTree\Server\obj\Debug\Server.pdb
