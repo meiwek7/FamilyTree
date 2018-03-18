@@ -1,6 +1,6 @@
-#ignore ".vs" folder
+#ignore this directories
 .vs/
 Client/bin/
 Client/obj/
 Server/bin/
-Server/obj
+Server/obj/
