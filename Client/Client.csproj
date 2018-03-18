@@ -54,9 +54,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="View\MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Compile Include="View\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="View\Character_Info.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Character_UserControl1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
@@ -64,10 +71,16 @@
     </Compile>
     <Compile Include="Infrastructure\ConLogic.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
-    <Compile Include="View\MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
+    <Compile Include="View\Character_Info.xaml.cs">
+      <DependentUpon>Character_Info.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Character_UserControl1.xaml.cs">
+      <DependentUpon>Character_UserControl1.xaml</DependentUpon>
+    </Compile>
+    <Page Include="View\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -95,6 +108,18 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="View\Resources\Rurick.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Resources\bg_1.jpg" />
+    <Resource Include="View\Resources\bg_2.PNG" />
+    <Resource Include="View\Resources\bg_darkwood_1.jpg" />
+    <Resource Include="View\Resources\bg_darkwood_2.jpg" />
+    <Resource Include="View\Resources\bg_leather_1.jpg" />
+    <Resource Include="View\Resources\family_tree.jpg" />
+    <Resource Include="View\Resources\ff20b695-6a1c-441a-90b1-78a1e1ea2491.jpg" />
+    <Resource Include="View\Resources\total_war1425239213_2015-03-01_00006.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

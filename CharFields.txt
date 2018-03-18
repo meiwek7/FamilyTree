@@ -1,0 +1,15 @@
+CharacterNationality .
+CharacterBirthCountry . 
+CharacterDeathCountry .
+CharacterLivingCountry .
+CharacterBirthPlace .
+CharacterDeathPlace .
+CharacterLivingPlace .
+CharacterReligious .
+CharacterFirstName .
+CharacterSecondName .
+CharacterLastName .
+CharacterBirthDate .
+CharacterDeathDate .
+CharacterBiography
+CharacterPhoto .
