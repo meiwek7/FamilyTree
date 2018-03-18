@@ -1,2 +1,9 @@
 #ignore ".vs" folder
+<<<<<<< HEAD
+
+.vs
+/
+Debug/Client_MarkupCompile.i.lref
+=======
 .vs/
+>>>>>>> parent of cf27a48... IgnoreCommit
