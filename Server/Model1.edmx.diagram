@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3cf77358dffc4af58960892649cd491c" Name="Diagram1" ZoomLevel="40">
+        <EntityTypeShape EntityType="FamilyTreeModel.AccessLevel" Width="1.5" PointX="0.5" PointY="24.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.Character" Width="1.5" PointX="8.625" PointY="23" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.CharacterBiography" Width="1.5" PointX="24.5" PointY="30.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.CharacterBirthCountry" Width="1.5" PointX="24.5" PointY="33.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.CharacterBirthDate" Width="1.5" PointX="24.5" PointY="27.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.CharacterBirthPlace" Width="1.5" PointX="27.5" PointY="30.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.CharacterDeathCountry" Width="1.5" PointX="27.5" PointY="33.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.CharacterDeathDate" Width="1.5" PointX="27.5" PointY="27.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.CharacterDeathPlace" Width="1.5" PointX="24.5" PointY="36.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.CharacterFirstName" Width="1.5" PointX="24.5" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.CharacterLastName" Width="1.5" PointX="27.5" PointY="36.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.CharacterLivingCountry" Width="1.5" PointX="30.5" PointY="30.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.CharacterLivingPlace" Width="1.5" PointX="27.5" PointY="24.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.CharacterNationality" Width="1.5" PointX="30.5" PointY="33.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.CharacterPhoto" Width="1.5" PointX="30.5" PointY="27.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.CharacterReligious" Width="1.5" PointX="30.5" PointY="36.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.CharacterSecondName" Width="1.5" PointX="30.5" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.Country" Width="1.5" PointX="28.25" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.House" Width="1.5" PointX="7.5" PointY="68.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.HouseCharacter" Width="1.5" PointX="9.75" PointY="46.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.Logs" Width="1.5" PointX="16.875" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.Nationality" Width="1.5" PointX="28.25" PointY="39.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.Place" Width="3.75" PointX="25.25" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.RelativeCharacter" Width="1.5" PointX="24.5" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.RelativeType" Width="1.5" PointX="12.375" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.Religious" Width="1.5" PointX="11.25" PointY="41.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.User" Width="1.5" PointX="3" PointY="20" IsExpanded="true" />
+        <AssociationConnector Association="FamilyTreeModel.User_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.Character_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.CharacterBiography_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.CharacterBirthCountry_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.CharacterBirthDate_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.CharacterBirthPlace_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.CharacterDeathCountry_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.CharacterDeathDate_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.CharacterDeathPlace_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.CharacterFirstName_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.CharacterLastName_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.CharacterLivingCountry_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.CharacterLivingPlace_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.CharacterNationality_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.CharacterPhoto_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.CharacterReligious_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.CharacterSecondName_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.House_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.HouseCharacter_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.RelativeCharacter_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.RelativeCharacter_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.User_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.CharacterBiography_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.CharacterBirthCountry_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.CharacterBirthCountry_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.CharacterBirthDate_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.CharacterBirthPlace_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.CharacterBirthPlace_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.CharacterDeathCountry_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.CharacterDeathCountry_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.CharacterDeathDate_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.CharacterDeathPlace_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.CharacterDeathPlace_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.CharacterFirstName_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.CharacterLastName_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.CharacterLivingCountry_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.CharacterLivingCountry_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.CharacterLivingPlace_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.CharacterLivingPlace_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.CharacterNationality_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.CharacterNationality_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.CharacterPhoto_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.CharacterReligious_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.CharacterReligious_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.CharacterSecondName_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.HouseCharacter_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.Logs_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.RelativeCharacter_fk2" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

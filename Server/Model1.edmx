@@ -1,0 +1,2385 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище FamilyTreeModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AccessLevel">
+          <Key>
+            <PropertyRef Name="type" />
+          </Key>
+          <Property Name="type" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Character">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="creator" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CharacterBiography">
+          <Key>
+            <PropertyRef Name="changeId" />
+          </Key>
+          <Property Name="characterId" Type="int" />
+          <Property Name="biography" Type="varchar(max)" Nullable="false" />
+          <Property Name="changeId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CharacterBirthCountry">
+          <Key>
+            <PropertyRef Name="changeId" />
+          </Key>
+          <Property Name="characterId" Type="int" />
+          <Property Name="country" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="changeId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CharacterBirthDate">
+          <Key>
+            <PropertyRef Name="changeId" />
+          </Key>
+          <Property Name="characterId" Type="int" />
+          <Property Name="birthDate" Type="date" Nullable="false" />
+          <Property Name="changeId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CharacterBirthPlace">
+          <Key>
+            <PropertyRef Name="changeId" />
+          </Key>
+          <Property Name="characterId" Type="int" />
+          <Property Name="place" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="changeId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CharacterDeathCountry">
+          <Key>
+            <PropertyRef Name="changeId" />
+          </Key>
+          <Property Name="characterId" Type="int" />
+          <Property Name="country" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="changeId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CharacterDeathDate">
+          <Key>
+            <PropertyRef Name="changeId" />
+          </Key>
+          <Property Name="characterId" Type="int" />
+          <Property Name="deathDate" Type="date" Nullable="false" />
+          <Property Name="changeId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CharacterDeathPlace">
+          <Key>
+            <PropertyRef Name="changeId" />
+          </Key>
+          <Property Name="characterId" Type="int" />
+          <Property Name="place" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="changeId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CharacterFirstName">
+          <Key>
+            <PropertyRef Name="changeId" />
+          </Key>
+          <Property Name="characterId" Type="int" />
+          <Property Name="firstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="changeId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CharacterLastName">
+          <Key>
+            <PropertyRef Name="changeId" />
+          </Key>
+          <Property Name="characterId" Type="int" />
+          <Property Name="lastName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="changeId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CharacterLivingCountry">
+          <Key>
+            <PropertyRef Name="changeId" />
+          </Key>
+          <Property Name="charcaterId" Type="int" />
+          <Property Name="country" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="changeId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CharacterLivingPlace">
+          <Key>
+            <PropertyRef Name="changeId" />
+          </Key>
+          <Property Name="characterId" Type="int" />
+          <Property Name="place" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="changeId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CharacterNationality">
+          <Key>
+            <PropertyRef Name="changeId" />
+          </Key>
+          <Property Name="characterId" Type="int" />
+          <Property Name="nationality" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="changeId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CharacterPhoto">
+          <Key>
+            <PropertyRef Name="changeId" />
+          </Key>
+          <Property Name="characterId" Type="int" />
+          <Property Name="photo" Type="image" Nullable="false" />
+          <Property Name="changeId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CharacterReligious">
+          <Key>
+            <PropertyRef Name="changeId" />
+          </Key>
+          <Property Name="characterId" Type="int" />
+          <Property Name="religious" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="changeId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CharacterSecondName">
+          <Key>
+            <PropertyRef Name="changeId" />
+          </Key>
+          <Property Name="characterId" Type="int" />
+          <Property Name="secondName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="changeId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="name" />
+          </Key>
+          <Property Name="name" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="House">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="houseKeeper" Type="int" Nullable="false" />
+          <Property Name="coatOfArms" Type="image" />
+          <Property Name="historyOfHouse" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="HouseCharacter">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="houseId" Type="int" Nullable="false" />
+          <Property Name="characterId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Logs">
+          <Key>
+            <PropertyRef Name="changeId" />
+          </Key>
+          <Property Name="changeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Nationality">
+          <Key>
+            <PropertyRef Name="name" />
+          </Key>
+          <Property Name="name" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Place">
+          <Key>
+            <PropertyRef Name="name" />
+          </Key>
+          <Property Name="name" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RelativeCharacter">
+          <Key>
+            <PropertyRef Name="characterId" />
+            <PropertyRef Name="targetId" />
+          </Key>
+          <Property Name="characterId" Type="int" Nullable="false" />
+          <Property Name="targetId" Type="int" Nullable="false" />
+          <Property Name="type" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RelativeType">
+          <Key>
+            <PropertyRef Name="type" />
+          </Key>
+          <Property Name="type" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Religious">
+          <Key>
+            <PropertyRef Name="name" />
+          </Key>
+          <Property Name="name" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="characterId" Type="int" />
+          <Property Name="password" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="phoneNumber" Type="varchar" MaxLength="20" />
+          <Property Name="lastLogIn" Type="datetime" Nullable="false" />
+          <Property Name="accessLevelType" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <Association Name="Character_fk0">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Character" Type="Self.Character" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Character">
+              <PropertyRef Name="creator" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterBiography_fk0">
+          <End Role="Character" Type="Self.Character" Multiplicity="0..1" />
+          <End Role="CharacterBiography" Type="Self.CharacterBiography" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Character">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CharacterBiography">
+              <PropertyRef Name="characterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterBiography_fk1">
+          <End Role="Logs" Type="Self.Logs" Multiplicity="1" />
+          <End Role="CharacterBiography" Type="Self.CharacterBiography" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Logs">
+              <PropertyRef Name="changeId" />
+            </Principal>
+            <Dependent Role="CharacterBiography">
+              <PropertyRef Name="changeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterBirthCountry_fk0">
+          <End Role="Character" Type="Self.Character" Multiplicity="0..1" />
+          <End Role="CharacterBirthCountry" Type="Self.CharacterBirthCountry" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Character">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CharacterBirthCountry">
+              <PropertyRef Name="characterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterBirthCountry_fk1">
+          <End Role="Country" Type="Self.Country" Multiplicity="1" />
+          <End Role="CharacterBirthCountry" Type="Self.CharacterBirthCountry" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="name" />
+            </Principal>
+            <Dependent Role="CharacterBirthCountry">
+              <PropertyRef Name="country" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterBirthCountry_fk2">
+          <End Role="Logs" Type="Self.Logs" Multiplicity="1" />
+          <End Role="CharacterBirthCountry" Type="Self.CharacterBirthCountry" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Logs">
+              <PropertyRef Name="changeId" />
+            </Principal>
+            <Dependent Role="CharacterBirthCountry">
+              <PropertyRef Name="changeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterBirthDate_fk0">
+          <End Role="Character" Type="Self.Character" Multiplicity="0..1" />
+          <End Role="CharacterBirthDate" Type="Self.CharacterBirthDate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Character">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CharacterBirthDate">
+              <PropertyRef Name="characterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterBirthDate_fk1">
+          <End Role="Logs" Type="Self.Logs" Multiplicity="1" />
+          <End Role="CharacterBirthDate" Type="Self.CharacterBirthDate" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Logs">
+              <PropertyRef Name="changeId" />
+            </Principal>
+            <Dependent Role="CharacterBirthDate">
+              <PropertyRef Name="changeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterBirthPlace_fk0">
+          <End Role="Character" Type="Self.Character" Multiplicity="0..1" />
+          <End Role="CharacterBirthPlace" Type="Self.CharacterBirthPlace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Character">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CharacterBirthPlace">
+              <PropertyRef Name="characterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterBirthPlace_fk1">
+          <End Role="Place" Type="Self.Place" Multiplicity="1" />
+          <End Role="CharacterBirthPlace" Type="Self.CharacterBirthPlace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Place">
+              <PropertyRef Name="name" />
+            </Principal>
+            <Dependent Role="CharacterBirthPlace">
+              <PropertyRef Name="place" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterBirthPlace_fk2">
+          <End Role="Logs" Type="Self.Logs" Multiplicity="1" />
+          <End Role="CharacterBirthPlace" Type="Self.CharacterBirthPlace" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Logs">
+              <PropertyRef Name="changeId" />
+            </Principal>
+            <Dependent Role="CharacterBirthPlace">
+              <PropertyRef Name="changeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterDeathCountry_fk0">
+          <End Role="Character" Type="Self.Character" Multiplicity="0..1" />
+          <End Role="CharacterDeathCountry" Type="Self.CharacterDeathCountry" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Character">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CharacterDeathCountry">
+              <PropertyRef Name="characterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterDeathCountry_fk1">
+          <End Role="Country" Type="Self.Country" Multiplicity="1" />
+          <End Role="CharacterDeathCountry" Type="Self.CharacterDeathCountry" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="name" />
+            </Principal>
+            <Dependent Role="CharacterDeathCountry">
+              <PropertyRef Name="country" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterDeathCountry_fk2">
+          <End Role="Logs" Type="Self.Logs" Multiplicity="1" />
+          <End Role="CharacterDeathCountry" Type="Self.CharacterDeathCountry" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Logs">
+              <PropertyRef Name="changeId" />
+            </Principal>
+            <Dependent Role="CharacterDeathCountry">
+              <PropertyRef Name="changeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterDeathDate_fk0">
+          <End Role="Character" Type="Self.Character" Multiplicity="0..1" />
+          <End Role="CharacterDeathDate" Type="Self.CharacterDeathDate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Character">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CharacterDeathDate">
+              <PropertyRef Name="characterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterDeathDate_fk1">
+          <End Role="Logs" Type="Self.Logs" Multiplicity="1" />
+          <End Role="CharacterDeathDate" Type="Self.CharacterDeathDate" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Logs">
+              <PropertyRef Name="changeId" />
+            </Principal>
+            <Dependent Role="CharacterDeathDate">
+              <PropertyRef Name="changeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterDeathPlace_fk0">
+          <End Role="Character" Type="Self.Character" Multiplicity="0..1" />
+          <End Role="CharacterDeathPlace" Type="Self.CharacterDeathPlace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Character">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CharacterDeathPlace">
+              <PropertyRef Name="characterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterDeathPlace_fk1">
+          <End Role="Place" Type="Self.Place" Multiplicity="1" />
+          <End Role="CharacterDeathPlace" Type="Self.CharacterDeathPlace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Place">
+              <PropertyRef Name="name" />
+            </Principal>
+            <Dependent Role="CharacterDeathPlace">
+              <PropertyRef Name="place" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterDeathPlace_fk2">
+          <End Role="Logs" Type="Self.Logs" Multiplicity="1" />
+          <End Role="CharacterDeathPlace" Type="Self.CharacterDeathPlace" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Logs">
+              <PropertyRef Name="changeId" />
+            </Principal>
+            <Dependent Role="CharacterDeathPlace">
+              <PropertyRef Name="changeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterFirstName_fk0">
+          <End Role="Character" Type="Self.Character" Multiplicity="0..1" />
+          <End Role="CharacterFirstName" Type="Self.CharacterFirstName" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Character">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CharacterFirstName">
+              <PropertyRef Name="characterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterFirstName_fk1">
+          <End Role="Logs" Type="Self.Logs" Multiplicity="1" />
+          <End Role="CharacterFirstName" Type="Self.CharacterFirstName" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Logs">
+              <PropertyRef Name="changeId" />
+            </Principal>
+            <Dependent Role="CharacterFirstName">
+              <PropertyRef Name="changeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterLastName_fk0">
+          <End Role="Character" Type="Self.Character" Multiplicity="0..1" />
+          <End Role="CharacterLastName" Type="Self.CharacterLastName" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Character">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CharacterLastName">
+              <PropertyRef Name="characterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterLastName_fk1">
+          <End Role="Logs" Type="Self.Logs" Multiplicity="1" />
+          <End Role="CharacterLastName" Type="Self.CharacterLastName" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Logs">
+              <PropertyRef Name="changeId" />
+            </Principal>
+            <Dependent Role="CharacterLastName">
+              <PropertyRef Name="changeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterLivingCountry_fk0">
+          <End Role="Character" Type="Self.Character" Multiplicity="0..1" />
+          <End Role="CharacterLivingCountry" Type="Self.CharacterLivingCountry" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Character">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CharacterLivingCountry">
+              <PropertyRef Name="charcaterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterLivingCountry_fk1">
+          <End Role="Country" Type="Self.Country" Multiplicity="1" />
+          <End Role="CharacterLivingCountry" Type="Self.CharacterLivingCountry" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="name" />
+            </Principal>
+            <Dependent Role="CharacterLivingCountry">
+              <PropertyRef Name="country" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterLivingCountry_fk2">
+          <End Role="Logs" Type="Self.Logs" Multiplicity="1" />
+          <End Role="CharacterLivingCountry" Type="Self.CharacterLivingCountry" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Logs">
+              <PropertyRef Name="changeId" />
+            </Principal>
+            <Dependent Role="CharacterLivingCountry">
+              <PropertyRef Name="changeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterLivingPlace_fk0">
+          <End Role="Character" Type="Self.Character" Multiplicity="0..1" />
+          <End Role="CharacterLivingPlace" Type="Self.CharacterLivingPlace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Character">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CharacterLivingPlace">
+              <PropertyRef Name="characterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterLivingPlace_fk1">
+          <End Role="Place" Type="Self.Place" Multiplicity="1" />
+          <End Role="CharacterLivingPlace" Type="Self.CharacterLivingPlace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Place">
+              <PropertyRef Name="name" />
+            </Principal>
+            <Dependent Role="CharacterLivingPlace">
+              <PropertyRef Name="place" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterLivingPlace_fk2">
+          <End Role="Logs" Type="Self.Logs" Multiplicity="1" />
+          <End Role="CharacterLivingPlace" Type="Self.CharacterLivingPlace" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Logs">
+              <PropertyRef Name="changeId" />
+            </Principal>
+            <Dependent Role="CharacterLivingPlace">
+              <PropertyRef Name="changeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterNationality_fk0">
+          <End Role="Character" Type="Self.Character" Multiplicity="0..1" />
+          <End Role="CharacterNationality" Type="Self.CharacterNationality" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Character">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CharacterNationality">
+              <PropertyRef Name="characterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterNationality_fk1">
+          <End Role="Nationality" Type="Self.Nationality" Multiplicity="1" />
+          <End Role="CharacterNationality" Type="Self.CharacterNationality" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nationality">
+              <PropertyRef Name="name" />
+            </Principal>
+            <Dependent Role="CharacterNationality">
+              <PropertyRef Name="nationality" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterNationality_fk2">
+          <End Role="Logs" Type="Self.Logs" Multiplicity="1" />
+          <End Role="CharacterNationality" Type="Self.CharacterNationality" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Logs">
+              <PropertyRef Name="changeId" />
+            </Principal>
+            <Dependent Role="CharacterNationality">
+              <PropertyRef Name="changeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterPhoto_fk0">
+          <End Role="Character" Type="Self.Character" Multiplicity="0..1" />
+          <End Role="CharacterPhoto" Type="Self.CharacterPhoto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Character">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CharacterPhoto">
+              <PropertyRef Name="characterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterPhoto_fk1">
+          <End Role="Logs" Type="Self.Logs" Multiplicity="1" />
+          <End Role="CharacterPhoto" Type="Self.CharacterPhoto" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Logs">
+              <PropertyRef Name="changeId" />
+            </Principal>
+            <Dependent Role="CharacterPhoto">
+              <PropertyRef Name="changeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterReligious_fk0">
+          <End Role="Character" Type="Self.Character" Multiplicity="0..1" />
+          <End Role="CharacterReligious" Type="Self.CharacterReligious" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Character">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CharacterReligious">
+              <PropertyRef Name="characterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterReligious_fk1">
+          <End Role="Religious" Type="Self.Religious" Multiplicity="1" />
+          <End Role="CharacterReligious" Type="Self.CharacterReligious" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Religious">
+              <PropertyRef Name="name" />
+            </Principal>
+            <Dependent Role="CharacterReligious">
+              <PropertyRef Name="religious" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterReligious_fk2">
+          <End Role="Logs" Type="Self.Logs" Multiplicity="1" />
+          <End Role="CharacterReligious" Type="Self.CharacterReligious" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Logs">
+              <PropertyRef Name="changeId" />
+            </Principal>
+            <Dependent Role="CharacterReligious">
+              <PropertyRef Name="changeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterSecondName_fk0">
+          <End Role="Character" Type="Self.Character" Multiplicity="0..1" />
+          <End Role="CharacterSecondName" Type="Self.CharacterSecondName" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Character">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CharacterSecondName">
+              <PropertyRef Name="characterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterSecondName_fk1">
+          <End Role="Logs" Type="Self.Logs" Multiplicity="1" />
+          <End Role="CharacterSecondName" Type="Self.CharacterSecondName" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Logs">
+              <PropertyRef Name="changeId" />
+            </Principal>
+            <Dependent Role="CharacterSecondName">
+              <PropertyRef Name="changeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="House_fk0">
+          <End Role="Character" Type="Self.Character" Multiplicity="1" />
+          <End Role="House" Type="Self.House" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Character">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="House">
+              <PropertyRef Name="houseKeeper" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="HouseCharacter_fk0">
+          <End Role="House" Type="Self.House" Multiplicity="1" />
+          <End Role="HouseCharacter" Type="Self.HouseCharacter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="House">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="HouseCharacter">
+              <PropertyRef Name="houseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="HouseCharacter_fk1">
+          <End Role="Character" Type="Self.Character" Multiplicity="1" />
+          <End Role="HouseCharacter" Type="Self.HouseCharacter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Character">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="HouseCharacter">
+              <PropertyRef Name="characterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Logs_fk0">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Logs" Type="Self.Logs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Logs">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RelativeCharacter_fk0">
+          <End Role="Character" Type="Self.Character" Multiplicity="1" />
+          <End Role="RelativeCharacter" Type="Self.RelativeCharacter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Character">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RelativeCharacter">
+              <PropertyRef Name="characterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RelativeCharacter_fk1">
+          <End Role="Character" Type="Self.Character" Multiplicity="1" />
+          <End Role="RelativeCharacter" Type="Self.RelativeCharacter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Character">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RelativeCharacter">
+              <PropertyRef Name="targetId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RelativeCharacter_fk2">
+          <End Role="RelativeType" Type="Self.RelativeType" Multiplicity="1" />
+          <End Role="RelativeCharacter" Type="Self.RelativeCharacter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RelativeType">
+              <PropertyRef Name="type" />
+            </Principal>
+            <Dependent Role="RelativeCharacter">
+              <PropertyRef Name="type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="User_fk0">
+          <End Role="Character" Type="Self.Character" Multiplicity="0..1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Character">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="characterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="User_fk1">
+          <End Role="AccessLevel" Type="Self.AccessLevel" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccessLevel">
+              <PropertyRef Name="type" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="accessLevelType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище FamilyTreeModelContainer">
+          <EntitySet Name="AccessLevel" EntityType="Self.AccessLevel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Character" EntityType="Self.Character" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CharacterBiography" EntityType="Self.CharacterBiography" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CharacterBirthCountry" EntityType="Self.CharacterBirthCountry" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CharacterBirthDate" EntityType="Self.CharacterBirthDate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CharacterBirthPlace" EntityType="Self.CharacterBirthPlace" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CharacterDeathCountry" EntityType="Self.CharacterDeathCountry" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CharacterDeathDate" EntityType="Self.CharacterDeathDate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CharacterDeathPlace" EntityType="Self.CharacterDeathPlace" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CharacterFirstName" EntityType="Self.CharacterFirstName" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CharacterLastName" EntityType="Self.CharacterLastName" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CharacterLivingCountry" EntityType="Self.CharacterLivingCountry" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CharacterLivingPlace" EntityType="Self.CharacterLivingPlace" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CharacterNationality" EntityType="Self.CharacterNationality" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CharacterPhoto" EntityType="Self.CharacterPhoto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CharacterReligious" EntityType="Self.CharacterReligious" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CharacterSecondName" EntityType="Self.CharacterSecondName" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="House" EntityType="Self.House" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HouseCharacter" EntityType="Self.HouseCharacter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Logs" EntityType="Self.Logs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Nationality" EntityType="Self.Nationality" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Place" EntityType="Self.Place" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RelativeCharacter" EntityType="Self.RelativeCharacter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RelativeType" EntityType="Self.RelativeType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Religious" EntityType="Self.Religious" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="Character_fk0" Association="Self.Character_fk0">
+            <End Role="User" EntitySet="User" />
+            <End Role="Character" EntitySet="Character" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterBiography_fk0" Association="Self.CharacterBiography_fk0">
+            <End Role="Character" EntitySet="Character" />
+            <End Role="CharacterBiography" EntitySet="CharacterBiography" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterBiography_fk1" Association="Self.CharacterBiography_fk1">
+            <End Role="Logs" EntitySet="Logs" />
+            <End Role="CharacterBiography" EntitySet="CharacterBiography" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterBirthCountry_fk0" Association="Self.CharacterBirthCountry_fk0">
+            <End Role="Character" EntitySet="Character" />
+            <End Role="CharacterBirthCountry" EntitySet="CharacterBirthCountry" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterBirthCountry_fk1" Association="Self.CharacterBirthCountry_fk1">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="CharacterBirthCountry" EntitySet="CharacterBirthCountry" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterBirthCountry_fk2" Association="Self.CharacterBirthCountry_fk2">
+            <End Role="Logs" EntitySet="Logs" />
+            <End Role="CharacterBirthCountry" EntitySet="CharacterBirthCountry" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterBirthDate_fk0" Association="Self.CharacterBirthDate_fk0">
+            <End Role="Character" EntitySet="Character" />
+            <End Role="CharacterBirthDate" EntitySet="CharacterBirthDate" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterBirthDate_fk1" Association="Self.CharacterBirthDate_fk1">
+            <End Role="Logs" EntitySet="Logs" />
+            <End Role="CharacterBirthDate" EntitySet="CharacterBirthDate" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterBirthPlace_fk0" Association="Self.CharacterBirthPlace_fk0">
+            <End Role="Character" EntitySet="Character" />
+            <End Role="CharacterBirthPlace" EntitySet="CharacterBirthPlace" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterBirthPlace_fk1" Association="Self.CharacterBirthPlace_fk1">
+            <End Role="Place" EntitySet="Place" />
+            <End Role="CharacterBirthPlace" EntitySet="CharacterBirthPlace" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterBirthPlace_fk2" Association="Self.CharacterBirthPlace_fk2">
+            <End Role="Logs" EntitySet="Logs" />
+            <End Role="CharacterBirthPlace" EntitySet="CharacterBirthPlace" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterDeathCountry_fk0" Association="Self.CharacterDeathCountry_fk0">
+            <End Role="Character" EntitySet="Character" />
+            <End Role="CharacterDeathCountry" EntitySet="CharacterDeathCountry" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterDeathCountry_fk1" Association="Self.CharacterDeathCountry_fk1">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="CharacterDeathCountry" EntitySet="CharacterDeathCountry" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterDeathCountry_fk2" Association="Self.CharacterDeathCountry_fk2">
+            <End Role="Logs" EntitySet="Logs" />
+            <End Role="CharacterDeathCountry" EntitySet="CharacterDeathCountry" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterDeathDate_fk0" Association="Self.CharacterDeathDate_fk0">
+            <End Role="Character" EntitySet="Character" />
+            <End Role="CharacterDeathDate" EntitySet="CharacterDeathDate" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterDeathDate_fk1" Association="Self.CharacterDeathDate_fk1">
+            <End Role="Logs" EntitySet="Logs" />
+            <End Role="CharacterDeathDate" EntitySet="CharacterDeathDate" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterDeathPlace_fk0" Association="Self.CharacterDeathPlace_fk0">
+            <End Role="Character" EntitySet="Character" />
+            <End Role="CharacterDeathPlace" EntitySet="CharacterDeathPlace" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterDeathPlace_fk1" Association="Self.CharacterDeathPlace_fk1">
+            <End Role="Place" EntitySet="Place" />
+            <End Role="CharacterDeathPlace" EntitySet="CharacterDeathPlace" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterDeathPlace_fk2" Association="Self.CharacterDeathPlace_fk2">
+            <End Role="Logs" EntitySet="Logs" />
+            <End Role="CharacterDeathPlace" EntitySet="CharacterDeathPlace" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterFirstName_fk0" Association="Self.CharacterFirstName_fk0">
+            <End Role="Character" EntitySet="Character" />
+            <End Role="CharacterFirstName" EntitySet="CharacterFirstName" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterFirstName_fk1" Association="Self.CharacterFirstName_fk1">
+            <End Role="Logs" EntitySet="Logs" />
+            <End Role="CharacterFirstName" EntitySet="CharacterFirstName" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterLastName_fk0" Association="Self.CharacterLastName_fk0">
+            <End Role="Character" EntitySet="Character" />
+            <End Role="CharacterLastName" EntitySet="CharacterLastName" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterLastName_fk1" Association="Self.CharacterLastName_fk1">
+            <End Role="Logs" EntitySet="Logs" />
+            <End Role="CharacterLastName" EntitySet="CharacterLastName" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterLivingCountry_fk0" Association="Self.CharacterLivingCountry_fk0">
+            <End Role="Character" EntitySet="Character" />
+            <End Role="CharacterLivingCountry" EntitySet="CharacterLivingCountry" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterLivingCountry_fk1" Association="Self.CharacterLivingCountry_fk1">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="CharacterLivingCountry" EntitySet="CharacterLivingCountry" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterLivingCountry_fk2" Association="Self.CharacterLivingCountry_fk2">
+            <End Role="Logs" EntitySet="Logs" />
+            <End Role="CharacterLivingCountry" EntitySet="CharacterLivingCountry" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterLivingPlace_fk0" Association="Self.CharacterLivingPlace_fk0">
+            <End Role="Character" EntitySet="Character" />
+            <End Role="CharacterLivingPlace" EntitySet="CharacterLivingPlace" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterLivingPlace_fk1" Association="Self.CharacterLivingPlace_fk1">
+            <End Role="Place" EntitySet="Place" />
+            <End Role="CharacterLivingPlace" EntitySet="CharacterLivingPlace" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterLivingPlace_fk2" Association="Self.CharacterLivingPlace_fk2">
+            <End Role="Logs" EntitySet="Logs" />
+            <End Role="CharacterLivingPlace" EntitySet="CharacterLivingPlace" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterNationality_fk0" Association="Self.CharacterNationality_fk0">
+            <End Role="Character" EntitySet="Character" />
+            <End Role="CharacterNationality" EntitySet="CharacterNationality" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterNationality_fk1" Association="Self.CharacterNationality_fk1">
+            <End Role="Nationality" EntitySet="Nationality" />
+            <End Role="CharacterNationality" EntitySet="CharacterNationality" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterNationality_fk2" Association="Self.CharacterNationality_fk2">
+            <End Role="Logs" EntitySet="Logs" />
+            <End Role="CharacterNationality" EntitySet="CharacterNationality" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterPhoto_fk0" Association="Self.CharacterPhoto_fk0">
+            <End Role="Character" EntitySet="Character" />
+            <End Role="CharacterPhoto" EntitySet="CharacterPhoto" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterPhoto_fk1" Association="Self.CharacterPhoto_fk1">
+            <End Role="Logs" EntitySet="Logs" />
+            <End Role="CharacterPhoto" EntitySet="CharacterPhoto" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterReligious_fk0" Association="Self.CharacterReligious_fk0">
+            <End Role="Character" EntitySet="Character" />
+            <End Role="CharacterReligious" EntitySet="CharacterReligious" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterReligious_fk1" Association="Self.CharacterReligious_fk1">
+            <End Role="Religious" EntitySet="Religious" />
+            <End Role="CharacterReligious" EntitySet="CharacterReligious" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterReligious_fk2" Association="Self.CharacterReligious_fk2">
+            <End Role="Logs" EntitySet="Logs" />
+            <End Role="CharacterReligious" EntitySet="CharacterReligious" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterSecondName_fk0" Association="Self.CharacterSecondName_fk0">
+            <End Role="Character" EntitySet="Character" />
+            <End Role="CharacterSecondName" EntitySet="CharacterSecondName" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterSecondName_fk1" Association="Self.CharacterSecondName_fk1">
+            <End Role="Logs" EntitySet="Logs" />
+            <End Role="CharacterSecondName" EntitySet="CharacterSecondName" />
+          </AssociationSet>
+          <AssociationSet Name="House_fk0" Association="Self.House_fk0">
+            <End Role="Character" EntitySet="Character" />
+            <End Role="House" EntitySet="House" />
+          </AssociationSet>
+          <AssociationSet Name="HouseCharacter_fk0" Association="Self.HouseCharacter_fk0">
+            <End Role="House" EntitySet="House" />
+            <End Role="HouseCharacter" EntitySet="HouseCharacter" />
+          </AssociationSet>
+          <AssociationSet Name="HouseCharacter_fk1" Association="Self.HouseCharacter_fk1">
+            <End Role="Character" EntitySet="Character" />
+            <End Role="HouseCharacter" EntitySet="HouseCharacter" />
+          </AssociationSet>
+          <AssociationSet Name="Logs_fk0" Association="Self.Logs_fk0">
+            <End Role="User" EntitySet="User" />
+            <End Role="Logs" EntitySet="Logs" />
+          </AssociationSet>
+          <AssociationSet Name="RelativeCharacter_fk0" Association="Self.RelativeCharacter_fk0">
+            <End Role="Character" EntitySet="Character" />
+            <End Role="RelativeCharacter" EntitySet="RelativeCharacter" />
+          </AssociationSet>
+          <AssociationSet Name="RelativeCharacter_fk1" Association="Self.RelativeCharacter_fk1">
+            <End Role="Character" EntitySet="Character" />
+            <End Role="RelativeCharacter" EntitySet="RelativeCharacter" />
+          </AssociationSet>
+          <AssociationSet Name="RelativeCharacter_fk2" Association="Self.RelativeCharacter_fk2">
+            <End Role="RelativeType" EntitySet="RelativeType" />
+            <End Role="RelativeCharacter" EntitySet="RelativeCharacter" />
+          </AssociationSet>
+          <AssociationSet Name="User_fk0" Association="Self.User_fk0">
+            <End Role="Character" EntitySet="Character" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="User_fk1" Association="Self.User_fk1">
+            <End Role="AccessLevel" EntitySet="AccessLevel" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FamilyTreeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AccessLevel">
+          <Key>
+            <PropertyRef Name="type" />
+          </Key>
+          <Property Name="type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.User_fk1" FromRole="AccessLevel" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Character">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="creator" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.Character_fk0" FromRole="Character" ToRole="User" />
+          <NavigationProperty Name="CharacterBiography" Relationship="Self.CharacterBiography_fk0" FromRole="Character" ToRole="CharacterBiography" />
+          <NavigationProperty Name="CharacterBirthCountry" Relationship="Self.CharacterBirthCountry_fk0" FromRole="Character" ToRole="CharacterBirthCountry" />
+          <NavigationProperty Name="CharacterBirthDate" Relationship="Self.CharacterBirthDate_fk0" FromRole="Character" ToRole="CharacterBirthDate" />
+          <NavigationProperty Name="CharacterBirthPlace" Relationship="Self.CharacterBirthPlace_fk0" FromRole="Character" ToRole="CharacterBirthPlace" />
+          <NavigationProperty Name="CharacterDeathCountry" Relationship="Self.CharacterDeathCountry_fk0" FromRole="Character" ToRole="CharacterDeathCountry" />
+          <NavigationProperty Name="CharacterDeathDate" Relationship="Self.CharacterDeathDate_fk0" FromRole="Character" ToRole="CharacterDeathDate" />
+          <NavigationProperty Name="CharacterDeathPlace" Relationship="Self.CharacterDeathPlace_fk0" FromRole="Character" ToRole="CharacterDeathPlace" />
+          <NavigationProperty Name="CharacterFirstName" Relationship="Self.CharacterFirstName_fk0" FromRole="Character" ToRole="CharacterFirstName" />
+          <NavigationProperty Name="CharacterLastName" Relationship="Self.CharacterLastName_fk0" FromRole="Character" ToRole="CharacterLastName" />
+          <NavigationProperty Name="CharacterLivingCountry" Relationship="Self.CharacterLivingCountry_fk0" FromRole="Character" ToRole="CharacterLivingCountry" />
+          <NavigationProperty Name="CharacterLivingPlace" Relationship="Self.CharacterLivingPlace_fk0" FromRole="Character" ToRole="CharacterLivingPlace" />
+          <NavigationProperty Name="CharacterNationality" Relationship="Self.CharacterNationality_fk0" FromRole="Character" ToRole="CharacterNationality" />
+          <NavigationProperty Name="CharacterPhoto" Relationship="Self.CharacterPhoto_fk0" FromRole="Character" ToRole="CharacterPhoto" />
+          <NavigationProperty Name="CharacterReligious" Relationship="Self.CharacterReligious_fk0" FromRole="Character" ToRole="CharacterReligious" />
+          <NavigationProperty Name="CharacterSecondName" Relationship="Self.CharacterSecondName_fk0" FromRole="Character" ToRole="CharacterSecondName" />
+          <NavigationProperty Name="House" Relationship="Self.House_fk0" FromRole="Character" ToRole="House" />
+          <NavigationProperty Name="HouseCharacter" Relationship="Self.HouseCharacter_fk1" FromRole="Character" ToRole="HouseCharacter" />
+          <NavigationProperty Name="RelativeCharacter" Relationship="Self.RelativeCharacter_fk0" FromRole="Character" ToRole="RelativeCharacter" />
+          <NavigationProperty Name="RelativeCharacter1" Relationship="Self.RelativeCharacter_fk1" FromRole="Character" ToRole="RelativeCharacter" />
+          <NavigationProperty Name="User1" Relationship="Self.User_fk0" FromRole="Character" ToRole="User" />
+        </EntityType>
+        <EntityType Name="CharacterBiography">
+          <Key>
+            <PropertyRef Name="changeId" />
+          </Key>
+          <Property Name="characterId" Type="Int32" />
+          <Property Name="biography" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="changeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Character" Relationship="Self.CharacterBiography_fk0" FromRole="CharacterBiography" ToRole="Character" />
+          <NavigationProperty Name="Logs" Relationship="Self.CharacterBiography_fk1" FromRole="CharacterBiography" ToRole="Logs" />
+        </EntityType>
+        <EntityType Name="CharacterBirthCountry">
+          <Key>
+            <PropertyRef Name="changeId" />
+          </Key>
+          <Property Name="characterId" Type="Int32" />
+          <Property Name="country" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="changeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Character" Relationship="Self.CharacterBirthCountry_fk0" FromRole="CharacterBirthCountry" ToRole="Character" />
+          <NavigationProperty Name="Country1" Relationship="Self.CharacterBirthCountry_fk1" FromRole="CharacterBirthCountry" ToRole="Country" />
+          <NavigationProperty Name="Logs" Relationship="Self.CharacterBirthCountry_fk2" FromRole="CharacterBirthCountry" ToRole="Logs" />
+        </EntityType>
+        <EntityType Name="CharacterBirthDate">
+          <Key>
+            <PropertyRef Name="changeId" />
+          </Key>
+          <Property Name="characterId" Type="Int32" />
+          <Property Name="birthDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="changeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Character" Relationship="Self.CharacterBirthDate_fk0" FromRole="CharacterBirthDate" ToRole="Character" />
+          <NavigationProperty Name="Logs" Relationship="Self.CharacterBirthDate_fk1" FromRole="CharacterBirthDate" ToRole="Logs" />
+        </EntityType>
+        <EntityType Name="CharacterBirthPlace">
+          <Key>
+            <PropertyRef Name="changeId" />
+          </Key>
+          <Property Name="characterId" Type="Int32" />
+          <Property Name="place" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="changeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Character" Relationship="Self.CharacterBirthPlace_fk0" FromRole="CharacterBirthPlace" ToRole="Character" />
+          <NavigationProperty Name="Place1" Relationship="Self.CharacterBirthPlace_fk1" FromRole="CharacterBirthPlace" ToRole="Place" />
+          <NavigationProperty Name="Logs" Relationship="Self.CharacterBirthPlace_fk2" FromRole="CharacterBirthPlace" ToRole="Logs" />
+        </EntityType>
+        <EntityType Name="CharacterDeathCountry">
+          <Key>
+            <PropertyRef Name="changeId" />
+          </Key>
+          <Property Name="characterId" Type="Int32" />
+          <Property Name="country" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="changeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Character" Relationship="Self.CharacterDeathCountry_fk0" FromRole="CharacterDeathCountry" ToRole="Character" />
+          <NavigationProperty Name="Country1" Relationship="Self.CharacterDeathCountry_fk1" FromRole="CharacterDeathCountry" ToRole="Country" />
+          <NavigationProperty Name="Logs" Relationship="Self.CharacterDeathCountry_fk2" FromRole="CharacterDeathCountry" ToRole="Logs" />
+        </EntityType>
+        <EntityType Name="CharacterDeathDate">
+          <Key>
+            <PropertyRef Name="changeId" />
+          </Key>
+          <Property Name="characterId" Type="Int32" />
+          <Property Name="deathDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="changeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Character" Relationship="Self.CharacterDeathDate_fk0" FromRole="CharacterDeathDate" ToRole="Character" />
+          <NavigationProperty Name="Logs" Relationship="Self.CharacterDeathDate_fk1" FromRole="CharacterDeathDate" ToRole="Logs" />
+        </EntityType>
+        <EntityType Name="CharacterDeathPlace">
+          <Key>
+            <PropertyRef Name="changeId" />
+          </Key>
+          <Property Name="characterId" Type="Int32" />
+          <Property Name="place" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="changeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Character" Relationship="Self.CharacterDeathPlace_fk0" FromRole="CharacterDeathPlace" ToRole="Character" />
+          <NavigationProperty Name="Place1" Relationship="Self.CharacterDeathPlace_fk1" FromRole="CharacterDeathPlace" ToRole="Place" />
+          <NavigationProperty Name="Logs" Relationship="Self.CharacterDeathPlace_fk2" FromRole="CharacterDeathPlace" ToRole="Logs" />
+        </EntityType>
+        <EntityType Name="CharacterFirstName">
+          <Key>
+            <PropertyRef Name="changeId" />
+          </Key>
+          <Property Name="characterId" Type="Int32" />
+          <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="changeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Character" Relationship="Self.CharacterFirstName_fk0" FromRole="CharacterFirstName" ToRole="Character" />
+          <NavigationProperty Name="Logs" Relationship="Self.CharacterFirstName_fk1" FromRole="CharacterFirstName" ToRole="Logs" />
+        </EntityType>
+        <EntityType Name="CharacterLastName">
+          <Key>
+            <PropertyRef Name="changeId" />
+          </Key>
+          <Property Name="characterId" Type="Int32" />
+          <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="changeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Character" Relationship="Self.CharacterLastName_fk0" FromRole="CharacterLastName" ToRole="Character" />
+          <NavigationProperty Name="Logs" Relationship="Self.CharacterLastName_fk1" FromRole="CharacterLastName" ToRole="Logs" />
+        </EntityType>
+        <EntityType Name="CharacterLivingCountry">
+          <Key>
+            <PropertyRef Name="changeId" />
+          </Key>
+          <Property Name="charcaterId" Type="Int32" />
+          <Property Name="country" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="changeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Character" Relationship="Self.CharacterLivingCountry_fk0" FromRole="CharacterLivingCountry" ToRole="Character" />
+          <NavigationProperty Name="Country1" Relationship="Self.CharacterLivingCountry_fk1" FromRole="CharacterLivingCountry" ToRole="Country" />
+          <NavigationProperty Name="Logs" Relationship="Self.CharacterLivingCountry_fk2" FromRole="CharacterLivingCountry" ToRole="Logs" />
+        </EntityType>
+        <EntityType Name="CharacterLivingPlace">
+          <Key>
+            <PropertyRef Name="changeId" />
+          </Key>
+          <Property Name="characterId" Type="Int32" />
+          <Property Name="place" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="changeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Character" Relationship="Self.CharacterLivingPlace_fk0" FromRole="CharacterLivingPlace" ToRole="Character" />
+          <NavigationProperty Name="Place1" Relationship="Self.CharacterLivingPlace_fk1" FromRole="CharacterLivingPlace" ToRole="Place" />
+          <NavigationProperty Name="Logs" Relationship="Self.CharacterLivingPlace_fk2" FromRole="CharacterLivingPlace" ToRole="Logs" />
+        </EntityType>
+        <EntityType Name="CharacterNationality">
+          <Key>
+            <PropertyRef Name="changeId" />
+          </Key>
+          <Property Name="characterId" Type="Int32" />
+          <Property Name="nationality" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="changeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Character" Relationship="Self.CharacterNationality_fk0" FromRole="CharacterNationality" ToRole="Character" />
+          <NavigationProperty Name="Nationality1" Relationship="Self.CharacterNationality_fk1" FromRole="CharacterNationality" ToRole="Nationality" />
+          <NavigationProperty Name="Logs" Relationship="Self.CharacterNationality_fk2" FromRole="CharacterNationality" ToRole="Logs" />
+        </EntityType>
+        <EntityType Name="CharacterPhoto">
+          <Key>
+            <PropertyRef Name="changeId" />
+          </Key>
+          <Property Name="characterId" Type="Int32" />
+          <Property Name="photo" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="changeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Character" Relationship="Self.CharacterPhoto_fk0" FromRole="CharacterPhoto" ToRole="Character" />
+          <NavigationProperty Name="Logs" Relationship="Self.CharacterPhoto_fk1" FromRole="CharacterPhoto" ToRole="Logs" />
+        </EntityType>
+        <EntityType Name="CharacterReligious">
+          <Key>
+            <PropertyRef Name="changeId" />
+          </Key>
+          <Property Name="characterId" Type="Int32" />
+          <Property Name="religious" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="changeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Character" Relationship="Self.CharacterReligious_fk0" FromRole="CharacterReligious" ToRole="Character" />
+          <NavigationProperty Name="Religious1" Relationship="Self.CharacterReligious_fk1" FromRole="CharacterReligious" ToRole="Religious" />
+          <NavigationProperty Name="Logs" Relationship="Self.CharacterReligious_fk2" FromRole="CharacterReligious" ToRole="Logs" />
+        </EntityType>
+        <EntityType Name="CharacterSecondName">
+          <Key>
+            <PropertyRef Name="changeId" />
+          </Key>
+          <Property Name="characterId" Type="Int32" />
+          <Property Name="secondName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="changeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Character" Relationship="Self.CharacterSecondName_fk0" FromRole="CharacterSecondName" ToRole="Character" />
+          <NavigationProperty Name="Logs" Relationship="Self.CharacterSecondName_fk1" FromRole="CharacterSecondName" ToRole="Logs" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="name" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="CharacterBirthCountry" Relationship="Self.CharacterBirthCountry_fk1" FromRole="Country" ToRole="CharacterBirthCountry" />
+          <NavigationProperty Name="CharacterDeathCountry" Relationship="Self.CharacterDeathCountry_fk1" FromRole="Country" ToRole="CharacterDeathCountry" />
+          <NavigationProperty Name="CharacterLivingCountry" Relationship="Self.CharacterLivingCountry_fk1" FromRole="Country" ToRole="CharacterLivingCountry" />
+        </EntityType>
+        <EntityType Name="House">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="houseKeeper" Type="Int32" Nullable="false" />
+          <Property Name="coatOfArms" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="historyOfHouse" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Character" Relationship="Self.House_fk0" FromRole="House" ToRole="Character" />
+          <NavigationProperty Name="HouseCharacter" Relationship="Self.HouseCharacter_fk0" FromRole="House" ToRole="HouseCharacter" />
+        </EntityType>
+        <EntityType Name="HouseCharacter">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="houseId" Type="Int32" Nullable="false" />
+          <Property Name="characterId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Character" Relationship="Self.HouseCharacter_fk1" FromRole="HouseCharacter" ToRole="Character" />
+          <NavigationProperty Name="House" Relationship="Self.HouseCharacter_fk0" FromRole="HouseCharacter" ToRole="House" />
+        </EntityType>
+        <EntityType Name="Logs">
+          <Key>
+            <PropertyRef Name="changeId" />
+          </Key>
+          <Property Name="changeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CharacterBiography" Relationship="Self.CharacterBiography_fk1" FromRole="Logs" ToRole="CharacterBiography" />
+          <NavigationProperty Name="CharacterBirthCountry" Relationship="Self.CharacterBirthCountry_fk2" FromRole="Logs" ToRole="CharacterBirthCountry" />
+          <NavigationProperty Name="CharacterBirthDate" Relationship="Self.CharacterBirthDate_fk1" FromRole="Logs" ToRole="CharacterBirthDate" />
+          <NavigationProperty Name="CharacterBirthPlace" Relationship="Self.CharacterBirthPlace_fk2" FromRole="Logs" ToRole="CharacterBirthPlace" />
+          <NavigationProperty Name="CharacterDeathCountry" Relationship="Self.CharacterDeathCountry_fk2" FromRole="Logs" ToRole="CharacterDeathCountry" />
+          <NavigationProperty Name="CharacterDeathDate" Relationship="Self.CharacterDeathDate_fk1" FromRole="Logs" ToRole="CharacterDeathDate" />
+          <NavigationProperty Name="CharacterDeathPlace" Relationship="Self.CharacterDeathPlace_fk2" FromRole="Logs" ToRole="CharacterDeathPlace" />
+          <NavigationProperty Name="CharacterFirstName" Relationship="Self.CharacterFirstName_fk1" FromRole="Logs" ToRole="CharacterFirstName" />
+          <NavigationProperty Name="CharacterLastName" Relationship="Self.CharacterLastName_fk1" FromRole="Logs" ToRole="CharacterLastName" />
+          <NavigationProperty Name="CharacterLivingCountry" Relationship="Self.CharacterLivingCountry_fk2" FromRole="Logs" ToRole="CharacterLivingCountry" />
+          <NavigationProperty Name="CharacterLivingPlace" Relationship="Self.CharacterLivingPlace_fk2" FromRole="Logs" ToRole="CharacterLivingPlace" />
+          <NavigationProperty Name="CharacterNationality" Relationship="Self.CharacterNationality_fk2" FromRole="Logs" ToRole="CharacterNationality" />
+          <NavigationProperty Name="CharacterPhoto" Relationship="Self.CharacterPhoto_fk1" FromRole="Logs" ToRole="CharacterPhoto" />
+          <NavigationProperty Name="CharacterReligious" Relationship="Self.CharacterReligious_fk2" FromRole="Logs" ToRole="CharacterReligious" />
+          <NavigationProperty Name="CharacterSecondName" Relationship="Self.CharacterSecondName_fk1" FromRole="Logs" ToRole="CharacterSecondName" />
+          <NavigationProperty Name="User" Relationship="Self.Logs_fk0" FromRole="Logs" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Nationality">
+          <Key>
+            <PropertyRef Name="name" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="CharacterNationality" Relationship="Self.CharacterNationality_fk1" FromRole="Nationality" ToRole="CharacterNationality" />
+        </EntityType>
+        <EntityType Name="Place">
+          <Key>
+            <PropertyRef Name="name" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="CharacterBirthPlace" Relationship="Self.CharacterBirthPlace_fk1" FromRole="Place" ToRole="CharacterBirthPlace" />
+          <NavigationProperty Name="CharacterDeathPlace" Relationship="Self.CharacterDeathPlace_fk1" FromRole="Place" ToRole="CharacterDeathPlace" />
+          <NavigationProperty Name="CharacterLivingPlace" Relationship="Self.CharacterLivingPlace_fk1" FromRole="Place" ToRole="CharacterLivingPlace" />
+        </EntityType>
+        <EntityType Name="RelativeCharacter">
+          <Key>
+            <PropertyRef Name="characterId" />
+            <PropertyRef Name="targetId" />
+          </Key>
+          <Property Name="characterId" Type="Int32" Nullable="false" />
+          <Property Name="targetId" Type="Int32" Nullable="false" />
+          <Property Name="type" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Character" Relationship="Self.RelativeCharacter_fk0" FromRole="RelativeCharacter" ToRole="Character" />
+          <NavigationProperty Name="Character1" Relationship="Self.RelativeCharacter_fk1" FromRole="RelativeCharacter" ToRole="Character" />
+          <NavigationProperty Name="RelativeType" Relationship="Self.RelativeCharacter_fk2" FromRole="RelativeCharacter" ToRole="RelativeType" />
+        </EntityType>
+        <EntityType Name="RelativeType">
+          <Key>
+            <PropertyRef Name="type" />
+          </Key>
+          <Property Name="type" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="RelativeCharacter" Relationship="Self.RelativeCharacter_fk2" FromRole="RelativeType" ToRole="RelativeCharacter" />
+        </EntityType>
+        <EntityType Name="Religious">
+          <Key>
+            <PropertyRef Name="name" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="CharacterReligious" Relationship="Self.CharacterReligious_fk1" FromRole="Religious" ToRole="CharacterReligious" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="email" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="characterId" Type="Int32" />
+          <Property Name="password" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="phoneNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="lastLogIn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="accessLevelType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="AccessLevel" Relationship="Self.User_fk1" FromRole="User" ToRole="AccessLevel" />
+          <NavigationProperty Name="Character" Relationship="Self.Character_fk0" FromRole="User" ToRole="Character" />
+          <NavigationProperty Name="Character1" Relationship="Self.User_fk0" FromRole="User" ToRole="Character" />
+          <NavigationProperty Name="Logs" Relationship="Self.Logs_fk0" FromRole="User" ToRole="Logs" />
+        </EntityType>
+        <Association Name="User_fk1">
+          <End Role="AccessLevel" Type="Self.AccessLevel" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccessLevel">
+              <PropertyRef Name="type" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="accessLevelType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Character_fk0">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Character" Type="Self.Character" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Character">
+              <PropertyRef Name="creator" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterBiography_fk0">
+          <End Role="Character" Type="Self.Character" Multiplicity="0..1" />
+          <End Role="CharacterBiography" Type="Self.CharacterBiography" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Character">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CharacterBiography">
+              <PropertyRef Name="characterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterBirthCountry_fk0">
+          <End Role="Character" Type="Self.Character" Multiplicity="0..1" />
+          <End Role="CharacterBirthCountry" Type="Self.CharacterBirthCountry" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Character">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CharacterBirthCountry">
+              <PropertyRef Name="characterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterBirthDate_fk0">
+          <End Role="Character" Type="Self.Character" Multiplicity="0..1" />
+          <End Role="CharacterBirthDate" Type="Self.CharacterBirthDate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Character">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CharacterBirthDate">
+              <PropertyRef Name="characterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterBirthPlace_fk0">
+          <End Role="Character" Type="Self.Character" Multiplicity="0..1" />
+          <End Role="CharacterBirthPlace" Type="Self.CharacterBirthPlace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Character">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CharacterBirthPlace">
+              <PropertyRef Name="characterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterDeathCountry_fk0">
+          <End Role="Character" Type="Self.Character" Multiplicity="0..1" />
+          <End Role="CharacterDeathCountry" Type="Self.CharacterDeathCountry" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Character">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CharacterDeathCountry">
+              <PropertyRef Name="characterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterDeathDate_fk0">
+          <End Role="Character" Type="Self.Character" Multiplicity="0..1" />
+          <End Role="CharacterDeathDate" Type="Self.CharacterDeathDate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Character">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CharacterDeathDate">
+              <PropertyRef Name="characterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterDeathPlace_fk0">
+          <End Role="Character" Type="Self.Character" Multiplicity="0..1" />
+          <End Role="CharacterDeathPlace" Type="Self.CharacterDeathPlace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Character">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CharacterDeathPlace">
+              <PropertyRef Name="characterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterFirstName_fk0">
+          <End Role="Character" Type="Self.Character" Multiplicity="0..1" />
+          <End Role="CharacterFirstName" Type="Self.CharacterFirstName" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Character">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CharacterFirstName">
+              <PropertyRef Name="characterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterLastName_fk0">
+          <End Role="Character" Type="Self.Character" Multiplicity="0..1" />
+          <End Role="CharacterLastName" Type="Self.CharacterLastName" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Character">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CharacterLastName">
+              <PropertyRef Name="characterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterLivingCountry_fk0">
+          <End Role="Character" Type="Self.Character" Multiplicity="0..1" />
+          <End Role="CharacterLivingCountry" Type="Self.CharacterLivingCountry" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Character">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CharacterLivingCountry">
+              <PropertyRef Name="charcaterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterLivingPlace_fk0">
+          <End Role="Character" Type="Self.Character" Multiplicity="0..1" />
+          <End Role="CharacterLivingPlace" Type="Self.CharacterLivingPlace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Character">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CharacterLivingPlace">
+              <PropertyRef Name="characterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterNationality_fk0">
+          <End Role="Character" Type="Self.Character" Multiplicity="0..1" />
+          <End Role="CharacterNationality" Type="Self.CharacterNationality" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Character">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CharacterNationality">
+              <PropertyRef Name="characterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterPhoto_fk0">
+          <End Role="Character" Type="Self.Character" Multiplicity="0..1" />
+          <End Role="CharacterPhoto" Type="Self.CharacterPhoto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Character">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CharacterPhoto">
+              <PropertyRef Name="characterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterReligious_fk0">
+          <End Role="Character" Type="Self.Character" Multiplicity="0..1" />
+          <End Role="CharacterReligious" Type="Self.CharacterReligious" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Character">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CharacterReligious">
+              <PropertyRef Name="characterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterSecondName_fk0">
+          <End Role="Character" Type="Self.Character" Multiplicity="0..1" />
+          <End Role="CharacterSecondName" Type="Self.CharacterSecondName" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Character">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CharacterSecondName">
+              <PropertyRef Name="characterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="House_fk0">
+          <End Role="Character" Type="Self.Character" Multiplicity="1" />
+          <End Role="House" Type="Self.House" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Character">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="House">
+              <PropertyRef Name="houseKeeper" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="HouseCharacter_fk1">
+          <End Role="Character" Type="Self.Character" Multiplicity="1" />
+          <End Role="HouseCharacter" Type="Self.HouseCharacter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Character">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="HouseCharacter">
+              <PropertyRef Name="characterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RelativeCharacter_fk0">
+          <End Role="Character" Type="Self.Character" Multiplicity="1" />
+          <End Role="RelativeCharacter" Type="Self.RelativeCharacter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Character">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RelativeCharacter">
+              <PropertyRef Name="characterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RelativeCharacter_fk1">
+          <End Role="Character" Type="Self.Character" Multiplicity="1" />
+          <End Role="RelativeCharacter" Type="Self.RelativeCharacter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Character">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RelativeCharacter">
+              <PropertyRef Name="targetId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="User_fk0">
+          <End Role="Character" Type="Self.Character" Multiplicity="0..1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Character">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="characterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterBiography_fk1">
+          <End Role="Logs" Type="Self.Logs" Multiplicity="1" />
+          <End Role="CharacterBiography" Type="Self.CharacterBiography" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Logs">
+              <PropertyRef Name="changeId" />
+            </Principal>
+            <Dependent Role="CharacterBiography">
+              <PropertyRef Name="changeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterBirthCountry_fk1">
+          <End Role="Country" Type="Self.Country" Multiplicity="1" />
+          <End Role="CharacterBirthCountry" Type="Self.CharacterBirthCountry" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="name" />
+            </Principal>
+            <Dependent Role="CharacterBirthCountry">
+              <PropertyRef Name="country" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterBirthCountry_fk2">
+          <End Role="Logs" Type="Self.Logs" Multiplicity="1" />
+          <End Role="CharacterBirthCountry" Type="Self.CharacterBirthCountry" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Logs">
+              <PropertyRef Name="changeId" />
+            </Principal>
+            <Dependent Role="CharacterBirthCountry">
+              <PropertyRef Name="changeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterBirthDate_fk1">
+          <End Role="Logs" Type="Self.Logs" Multiplicity="1" />
+          <End Role="CharacterBirthDate" Type="Self.CharacterBirthDate" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Logs">
+              <PropertyRef Name="changeId" />
+            </Principal>
+            <Dependent Role="CharacterBirthDate">
+              <PropertyRef Name="changeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterBirthPlace_fk1">
+          <End Role="Place" Type="Self.Place" Multiplicity="1" />
+          <End Role="CharacterBirthPlace" Type="Self.CharacterBirthPlace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Place">
+              <PropertyRef Name="name" />
+            </Principal>
+            <Dependent Role="CharacterBirthPlace">
+              <PropertyRef Name="place" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterBirthPlace_fk2">
+          <End Role="Logs" Type="Self.Logs" Multiplicity="1" />
+          <End Role="CharacterBirthPlace" Type="Self.CharacterBirthPlace" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Logs">
+              <PropertyRef Name="changeId" />
+            </Principal>
+            <Dependent Role="CharacterBirthPlace">
+              <PropertyRef Name="changeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterDeathCountry_fk1">
+          <End Role="Country" Type="Self.Country" Multiplicity="1" />
+          <End Role="CharacterDeathCountry" Type="Self.CharacterDeathCountry" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="name" />
+            </Principal>
+            <Dependent Role="CharacterDeathCountry">
+              <PropertyRef Name="country" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterDeathCountry_fk2">
+          <End Role="Logs" Type="Self.Logs" Multiplicity="1" />
+          <End Role="CharacterDeathCountry" Type="Self.CharacterDeathCountry" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Logs">
+              <PropertyRef Name="changeId" />
+            </Principal>
+            <Dependent Role="CharacterDeathCountry">
+              <PropertyRef Name="changeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterDeathDate_fk1">
+          <End Role="Logs" Type="Self.Logs" Multiplicity="1" />
+          <End Role="CharacterDeathDate" Type="Self.CharacterDeathDate" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Logs">
+              <PropertyRef Name="changeId" />
+            </Principal>
+            <Dependent Role="CharacterDeathDate">
+              <PropertyRef Name="changeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterDeathPlace_fk1">
+          <End Role="Place" Type="Self.Place" Multiplicity="1" />
+          <End Role="CharacterDeathPlace" Type="Self.CharacterDeathPlace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Place">
+              <PropertyRef Name="name" />
+            </Principal>
+            <Dependent Role="CharacterDeathPlace">
+              <PropertyRef Name="place" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterDeathPlace_fk2">
+          <End Role="Logs" Type="Self.Logs" Multiplicity="1" />
+          <End Role="CharacterDeathPlace" Type="Self.CharacterDeathPlace" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Logs">
+              <PropertyRef Name="changeId" />
+            </Principal>
+            <Dependent Role="CharacterDeathPlace">
+              <PropertyRef Name="changeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterFirstName_fk1">
+          <End Role="Logs" Type="Self.Logs" Multiplicity="1" />
+          <End Role="CharacterFirstName" Type="Self.CharacterFirstName" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Logs">
+              <PropertyRef Name="changeId" />
+            </Principal>
+            <Dependent Role="CharacterFirstName">
+              <PropertyRef Name="changeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterLastName_fk1">
+          <End Role="Logs" Type="Self.Logs" Multiplicity="1" />
+          <End Role="CharacterLastName" Type="Self.CharacterLastName" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Logs">
+              <PropertyRef Name="changeId" />
+            </Principal>
+            <Dependent Role="CharacterLastName">
+              <PropertyRef Name="changeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterLivingCountry_fk1">
+          <End Role="Country" Type="Self.Country" Multiplicity="1" />
+          <End Role="CharacterLivingCountry" Type="Self.CharacterLivingCountry" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="name" />
+            </Principal>
+            <Dependent Role="CharacterLivingCountry">
+              <PropertyRef Name="country" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterLivingCountry_fk2">
+          <End Role="Logs" Type="Self.Logs" Multiplicity="1" />
+          <End Role="CharacterLivingCountry" Type="Self.CharacterLivingCountry" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Logs">
+              <PropertyRef Name="changeId" />
+            </Principal>
+            <Dependent Role="CharacterLivingCountry">
+              <PropertyRef Name="changeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterLivingPlace_fk1">
+          <End Role="Place" Type="Self.Place" Multiplicity="1" />
+          <End Role="CharacterLivingPlace" Type="Self.CharacterLivingPlace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Place">
+              <PropertyRef Name="name" />
+            </Principal>
+            <Dependent Role="CharacterLivingPlace">
+              <PropertyRef Name="place" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterLivingPlace_fk2">
+          <End Role="Logs" Type="Self.Logs" Multiplicity="1" />
+          <End Role="CharacterLivingPlace" Type="Self.CharacterLivingPlace" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Logs">
+              <PropertyRef Name="changeId" />
+            </Principal>
+            <Dependent Role="CharacterLivingPlace">
+              <PropertyRef Name="changeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterNationality_fk1">
+          <End Role="Nationality" Type="Self.Nationality" Multiplicity="1" />
+          <End Role="CharacterNationality" Type="Self.CharacterNationality" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nationality">
+              <PropertyRef Name="name" />
+            </Principal>
+            <Dependent Role="CharacterNationality">
+              <PropertyRef Name="nationality" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterNationality_fk2">
+          <End Role="Logs" Type="Self.Logs" Multiplicity="1" />
+          <End Role="CharacterNationality" Type="Self.CharacterNationality" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Logs">
+              <PropertyRef Name="changeId" />
+            </Principal>
+            <Dependent Role="CharacterNationality">
+              <PropertyRef Name="changeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterPhoto_fk1">
+          <End Role="Logs" Type="Self.Logs" Multiplicity="1" />
+          <End Role="CharacterPhoto" Type="Self.CharacterPhoto" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Logs">
+              <PropertyRef Name="changeId" />
+            </Principal>
+            <Dependent Role="CharacterPhoto">
+              <PropertyRef Name="changeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterReligious_fk1">
+          <End Role="Religious" Type="Self.Religious" Multiplicity="1" />
+          <End Role="CharacterReligious" Type="Self.CharacterReligious" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Religious">
+              <PropertyRef Name="name" />
+            </Principal>
+            <Dependent Role="CharacterReligious">
+              <PropertyRef Name="religious" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterReligious_fk2">
+          <End Role="Logs" Type="Self.Logs" Multiplicity="1" />
+          <End Role="CharacterReligious" Type="Self.CharacterReligious" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Logs">
+              <PropertyRef Name="changeId" />
+            </Principal>
+            <Dependent Role="CharacterReligious">
+              <PropertyRef Name="changeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CharacterSecondName_fk1">
+          <End Role="Logs" Type="Self.Logs" Multiplicity="1" />
+          <End Role="CharacterSecondName" Type="Self.CharacterSecondName" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Logs">
+              <PropertyRef Name="changeId" />
+            </Principal>
+            <Dependent Role="CharacterSecondName">
+              <PropertyRef Name="changeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="HouseCharacter_fk0">
+          <End Role="House" Type="Self.House" Multiplicity="1" />
+          <End Role="HouseCharacter" Type="Self.HouseCharacter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="House">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="HouseCharacter">
+              <PropertyRef Name="houseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Logs_fk0">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Logs" Type="Self.Logs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Logs">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RelativeCharacter_fk2">
+          <End Role="RelativeType" Type="Self.RelativeType" Multiplicity="1" />
+          <End Role="RelativeCharacter" Type="Self.RelativeCharacter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RelativeType">
+              <PropertyRef Name="type" />
+            </Principal>
+            <Dependent Role="RelativeCharacter">
+              <PropertyRef Name="type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FamilyTreeEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AccessLevel" EntityType="Self.AccessLevel" />
+          <EntitySet Name="Character" EntityType="Self.Character" />
+          <EntitySet Name="CharacterBiography" EntityType="Self.CharacterBiography" />
+          <EntitySet Name="CharacterBirthCountry" EntityType="Self.CharacterBirthCountry" />
+          <EntitySet Name="CharacterBirthDate" EntityType="Self.CharacterBirthDate" />
+          <EntitySet Name="CharacterBirthPlace" EntityType="Self.CharacterBirthPlace" />
+          <EntitySet Name="CharacterDeathCountry" EntityType="Self.CharacterDeathCountry" />
+          <EntitySet Name="CharacterDeathDate" EntityType="Self.CharacterDeathDate" />
+          <EntitySet Name="CharacterDeathPlace" EntityType="Self.CharacterDeathPlace" />
+          <EntitySet Name="CharacterFirstName" EntityType="Self.CharacterFirstName" />
+          <EntitySet Name="CharacterLastName" EntityType="Self.CharacterLastName" />
+          <EntitySet Name="CharacterLivingCountry" EntityType="Self.CharacterLivingCountry" />
+          <EntitySet Name="CharacterLivingPlace" EntityType="Self.CharacterLivingPlace" />
+          <EntitySet Name="CharacterNationality" EntityType="Self.CharacterNationality" />
+          <EntitySet Name="CharacterPhoto" EntityType="Self.CharacterPhoto" />
+          <EntitySet Name="CharacterReligious" EntityType="Self.CharacterReligious" />
+          <EntitySet Name="CharacterSecondName" EntityType="Self.CharacterSecondName" />
+          <EntitySet Name="Country" EntityType="Self.Country" />
+          <EntitySet Name="House" EntityType="Self.House" />
+          <EntitySet Name="HouseCharacter" EntityType="Self.HouseCharacter" />
+          <EntitySet Name="Logs" EntityType="Self.Logs" />
+          <EntitySet Name="Nationality" EntityType="Self.Nationality" />
+          <EntitySet Name="Place" EntityType="Self.Place" />
+          <EntitySet Name="RelativeCharacter" EntityType="Self.RelativeCharacter" />
+          <EntitySet Name="RelativeType" EntityType="Self.RelativeType" />
+          <EntitySet Name="Religious" EntityType="Self.Religious" />
+          <EntitySet Name="User" EntityType="Self.User" />
+          <AssociationSet Name="User_fk1" Association="Self.User_fk1">
+            <End Role="AccessLevel" EntitySet="AccessLevel" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="Character_fk0" Association="Self.Character_fk0">
+            <End Role="User" EntitySet="User" />
+            <End Role="Character" EntitySet="Character" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterBiography_fk0" Association="Self.CharacterBiography_fk0">
+            <End Role="Character" EntitySet="Character" />
+            <End Role="CharacterBiography" EntitySet="CharacterBiography" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterBirthCountry_fk0" Association="Self.CharacterBirthCountry_fk0">
+            <End Role="Character" EntitySet="Character" />
+            <End Role="CharacterBirthCountry" EntitySet="CharacterBirthCountry" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterBirthDate_fk0" Association="Self.CharacterBirthDate_fk0">
+            <End Role="Character" EntitySet="Character" />
+            <End Role="CharacterBirthDate" EntitySet="CharacterBirthDate" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterBirthPlace_fk0" Association="Self.CharacterBirthPlace_fk0">
+            <End Role="Character" EntitySet="Character" />
+            <End Role="CharacterBirthPlace" EntitySet="CharacterBirthPlace" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterDeathCountry_fk0" Association="Self.CharacterDeathCountry_fk0">
+            <End Role="Character" EntitySet="Character" />
+            <End Role="CharacterDeathCountry" EntitySet="CharacterDeathCountry" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterDeathDate_fk0" Association="Self.CharacterDeathDate_fk0">
+            <End Role="Character" EntitySet="Character" />
+            <End Role="CharacterDeathDate" EntitySet="CharacterDeathDate" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterDeathPlace_fk0" Association="Self.CharacterDeathPlace_fk0">
+            <End Role="Character" EntitySet="Character" />
+            <End Role="CharacterDeathPlace" EntitySet="CharacterDeathPlace" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterFirstName_fk0" Association="Self.CharacterFirstName_fk0">
+            <End Role="Character" EntitySet="Character" />
+            <End Role="CharacterFirstName" EntitySet="CharacterFirstName" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterLastName_fk0" Association="Self.CharacterLastName_fk0">
+            <End Role="Character" EntitySet="Character" />
+            <End Role="CharacterLastName" EntitySet="CharacterLastName" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterLivingCountry_fk0" Association="Self.CharacterLivingCountry_fk0">
+            <End Role="Character" EntitySet="Character" />
+            <End Role="CharacterLivingCountry" EntitySet="CharacterLivingCountry" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterLivingPlace_fk0" Association="Self.CharacterLivingPlace_fk0">
+            <End Role="Character" EntitySet="Character" />
+            <End Role="CharacterLivingPlace" EntitySet="CharacterLivingPlace" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterNationality_fk0" Association="Self.CharacterNationality_fk0">
+            <End Role="Character" EntitySet="Character" />
+            <End Role="CharacterNationality" EntitySet="CharacterNationality" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterPhoto_fk0" Association="Self.CharacterPhoto_fk0">
+            <End Role="Character" EntitySet="Character" />
+            <End Role="CharacterPhoto" EntitySet="CharacterPhoto" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterReligious_fk0" Association="Self.CharacterReligious_fk0">
+            <End Role="Character" EntitySet="Character" />
+            <End Role="CharacterReligious" EntitySet="CharacterReligious" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterSecondName_fk0" Association="Self.CharacterSecondName_fk0">
+            <End Role="Character" EntitySet="Character" />
+            <End Role="CharacterSecondName" EntitySet="CharacterSecondName" />
+          </AssociationSet>
+          <AssociationSet Name="House_fk0" Association="Self.House_fk0">
+            <End Role="Character" EntitySet="Character" />
+            <End Role="House" EntitySet="House" />
+          </AssociationSet>
+          <AssociationSet Name="HouseCharacter_fk1" Association="Self.HouseCharacter_fk1">
+            <End Role="Character" EntitySet="Character" />
+            <End Role="HouseCharacter" EntitySet="HouseCharacter" />
+          </AssociationSet>
+          <AssociationSet Name="RelativeCharacter_fk0" Association="Self.RelativeCharacter_fk0">
+            <End Role="Character" EntitySet="Character" />
+            <End Role="RelativeCharacter" EntitySet="RelativeCharacter" />
+          </AssociationSet>
+          <AssociationSet Name="RelativeCharacter_fk1" Association="Self.RelativeCharacter_fk1">
+            <End Role="Character" EntitySet="Character" />
+            <End Role="RelativeCharacter" EntitySet="RelativeCharacter" />
+          </AssociationSet>
+          <AssociationSet Name="User_fk0" Association="Self.User_fk0">
+            <End Role="Character" EntitySet="Character" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterBiography_fk1" Association="Self.CharacterBiography_fk1">
+            <End Role="Logs" EntitySet="Logs" />
+            <End Role="CharacterBiography" EntitySet="CharacterBiography" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterBirthCountry_fk1" Association="Self.CharacterBirthCountry_fk1">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="CharacterBirthCountry" EntitySet="CharacterBirthCountry" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterBirthCountry_fk2" Association="Self.CharacterBirthCountry_fk2">
+            <End Role="Logs" EntitySet="Logs" />
+            <End Role="CharacterBirthCountry" EntitySet="CharacterBirthCountry" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterBirthDate_fk1" Association="Self.CharacterBirthDate_fk1">
+            <End Role="Logs" EntitySet="Logs" />
+            <End Role="CharacterBirthDate" EntitySet="CharacterBirthDate" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterBirthPlace_fk1" Association="Self.CharacterBirthPlace_fk1">
+            <End Role="Place" EntitySet="Place" />
+            <End Role="CharacterBirthPlace" EntitySet="CharacterBirthPlace" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterBirthPlace_fk2" Association="Self.CharacterBirthPlace_fk2">
+            <End Role="Logs" EntitySet="Logs" />
+            <End Role="CharacterBirthPlace" EntitySet="CharacterBirthPlace" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterDeathCountry_fk1" Association="Self.CharacterDeathCountry_fk1">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="CharacterDeathCountry" EntitySet="CharacterDeathCountry" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterDeathCountry_fk2" Association="Self.CharacterDeathCountry_fk2">
+            <End Role="Logs" EntitySet="Logs" />
+            <End Role="CharacterDeathCountry" EntitySet="CharacterDeathCountry" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterDeathDate_fk1" Association="Self.CharacterDeathDate_fk1">
+            <End Role="Logs" EntitySet="Logs" />
+            <End Role="CharacterDeathDate" EntitySet="CharacterDeathDate" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterDeathPlace_fk1" Association="Self.CharacterDeathPlace_fk1">
+            <End Role="Place" EntitySet="Place" />
+            <End Role="CharacterDeathPlace" EntitySet="CharacterDeathPlace" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterDeathPlace_fk2" Association="Self.CharacterDeathPlace_fk2">
+            <End Role="Logs" EntitySet="Logs" />
+            <End Role="CharacterDeathPlace" EntitySet="CharacterDeathPlace" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterFirstName_fk1" Association="Self.CharacterFirstName_fk1">
+            <End Role="Logs" EntitySet="Logs" />
+            <End Role="CharacterFirstName" EntitySet="CharacterFirstName" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterLastName_fk1" Association="Self.CharacterLastName_fk1">
+            <End Role="Logs" EntitySet="Logs" />
+            <End Role="CharacterLastName" EntitySet="CharacterLastName" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterLivingCountry_fk1" Association="Self.CharacterLivingCountry_fk1">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="CharacterLivingCountry" EntitySet="CharacterLivingCountry" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterLivingCountry_fk2" Association="Self.CharacterLivingCountry_fk2">
+            <End Role="Logs" EntitySet="Logs" />
+            <End Role="CharacterLivingCountry" EntitySet="CharacterLivingCountry" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterLivingPlace_fk1" Association="Self.CharacterLivingPlace_fk1">
+            <End Role="Place" EntitySet="Place" />
+            <End Role="CharacterLivingPlace" EntitySet="CharacterLivingPlace" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterLivingPlace_fk2" Association="Self.CharacterLivingPlace_fk2">
+            <End Role="Logs" EntitySet="Logs" />
+            <End Role="CharacterLivingPlace" EntitySet="CharacterLivingPlace" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterNationality_fk1" Association="Self.CharacterNationality_fk1">
+            <End Role="Nationality" EntitySet="Nationality" />
+            <End Role="CharacterNationality" EntitySet="CharacterNationality" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterNationality_fk2" Association="Self.CharacterNationality_fk2">
+            <End Role="Logs" EntitySet="Logs" />
+            <End Role="CharacterNationality" EntitySet="CharacterNationality" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterPhoto_fk1" Association="Self.CharacterPhoto_fk1">
+            <End Role="Logs" EntitySet="Logs" />
+            <End Role="CharacterPhoto" EntitySet="CharacterPhoto" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterReligious_fk1" Association="Self.CharacterReligious_fk1">
+            <End Role="Religious" EntitySet="Religious" />
+            <End Role="CharacterReligious" EntitySet="CharacterReligious" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterReligious_fk2" Association="Self.CharacterReligious_fk2">
+            <End Role="Logs" EntitySet="Logs" />
+            <End Role="CharacterReligious" EntitySet="CharacterReligious" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterSecondName_fk1" Association="Self.CharacterSecondName_fk1">
+            <End Role="Logs" EntitySet="Logs" />
+            <End Role="CharacterSecondName" EntitySet="CharacterSecondName" />
+          </AssociationSet>
+          <AssociationSet Name="HouseCharacter_fk0" Association="Self.HouseCharacter_fk0">
+            <End Role="House" EntitySet="House" />
+            <End Role="HouseCharacter" EntitySet="HouseCharacter" />
+          </AssociationSet>
+          <AssociationSet Name="Logs_fk0" Association="Self.Logs_fk0">
+            <End Role="User" EntitySet="User" />
+            <End Role="Logs" EntitySet="Logs" />
+          </AssociationSet>
+          <AssociationSet Name="RelativeCharacter_fk2" Association="Self.RelativeCharacter_fk2">
+            <End Role="RelativeType" EntitySet="RelativeType" />
+            <End Role="RelativeCharacter" EntitySet="RelativeCharacter" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище FamilyTreeModelContainer" CdmEntityContainer="FamilyTreeEntities">
+          <EntitySetMapping Name="AccessLevel">
+            <EntityTypeMapping TypeName="FamilyTreeModel.AccessLevel">
+              <MappingFragment StoreEntitySet="AccessLevel">
+                <ScalarProperty Name="type" ColumnName="type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Character">
+            <EntityTypeMapping TypeName="FamilyTreeModel.Character">
+              <MappingFragment StoreEntitySet="Character">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="creator" ColumnName="creator" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CharacterBiography">
+            <EntityTypeMapping TypeName="FamilyTreeModel.CharacterBiography">
+              <MappingFragment StoreEntitySet="CharacterBiography">
+                <ScalarProperty Name="characterId" ColumnName="characterId" />
+                <ScalarProperty Name="biography" ColumnName="biography" />
+                <ScalarProperty Name="changeId" ColumnName="changeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CharacterBirthCountry">
+            <EntityTypeMapping TypeName="FamilyTreeModel.CharacterBirthCountry">
+              <MappingFragment StoreEntitySet="CharacterBirthCountry">
+                <ScalarProperty Name="characterId" ColumnName="characterId" />
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="changeId" ColumnName="changeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CharacterBirthDate">
+            <EntityTypeMapping TypeName="FamilyTreeModel.CharacterBirthDate">
+              <MappingFragment StoreEntitySet="CharacterBirthDate">
+                <ScalarProperty Name="characterId" ColumnName="characterId" />
+                <ScalarProperty Name="birthDate" ColumnName="birthDate" />
+                <ScalarProperty Name="changeId" ColumnName="changeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CharacterBirthPlace">
+            <EntityTypeMapping TypeName="FamilyTreeModel.CharacterBirthPlace">
+              <MappingFragment StoreEntitySet="CharacterBirthPlace">
+                <ScalarProperty Name="characterId" ColumnName="characterId" />
+                <ScalarProperty Name="place" ColumnName="place" />
+                <ScalarProperty Name="changeId" ColumnName="changeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CharacterDeathCountry">
+            <EntityTypeMapping TypeName="FamilyTreeModel.CharacterDeathCountry">
+              <MappingFragment StoreEntitySet="CharacterDeathCountry">
+                <ScalarProperty Name="characterId" ColumnName="characterId" />
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="changeId" ColumnName="changeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CharacterDeathDate">
+            <EntityTypeMapping TypeName="FamilyTreeModel.CharacterDeathDate">
+              <MappingFragment StoreEntitySet="CharacterDeathDate">
+                <ScalarProperty Name="characterId" ColumnName="characterId" />
+                <ScalarProperty Name="deathDate" ColumnName="deathDate" />
+                <ScalarProperty Name="changeId" ColumnName="changeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CharacterDeathPlace">
+            <EntityTypeMapping TypeName="FamilyTreeModel.CharacterDeathPlace">
+              <MappingFragment StoreEntitySet="CharacterDeathPlace">
+                <ScalarProperty Name="characterId" ColumnName="characterId" />
+                <ScalarProperty Name="place" ColumnName="place" />
+                <ScalarProperty Name="changeId" ColumnName="changeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CharacterFirstName">
+            <EntityTypeMapping TypeName="FamilyTreeModel.CharacterFirstName">
+              <MappingFragment StoreEntitySet="CharacterFirstName">
+                <ScalarProperty Name="characterId" ColumnName="characterId" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="changeId" ColumnName="changeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CharacterLastName">
+            <EntityTypeMapping TypeName="FamilyTreeModel.CharacterLastName">
+              <MappingFragment StoreEntitySet="CharacterLastName">
+                <ScalarProperty Name="characterId" ColumnName="characterId" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="changeId" ColumnName="changeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CharacterLivingCountry">
+            <EntityTypeMapping TypeName="FamilyTreeModel.CharacterLivingCountry">
+              <MappingFragment StoreEntitySet="CharacterLivingCountry">
+                <ScalarProperty Name="charcaterId" ColumnName="charcaterId" />
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="changeId" ColumnName="changeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CharacterLivingPlace">
+            <EntityTypeMapping TypeName="FamilyTreeModel.CharacterLivingPlace">
+              <MappingFragment StoreEntitySet="CharacterLivingPlace">
+                <ScalarProperty Name="characterId" ColumnName="characterId" />
+                <ScalarProperty Name="place" ColumnName="place" />
+                <ScalarProperty Name="changeId" ColumnName="changeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CharacterNationality">
+            <EntityTypeMapping TypeName="FamilyTreeModel.CharacterNationality">
+              <MappingFragment StoreEntitySet="CharacterNationality">
+                <ScalarProperty Name="characterId" ColumnName="characterId" />
+                <ScalarProperty Name="nationality" ColumnName="nationality" />
+                <ScalarProperty Name="changeId" ColumnName="changeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CharacterPhoto">
+            <EntityTypeMapping TypeName="FamilyTreeModel.CharacterPhoto">
+              <MappingFragment StoreEntitySet="CharacterPhoto">
+                <ScalarProperty Name="characterId" ColumnName="characterId" />
+                <ScalarProperty Name="photo" ColumnName="photo" />
+                <ScalarProperty Name="changeId" ColumnName="changeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CharacterReligious">
+            <EntityTypeMapping TypeName="FamilyTreeModel.CharacterReligious">
+              <MappingFragment StoreEntitySet="CharacterReligious">
+                <ScalarProperty Name="characterId" ColumnName="characterId" />
+                <ScalarProperty Name="religious" ColumnName="religious" />
+                <ScalarProperty Name="changeId" ColumnName="changeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CharacterSecondName">
+            <EntityTypeMapping TypeName="FamilyTreeModel.CharacterSecondName">
+              <MappingFragment StoreEntitySet="CharacterSecondName">
+                <ScalarProperty Name="characterId" ColumnName="characterId" />
+                <ScalarProperty Name="secondName" ColumnName="secondName" />
+                <ScalarProperty Name="changeId" ColumnName="changeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Country">
+            <EntityTypeMapping TypeName="FamilyTreeModel.Country">
+              <MappingFragment StoreEntitySet="Country">
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="House">
+            <EntityTypeMapping TypeName="FamilyTreeModel.House">
+              <MappingFragment StoreEntitySet="House">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="houseKeeper" ColumnName="houseKeeper" />
+                <ScalarProperty Name="coatOfArms" ColumnName="coatOfArms" />
+                <ScalarProperty Name="historyOfHouse" ColumnName="historyOfHouse" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HouseCharacter">
+            <EntityTypeMapping TypeName="FamilyTreeModel.HouseCharacter">
+              <MappingFragment StoreEntitySet="HouseCharacter">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="houseId" ColumnName="houseId" />
+                <ScalarProperty Name="characterId" ColumnName="characterId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Logs">
+            <EntityTypeMapping TypeName="FamilyTreeModel.Logs">
+              <MappingFragment StoreEntitySet="Logs">
+                <ScalarProperty Name="changeId" ColumnName="changeId" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Nationality">
+            <EntityTypeMapping TypeName="FamilyTreeModel.Nationality">
+              <MappingFragment StoreEntitySet="Nationality">
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Place">
+            <EntityTypeMapping TypeName="FamilyTreeModel.Place">
+              <MappingFragment StoreEntitySet="Place">
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RelativeCharacter">
+            <EntityTypeMapping TypeName="FamilyTreeModel.RelativeCharacter">
+              <MappingFragment StoreEntitySet="RelativeCharacter">
+                <ScalarProperty Name="characterId" ColumnName="characterId" />
+                <ScalarProperty Name="targetId" ColumnName="targetId" />
+                <ScalarProperty Name="type" ColumnName="type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RelativeType">
+            <EntityTypeMapping TypeName="FamilyTreeModel.RelativeType">
+              <MappingFragment StoreEntitySet="RelativeType">
+                <ScalarProperty Name="type" ColumnName="type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Religious">
+            <EntityTypeMapping TypeName="FamilyTreeModel.Religious">
+              <MappingFragment StoreEntitySet="Religious">
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="FamilyTreeModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="characterId" ColumnName="characterId" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+                <ScalarProperty Name="lastLogIn" ColumnName="lastLogIn" />
+                <ScalarProperty Name="accessLevelType" ColumnName="accessLevelType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
