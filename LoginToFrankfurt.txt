@@ -1,0 +1,3 @@
+myteamprojectinstance.civizd9ntnno.eu-central-1.rds.amazonaws.com - endpoint name
+Simpleuser - login
+odinbogneodin7 - pass
