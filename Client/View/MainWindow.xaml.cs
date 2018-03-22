@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.ServiceModel;
+using BasicLib;
 
 namespace Client
 {
@@ -23,6 +25,24 @@ namespace Client
         public MainWindow()
         {
             InitializeComponent();
+            //Указание, где ожидать входящие сообщения.
+            Uri address = new Uri("http://localhost:4000/IContract");
+
+            // Указание, как обмениваться сообщениями.
+            BasicHttpBinding binding = new BasicHttpBinding();
+
+            // Создание Конечной Точки.
+            EndpointAddress endpoint = new EndpointAddress(address);
+
+            // Создание фабрики каналов.
+            ChannelFactory<IAuth> factory = new ChannelFactory<IAuth>(binding, endpoint);
+
+            // Использование factory для создания канала (прокси).
+            IAuth channel = factory.CreateChannel();
+
+            // Использование канала для отправки сообщения получателю и приема ответа.
+            bool response = channel.Auth(new User("AntoxaDerzkiyKoder@gmail.com", "pass"));
+            // Задержка.
         }
     }
 }
