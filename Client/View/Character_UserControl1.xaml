@@ -17,7 +17,7 @@
                 <ImageBrush ImageSource="Resources\Rurick.PNG"></ImageBrush>
             </Label.Background>
         </Label>
-        <TextBox Grid.Row="1" HorizontalContentAlignment="Center">Рюрик</TextBox>
+        <TextBox Grid.Row="1" HorizontalContentAlignment="Center" Foreground="White" Background="Black">Рюрик</TextBox>
 
     </Grid>
 </UserControl>
