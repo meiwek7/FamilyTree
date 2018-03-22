@@ -11,6 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{23CC48
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{ECBEE228-3ADB-43D7-A81E-DAE8BA560B22}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ClassLibrary", "ClassLibrary", "{C2EAB270-A925-4E58-8DC0-4CAA7FEB4567}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicLib", "BasicLib\BasicLib.csproj", "{91B76179-C1C9-48E6-9313-0A3B33C10A37}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +29,10 @@ Global
 		{ECBEE228-3ADB-43D7-A81E-DAE8BA560B22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECBEE228-3ADB-43D7-A81E-DAE8BA560B22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECBEE228-3ADB-43D7-A81E-DAE8BA560B22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91B76179-C1C9-48E6-9313-0A3B33C10A37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91B76179-C1C9-48E6-9313-0A3B33C10A37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91B76179-C1C9-48E6-9313-0A3B33C10A37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91B76179-C1C9-48E6-9313-0A3B33C10A37}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,5 +40,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{67C3E5C4-4814-4A6F-B487-EBFF79E8B63E} = {FEB44F80-42B3-407A-83BA-DDF2CB4858E2}
 		{ECBEE228-3ADB-43D7-A81E-DAE8BA560B22} = {23CC48A7-3724-4574-8A32-A02FD029E06C}
+		{91B76179-C1C9-48E6-9313-0A3B33C10A37} = {C2EAB270-A925-4E58-8DC0-4CAA7FEB4567}
 	EndGlobalSection
 EndGlobal

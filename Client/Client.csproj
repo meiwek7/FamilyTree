@@ -36,6 +36,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -54,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModel\AuthorizationViewModel.cs" />
     <Compile Include="View\Authorization.xaml.cs">
       <DependentUpon>Authorization.xaml</DependentUpon>
     </Compile>
@@ -134,6 +136,12 @@
     <Resource Include="View\Resources\family_tree.jpg" />
     <Resource Include="View\Resources\ff20b695-6a1c-441a-90b1-78a1e1ea2491.jpg" />
     <Resource Include="View\Resources\total_war1425239213_2015-03-01_00006.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BasicLib\BasicLib.csproj">
+      <Project>{91B76179-C1C9-48E6-9313-0A3B33C10A37}</Project>
+      <Name>BasicLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
