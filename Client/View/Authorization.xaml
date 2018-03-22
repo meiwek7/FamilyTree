@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Client.View"
         mc:Ignorable="d"
-        Title="Family Tree | Authorization" Height="150" Width="300">
+        Title="Family Tree | Authorization" Height="150" Width="300" MinHeight="150" MaxHeight="150" MinWidth="300" MaxWidth="300">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30px"></RowDefinition>
