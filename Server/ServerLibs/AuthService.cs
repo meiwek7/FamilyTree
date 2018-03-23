@@ -14,11 +14,12 @@ namespace Server.ServerLibs
             using (FamilyTreeEntities db = new FamilyTreeEntities())
             {
                 object BaseUser;
-                BaseUser = db.User.Where(x => x.email == user.Email).ToList().First();
-                if (BaseUser == null)
+                var BaseUser1 = db.User.Where(x => x.email == user.Email).ToList();
+                if (BaseUser1.Count() == 0)
                 {
                     return false;
                 }
+                BaseUser = BaseUser1.First();
                 if ( (BaseUser as Server.User).password != user.Password)
                 {
                     return false;
