@@ -7,7 +7,7 @@ using System.Runtime.Serialization;
 namespace BasicLib
 {
     [DataContract]
-    public partial class User
+    public class User
     {
         [DataMember]
         private int id;
@@ -24,6 +24,10 @@ namespace BasicLib
         [DataMember]
         private string accessLevelType;
 
+        public User()
+        {
+
+        }
         public User(string email, string password)
         {
             this.email = email;
