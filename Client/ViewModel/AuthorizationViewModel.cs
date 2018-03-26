@@ -18,35 +18,6 @@ namespace Client.ViewModel
         {
             user = new User();
         }
-        //public RelayCommand Enter
-        //{
-        //    get
-        //    {
-        //        return enter ?? (enter = new RelayCommand(obj => {
-        //            //Запихиваем в базу
-        //            TeacherDAO.InsertStudent(new Student
-        //            {
-        //                Name = StudentName,
-        //                Surname = StudentSurname,
-        //                Teacherid = CurrentTeacher.Id
-        //            });
-        //            //(Запихиваем) Обновляем (к) учителю (в) коллекцию в ЮзерИнтерфейсе
-        //            //ContextMWVM.CurrentCollectionTeachers.ToList().Find(x => x.Id == CurrentTeacher.Id).StudentsCollection.Add(new Student
-        //            //{
-        //            //    Name = StudentName,
-        //            //    Surname = StudentSurname,
-        //            //    Teacherid = CurrentTeacher.Id
-        //            //});
-        //            ContextMWVM.CurrentCollectionTeachers.ToList().Find(x => x.Id == CurrentTeacher.Id).StudentsCollection = null;
-        //            //Закрываем
-        //            (obj as View.AddWindowStudent).Close();
-        //        }, obj => {
-        //            if (CurrentTeacher != null && StudentName != null && StudentName != "" && StudentSurname != null && StudentSurname != "")
-        //                return true;
-        //            return false;
-        //        }));
-        //    }
-        //}
         #region Enter
         public ICommand EnterCommand { get {
                 if(_enterCommand==null)
@@ -64,6 +35,6 @@ namespace Client.ViewModel
             return true;
         }
         #endregion
-        public User User { get => user; set => user = value; }
+        public User User { get { return user; } set { user = value; } }
     }
 }

@@ -13,9 +13,56 @@ namespace Client.ViewModel
         private static AuthorizationViewModel       authorizationVM;
         private static CharacterWindowViewModel     character_InfoVM;
 
-        public static MainWindowViewModel       MainWindowVM { get => mainWindowVM; set => mainWindowVM = value; }
-        public static RegisterViewModel         RegisterVM { get => registerVM; set => registerVM = value; }
-        public static AuthorizationViewModel    AuthorizationVM { get => authorizationVM; set => authorizationVM = value; }
-        public static CharacterWindowViewModel  Character_InfoVM { get => character_InfoVM; set => character_InfoVM = value; }
+        internal static MainWindowViewModel MainWindowVM
+        {
+            get
+            {
+                return mainWindowVM;
+            }
+
+            set
+            {
+                mainWindowVM = value;
+            }
+        }
+
+        internal static RegisterViewModel RegisterVM
+        {
+            get
+            {
+                return registerVM;
+            }
+
+            set
+            {
+                registerVM = value;
+            }
+        }
+
+        internal static AuthorizationViewModel AuthorizationVM
+        {
+            get
+            {
+                return authorizationVM;
+            }
+
+            set
+            {
+                authorizationVM = value;
+            }
+        }
+
+        internal static CharacterWindowViewModel Character_InfoVM
+        {
+            get
+            {
+                return character_InfoVM;
+            }
+
+            set
+            {
+                character_InfoVM = value;
+            }
+        }
     }
 }
