@@ -57,7 +57,6 @@ namespace Client.ViewModel
             } }
         private void ExecuteEnterCommand(object param)
         {
-            //var result = ConLogic.Channel.Auth(user);
             var result = ConLogic.Proxy.Auth(user);
         }
         private bool CanExecuteEnterCommand(object param)

@@ -148,7 +148,7 @@
     <Compile Include="Religious.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="ServerLibs\AuthService.cs" />
+    <Compile Include="ServerLibs\AuthServiceServ.cs" />
     <Compile Include="User.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
