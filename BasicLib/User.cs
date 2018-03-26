@@ -34,12 +34,12 @@ namespace BasicLib
             this.password = password;
         }
 
-        public int Id { get => id; set => id = value; }
-        public string Email { get => email; set => email = value; }
-        public int CharacterId { get => characterId; set => characterId = value; }
-        public string Password { get => password; set => password = value; }
-        public string PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
-        public DateTime LastLogIn { get => lastLogIn; set => lastLogIn = value; }
-        public string AccessLevelType { get => accessLevelType; set => accessLevelType = value; }
+        public int Id { get { return id; } set { id = value; } }
+        public string Email { get { return email; } set { email = value; } }
+        public int CharacterId { get { return characterId; } set { characterId = value; } }
+        public string Password { get { return password; } set { password = value; } }
+        public string PhoneNumber { get { return phoneNumber; } set { phoneNumber = value; } }
+        public DateTime LastLogIn { get { return lastLogIn; } set { lastLogIn = value; } }
+        public string AccessLevelType { get { return accessLevelType; } set { accessLevelType = value; } }
     }
 }
