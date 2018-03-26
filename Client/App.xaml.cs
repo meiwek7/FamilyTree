@@ -13,5 +13,11 @@ namespace Client
     /// </summary>
     public partial class App : Application
     {
+        //DemoService1Client proxy = new DemoService1Client();
+
+        //private void DoWorkInClient()
+        //{
+        //    string mess = proxy.DoWork();
+        //}
     }
 }

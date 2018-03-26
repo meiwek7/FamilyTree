@@ -24,29 +24,34 @@ namespace Server
                 }
             }
             Console.WriteLine();
-            // Указание адреса, где ожидать входящие сообщения.
-            Uri address = new Uri("http://localhost:4000/IContract"); // ADDRESS.   (A)
+            //Указание адреса, где ожидать входящие сообщения.
+           Uri address = new Uri("http://localhost:4000/IContract"); // ADDRESS.   (A)
 
-            // Указание привязки, как обмениваться сообщениями.
+            //Указание привязки, как обмениваться сообщениями.
             BasicHttpBinding binding = new BasicHttpBinding();        // BINDING.   (B)
 
-            // Указание контракта.
+            //Указание контракта.
             Type contract = typeof(IAuth);                            // CONTRACT.  (C) 
 
-            // Создание провайдера Хостинга с указанием Сервиса.
+            //Создание провайдера Хостинга с указанием Сервиса.
             ServiceHost host = new ServiceHost(typeof(AuthService));
 
-            // Добавление "Конечной Точки".
-            host.AddServiceEndpoint(contract, binding, address);
+            //Добавление "Конечной Точки".
+           host.AddServiceEndpoint(contract, binding, address);
 
-            // Начало ожидания прихода сообщений.
-            host.Open();
+            //Начало ожидания прихода сообщений.
+             host.Open();
 
-
+            // = ============
+            //  DemoService1
+            // = ============
+            //ServiceHost host2 = new ServiceHost(typeof(DemoService1));
+            //host2.Open();
             Console.WriteLine("Приложение готово к приему сообщений.");
-            Console.ReadKey();
+            //Console.ReadKey();
 
-
+            //host2.Close();
+            //Console.WriteLine("Host2 - stopped");
             // Завершение ожидания прихода сообщений.
             host.Close();
         }

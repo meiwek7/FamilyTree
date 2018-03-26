@@ -18,13 +18,13 @@ namespace Server.ServerLibs
                 BaseUser = null;
                 if (BaseUser1.Count() == 0)
                 {
-                    Console.WriteLine("{0} - {1} - Не смог войти в систему", user.Id, user.Password);
+                    Console.WriteLine("{0} - {1} - Не смог войти в систему. Такого пользователя нет в базе", user.Id, user.Password);
                     return false;
                 }
                 BaseUser = BaseUser1.First();
                 if ( (BaseUser as Server.User).password != user.Password)
                 {
-                    Console.WriteLine("{0}.{1} - {2} - Не смог войти в систему", (BaseUser as Server.User).id, (BaseUser as Server.User).email, (BaseUser as Server.User).phoneNumber);
+                    Console.WriteLine("{0}.{1} - {2} - Не смог войти в систему. Пароль неверный.", (BaseUser as Server.User).id, (BaseUser as Server.User).email, (BaseUser as Server.User).phoneNumber);
                     return false;
                 }
                 Console.WriteLine("{0}.{1} - {2} - Успешно вошел в систему", (BaseUser as Server.User).id, (BaseUser as Server.User).email, (BaseUser as Server.User).phoneNumber);

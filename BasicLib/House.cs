@@ -12,5 +12,6 @@ namespace BasicLib
         private int houseKeeper;
         private string history;
         private string coatOfArms;
+
     }
 }
