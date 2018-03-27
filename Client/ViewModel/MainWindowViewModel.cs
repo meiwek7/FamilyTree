@@ -9,6 +9,6 @@ namespace Client.ViewModel
 {
     class MainWindowViewModel
     {
-        //User CurrentUser = new User();
+
     }
 }

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Client.View"
         xmlns:reg="clr-namespace:Client.ViewModel"
         mc:Ignorable="d"
-        Title="Family Tree | Registration" Height="150" Width="300" MinHeight="150" MaxHeight="150" MinWidth="300" MaxWidth="300" Name="RegisterView">
+        Title="Family Tree | Registration" Height="150" Width="300" MinHeight="150" MaxHeight="300" MinWidth="300" MaxWidth="450" Name="RegisterView">
     <Window.DataContext>
         <reg:RegisterViewModel></reg:RegisterViewModel>
     </Window.DataContext>
@@ -53,8 +53,5 @@
 
         <Button Name="b_cancel" Margin="5,5,5,5" Grid.Row="3" Grid.ColumnSpan="2" Background="Transparent" Foreground="White" Command="{Binding Path=CloseCommand}" CommandParameter="{Binding ElementName=RegisterView}">Cancel</Button>
         <Button Name="b_register" Margin="5,5,5,5" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" Background="Transparent" Foreground="White">Register</Button>
-
-
-
     </Grid>
 </Window>

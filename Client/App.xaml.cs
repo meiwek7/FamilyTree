@@ -5,6 +5,8 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using Client.ViewModel;
+using Client.View;
 
 namespace Client
 {
@@ -13,11 +15,14 @@ namespace Client
     /// </summary>
     public partial class App : Application
     {
-        //DemoService1Client proxy = new DemoService1Client();
-
-        //private void DoWorkInClient()
-        //{
-        //    string mess = proxy.DoWork();
-        //}
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            WindowViewLoaderService.Register(typeof(MainWindow), typeof(MainWindowViewModel) );
+            WindowViewLoaderService.Register(typeof(Register), typeof(RegisterViewModel) );
+            WindowViewLoaderService.Register(typeof(Authorization), typeof(AuthorizationViewModel) );
+            Authorization mainWindow = new Authorization();
+            mainWindow.Show();
+        }
     }
 }

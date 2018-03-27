@@ -29,7 +29,6 @@ namespace Client.ViewModel
         {
             Register RegisterWindow = obj as Register;
             RegisterWindow.Close();
-
         }
     }
 }
