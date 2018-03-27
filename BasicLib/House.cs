@@ -13,5 +13,69 @@ namespace BasicLib
         private string history;
         private string coatOfArms;
 
+        public int Id
+        {
+            get
+            {
+                return id;
+            }
+
+            set
+            {
+                id = value;
+            }
+        }
+
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+
+            set
+            {
+                name = value;
+            }
+        }
+
+        public int HouseKeeper
+        {
+            get
+            {
+                return houseKeeper;
+            }
+
+            set
+            {
+                houseKeeper = value;
+            }
+        }
+
+        public string History
+        {
+            get
+            {
+                return history;
+            }
+
+            set
+            {
+                history = value;
+            }
+        }
+
+        public string CoatOfArms
+        {
+            get
+            {
+                return coatOfArms;
+            }
+
+            set
+            {
+                coatOfArms = value;
+            }
+        }
     }
 }

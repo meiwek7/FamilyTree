@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Runtime.Serialization;
+using System.Security;
 
 namespace BasicLib
 {
@@ -37,6 +38,7 @@ namespace BasicLib
         public int Id { get { return id; } set { id = value; } }
         public string Email { get { return email; } set { email = value; } }
         public int CharacterId { get { return characterId; } set { characterId = value; } }
+        public SecureString MyProperty { get; set; }
         public string Password { get { return password; } set { password = value; } }
         public string PhoneNumber { get { return phoneNumber; } set { phoneNumber = value; } }
         public DateTime LastLogIn { get { return lastLogIn; } set { lastLogIn = value; } }
