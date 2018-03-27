@@ -7,6 +7,7 @@ using BasicLib;
 using Client.Infrastructure;
 using System.Windows.Input;
 using System.Windows.Controls;
+using Client.View;
 
 namespace Client.ViewModel
 {
@@ -14,6 +15,7 @@ namespace Client.ViewModel
     {
         User user;
         RelayCommand _enterCommand;
+        RelayCommand _registerCommand;
 
         public AuthorizationViewModel()
         {
@@ -30,7 +32,7 @@ namespace Client.ViewModel
         private void ExecuteEnterCommand(object param)
         {
             var pas = param as PasswordBox;
-            var str = pas.SecurePassword;
+            var str = pas.Password;
             var result = ConLogic.Proxy.Auth(user);
         }
         private bool CanExecuteEnterCommand(object param)
@@ -40,5 +42,24 @@ namespace Client.ViewModel
         }
         #endregion
         public User User { get { return user; } set { user = value; } }
+
+       public ICommand RegisterCommand
+
+        {
+            get
+            {
+                if(_registerCommand == null)
+                {
+                    _registerCommand = new RelayCommand(ExecuteRegisterCommand);
+                }
+                return _registerCommand;
+            }
+        }
+
+        private void ExecuteRegisterCommand(object obj)
+        {
+            Register RegisterWindow = new Register();
+            RegisterWindow.Show();
+        }
     }
 }

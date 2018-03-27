@@ -4,8 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Client.View"
+        xmlns:reg="clr-namespace:Client.ViewModel"
         mc:Ignorable="d"
-        Title="Family Tree | Registration" Height="150" Width="300" MinHeight="150" MaxHeight="150" MinWidth="300" MaxWidth="300">
+        Title="Family Tree | Registration" Height="150" Width="300" MinHeight="150" MaxHeight="150" MinWidth="300" MaxWidth="300" Name="RegisterView">
+    <Window.DataContext>
+        <reg:RegisterViewModel></reg:RegisterViewModel>
+    </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30px"></RowDefinition>
@@ -15,11 +19,11 @@
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"></ColumnDefinition>
-            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="62*"></ColumnDefinition>
+            <ColumnDefinition Width="62*"></ColumnDefinition>
             <ColumnDefinition Width="45px"></ColumnDefinition>
-            <ColumnDefinition Width="1*"></ColumnDefinition>
-            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="62"></ColumnDefinition>
+            <ColumnDefinition Width="61*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
         <Label Grid.Row="0" Grid.RowSpan="4" Grid.ColumnSpan="5">
@@ -47,7 +51,7 @@
         <TextBox Margin="0,0,5,0" Name="tb_email" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Foreground="White" Background="Transparent"></TextBox>
         <PasswordBox Margin="0,0,5,0"  Name="tb_password" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" Foreground="White" Background="Transparent"></PasswordBox>
 
-        <Button Name="b_cancel" Margin="5,5,5,5" Grid.Row="3" Grid.ColumnSpan="2" Background="Transparent" Foreground="White">Cancel</Button>
+        <Button Name="b_cancel" Margin="5,5,5,5" Grid.Row="3" Grid.ColumnSpan="2" Background="Transparent" Foreground="White" Command="{Binding Path=CloseCommand}" CommandParameter="{Binding ElementName=RegisterView}">Cancel</Button>
         <Button Name="b_register" Margin="5,5,5,5" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" Background="Transparent" Foreground="White">Register</Button>
 
 
