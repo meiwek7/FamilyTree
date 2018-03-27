@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Client.View"
         xmlns:vm="clr-namespace:Client.ViewModel"
+        xmlns:w="clr-namespace:Client.Infrastructure"
         mc:Ignorable="d"
         Title="Family Tree | Authorization" Height="150" Width="300" MinHeight="150" MaxHeight="150" MinWidth="300" MaxWidth="300">
     <Window.DataContext>
@@ -49,9 +50,10 @@
         <Label Grid.Row="2" Foreground="White" HorizontalAlignment="Center">Password</Label>
 
         <TextBox Margin="0,0,5,0" Name="tb_email" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Foreground="White" Background="Transparent" Text="{Binding User.Email, UpdateSourceTrigger=PropertyChanged}"></TextBox>
-        <TextBox Margin="0,0,5,0"  Name="tb_password" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" Foreground="White" Background="Transparent" Text="{Binding User.Password, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <PasswordBox Margin="0,0,5,0"  Name="tb_password" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" Foreground="White" Background="Transparent"></PasswordBox>
+                   <!--w:PasswordHelper.Attach="True"  Password="{Binding User.MyProperty, UpdateSourceTrigger=PropertyChanged}"-->
 
         <Button Name="b_register" Margin="5,5,5,5" Grid.Row="3" Grid.ColumnSpan="2" Background="Transparent" Foreground="White">Register</Button>
-        <Button Name="b_enter" Margin="5,5,5,5" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" Background="Transparent" Foreground="White" Command="{Binding Path=EnterCommand}">Enter</Button>
+        <Button Name="b_enter" Margin="5,5,5,5" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" Background="Transparent" Foreground="White" Command="{Binding Path=EnterCommand}" CommandParameter="{Binding ElementName=tb_password}">Enter</Button>
     </Grid>
 </Window>

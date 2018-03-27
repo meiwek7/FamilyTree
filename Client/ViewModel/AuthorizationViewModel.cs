@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using BasicLib;
 using Client.Infrastructure;
 using System.Windows.Input;
+using System.Windows.Controls;
 
 namespace Client.ViewModel
 {
@@ -28,10 +29,13 @@ namespace Client.ViewModel
             } }
         private void ExecuteEnterCommand(object param)
         {
+            var pas = param as PasswordBox;
+            var str = pas.SecurePassword;
             var result = ConLogic.Proxy.Auth(user);
         }
         private bool CanExecuteEnterCommand(object param)
         {
+          
             return true;
         }
         #endregion
