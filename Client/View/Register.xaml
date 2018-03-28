@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Client.View"
+        xmlns:Behaviors="clr-namespace:Client.ViewModel.Behaviors"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         xmlns:reg="clr-namespace:Client.ViewModel"
         mc:Ignorable="d"
         Title="Family Tree | Registration" Height="150" Width="300" MinHeight="150" MaxHeight="300" MinWidth="300" MaxWidth="450" Name="RegisterView">
@@ -48,10 +50,27 @@
         <Label Grid.Row="1" Foreground="White" HorizontalAlignment="Center">Email</Label>
         <Label Grid.Row="2" Foreground="White" HorizontalAlignment="Center">Password</Label>
 
-        <TextBox Margin="0,0,5,0" Name="tb_email" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Foreground="White" Background="Transparent"></TextBox>
-        <PasswordBox Margin="0,0,5,0"  Name="tb_password" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" Foreground="White" Background="Transparent"></PasswordBox>
+        <TextBox Margin="0,0,5,0" Name="tb_email" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Foreground="White" Background="Transparent"
+                 Text="{Binding Path=FutureUser.Email, UpdateSourceTrigger=PropertyChanged}"
+                 ></TextBox>
+        <PasswordBox Margin="0,0,5,0"  Name="tb_password" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" Foreground="White" Background="Transparent">
+            <i:Interaction.Behaviors>
+                    <Behaviors:PasswordBehavior Password="{Binding Path=FutureUser.Password, Mode=TwoWay}"/>
+            </i:Interaction.Behaviors>
+        </PasswordBox>
 
         <Button Name="b_cancel" Margin="5,5,5,5" Grid.Row="3" Grid.ColumnSpan="2" Background="Transparent" Foreground="White" Command="{Binding Path=CloseCommand}" CommandParameter="{Binding ElementName=RegisterView}">Cancel</Button>
-        <Button Name="b_register" Margin="5,5,5,5" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" Background="Transparent" Foreground="White">Register</Button>
+        <Button Name="b_register"
+                Margin="5,5,5,5"
+                Grid.Row="3"
+                Grid.Column="3"
+                Grid.ColumnSpan="2"
+                Background="Transparent"
+                Foreground="White"
+                Command="{Binding Path=RegisterCommand}"
+                CommandParameter="{Binding ElementName=RegisterView}"
+                >
+            Register
+        </Button>
     </Grid>
 </Window>

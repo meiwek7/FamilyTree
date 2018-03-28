@@ -14,12 +14,17 @@ namespace BasicLib
         [OperationContract]
         User Initialize();
         [OperationContract]
-        bool RegisterUser();
+        RegisterResult RegisterUser(User user);
     }
     public enum AuthErrors
     {
         EverythingIsFine = 0,
         NoSuchUser = 1,
         IncorrectPass = 2
+    }
+    public enum RegisterResult
+    {
+        UserRegSuccess = 0,
+        SomethingWentWrong = 1
     }
 }

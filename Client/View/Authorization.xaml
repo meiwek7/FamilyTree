@@ -276,8 +276,7 @@
                 Grid.Row="4"
                 Grid.Column="3"
                 Grid.ColumnSpan="2"
-                Style="{StaticResource InformButton}"
-                Command="{Binding Path=EnterCommand}">
+                Style="{StaticResource InformButton}">
             Forgot password
         </Button>
     </Grid>

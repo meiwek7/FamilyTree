@@ -68,7 +68,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Infrastructure\PasswordHelper.cs" />
     <Compile Include="Infrastructure\RelayCommand.cs" />
     <Compile Include="ViewModel\AuthorizationViewModel.cs" />
     <Compile Include="ViewModel\Behaviors\PasswordBehavior.cs" />

@@ -20,4 +20,11 @@
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="AuthErrors" nillable="true" type="tns:AuthErrors" />
+  <xs:simpleType name="RegisterResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="UserRegSuccess" />
+      <xs:enumeration value="SomethingWentWrong" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RegisterResult" nillable="true" type="tns:RegisterResult" />
 </xs:schema>

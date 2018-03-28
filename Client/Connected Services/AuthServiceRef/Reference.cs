@@ -28,10 +28,10 @@ namespace Client.AuthServiceRef {
         System.Threading.Tasks.Task<BasicLib.User> InitializeAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuth/RegisterUser", ReplyAction="http://tempuri.org/IAuth/RegisterUserResponse")]
-        bool RegisterUser();
+        BasicLib.RegisterResult RegisterUser(BasicLib.User user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuth/RegisterUser", ReplyAction="http://tempuri.org/IAuth/RegisterUserResponse")]
-        System.Threading.Tasks.Task<bool> RegisterUserAsync();
+        System.Threading.Tasks.Task<BasicLib.RegisterResult> RegisterUserAsync(BasicLib.User user);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -77,12 +77,12 @@ namespace Client.AuthServiceRef {
             return base.Channel.InitializeAsync();
         }
         
-        public bool RegisterUser() {
-            return base.Channel.RegisterUser();
+        public BasicLib.RegisterResult RegisterUser(BasicLib.User user) {
+            return base.Channel.RegisterUser(user);
         }
         
-        public System.Threading.Tasks.Task<bool> RegisterUserAsync() {
-            return base.Channel.RegisterUserAsync();
+        public System.Threading.Tasks.Task<BasicLib.RegisterResult> RegisterUserAsync(BasicLib.User user) {
+            return base.Channel.RegisterUserAsync(user);
         }
     }
 }

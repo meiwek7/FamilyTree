@@ -23,12 +23,14 @@ namespace Server.ServerLibs
                     Console.WriteLine("{0} - {1} - Не смог войти в систему. Такого пользователя нет в базе", user.Email, user.Password);
                     return AuthErrors.NoSuchUser;
                 }
-                BaseUser = BaseUser1.First();
+                BaseUser = BaseUser1.First() as Server.User;
                 if ((BaseUser as Server.User).password != user.Password)
                 {
                     Console.WriteLine("{0}.{1} - {2} - Не смог войти в систему. Пароль неверный.", (BaseUser as Server.User).id, (BaseUser as Server.User).email, (BaseUser as Server.User).phoneNumber);
                     return AuthErrors.IncorrectPass;
                 }
+                (BaseUser as Server.User).lastLogIn = DateTime.Now;
+                db.SaveChanges();
                 Console.WriteLine("{0}.{1} - {2} - Успешно вошел в систему", (BaseUser as Server.User).id, (BaseUser as Server.User).email, (BaseUser as Server.User).phoneNumber);
             }
             return AuthErrors.EverythingIsFine;
@@ -38,9 +40,22 @@ namespace Server.ServerLibs
         {
             throw new NotImplementedException();
         }
-        public bool RegisterUser()
+
+        public RegisterResult RegisterUser(BasicLib.User user)
         {
-            return true;
+            using (FamilyTreeEntities db = new FamilyTreeEntities())
+            {
+                Server.User NewUser = new Server.User();
+                NewUser.email = user.Email;
+                NewUser.password = user.Password;
+                NewUser.accessLevelType = "user";
+                NewUser.lastLogIn = DateTime.Now;
+                db.User.Add(NewUser);
+                db.SaveChanges();
+                Console.WriteLine("{0} - Успешно зарегистрирован в системе Password: {1}", user.Email,user.Password);
+            }
+            return RegisterResult.UserRegSuccess;
+            return RegisterResult.SomethingWentWrong;
         }
     }
 }

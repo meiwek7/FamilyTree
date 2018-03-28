@@ -16,11 +16,11 @@ namespace Server
             Console.Title = "SERVER";
             using (FamilyTreeEntities db = new FamilyTreeEntities())
             {
-                Console.WriteLine("Список Юзеров");
+                Console.WriteLine("Список Юзеров:");
                 var users = db.User;
                 foreach (User u in users)
                 {
-                    Console.WriteLine("{0}.{1} - {2} - {3}", u.id, u.email, u.phoneNumber,u.password);
+                    Console.WriteLine("BaseId: {0} || E-mail:{1}  || PhoneNumber:{2} || Password:{3} || LastLogIn:{4}", u.id, u.email, u.phoneNumber, u.password, u.lastLogIn);
                 }
             }
             Console.WriteLine();
@@ -29,7 +29,6 @@ namespace Server
             Console.WriteLine("Приложение готово к приему сообщений.");
             Console.ReadKey();
             host.Close();
-            Console.WriteLine("Host2 - stopped");
         }
     }
 }

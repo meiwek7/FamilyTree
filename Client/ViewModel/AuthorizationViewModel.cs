@@ -54,7 +54,12 @@ namespace Client.ViewModel
         }
         private bool CanExecuteEnterCommand(object param)
         {
-            return true;
+            if (User.Email == "" || User.Email == null || User.Email.Length > 40)
+                return false;
+            if (User.Password == "" || User.Password == null || User.Password.Length > 30)
+                return false;
+            else
+                return true;
         }
         #endregion
 
