@@ -234,7 +234,8 @@
                      HorizontalAlignment="Center"
                      HorizontalContentAlignment="Center"
                      VerticalContentAlignment="Center"
-                     VerticalAlignment="Center"/>
+                     VerticalAlignment="Center"
+                     Foreground="Red"/>
         </Popup>
         <Popup Grid.Column="1"
                Grid.Row="1"
@@ -244,13 +245,14 @@
                Placement="Center"
                PlacementTarget="{Binding ElementName=tb_email}"
                MaxWidth="500"
-               IsOpen="{Binding Path=PopupPass, UpdateSourceTrigger=PropertyChanged}">
+               IsOpen="{Binding Path=PopupMail, UpdateSourceTrigger=PropertyChanged}">
             <TextBox Template="{StaticResource TextBoxBaseControlTemplate}"
                      Text="Такой E-mail в системе не найден"
                      HorizontalAlignment="Center"
                      HorizontalContentAlignment="Center"
                      VerticalContentAlignment="Center"
-                     VerticalAlignment="Center"/>
+                     VerticalAlignment="Center"
+                     Foreground="Red"/>
         </Popup>
         <Button Name="b_register"
                 Command="{Binding Path=RegisterCommand}"

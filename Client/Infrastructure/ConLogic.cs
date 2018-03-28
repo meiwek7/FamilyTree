@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ServiceModel;
 using BasicLib;
-using Client.ServiceAuthReference;
+using Client.AuthServiceRef;
 
 namespace Client.Infrastructure
 {
