@@ -11,7 +11,7 @@ namespace Server.ServerLibs
     // ПРИМЕЧАНИЕ. Команду "Переименовать" в меню "Рефакторинг" можно использовать для одновременного изменения имени класса "AuthServiceServ" в коде и файле конфигурации.
     public class AuthServiceServ : IAuth
     {
-        public bool Auth(BasicLib.User user)
+        public AuthErrors Auth(BasicLib.User user)
         {
             using (FamilyTreeEntities db = new FamilyTreeEntities())
             {
@@ -21,22 +21,26 @@ namespace Server.ServerLibs
                 if (BaseUser1.Count() == 0)
                 {
                     Console.WriteLine("{0} - {1} - Не смог войти в систему. Такого пользователя нет в базе", user.Email, user.Password);
-                    return false;
+                    return AuthErrors.NoSuchUser;
                 }
                 BaseUser = BaseUser1.First();
                 if ((BaseUser as Server.User).password != user.Password)
                 {
                     Console.WriteLine("{0}.{1} - {2} - Не смог войти в систему. Пароль неверный.", (BaseUser as Server.User).id, (BaseUser as Server.User).email, (BaseUser as Server.User).phoneNumber);
-                    return false;
+                    return AuthErrors.IncorrectPass;
                 }
                 Console.WriteLine("{0}.{1} - {2} - Успешно вошел в систему", (BaseUser as Server.User).id, (BaseUser as Server.User).email, (BaseUser as Server.User).phoneNumber);
             }
-            return true;
+            return AuthErrors.EverythingIsFine;
         }
 
         public BasicLib.User Initialize()
         {
             throw new NotImplementedException();
+        }
+        public bool RegisterUser()
+        {
+            return true;
         }
     }
 }

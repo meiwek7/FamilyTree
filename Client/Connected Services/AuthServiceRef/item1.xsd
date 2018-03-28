@@ -11,7 +11,7 @@
   <xs:element name="AuthResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="AuthResult" type="xs:boolean" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/BasicLib" minOccurs="0" name="AuthResult" type="q2:AuthErrors" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -23,7 +23,19 @@
   <xs:element name="InitializeResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/BasicLib" minOccurs="0" name="InitializeResult" nillable="true" type="q2:User" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/BasicLib" minOccurs="0" name="InitializeResult" nillable="true" type="q3:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterUser">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RegisterUserResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

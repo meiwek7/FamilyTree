@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="yJ/C15O6C/5e/4z0ZLDRmG4J/N4=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="SbXgjAPDpM8WoF0LKT0S1TXGhHw=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_IAuth">
       <properties>
@@ -112,7 +112,7 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IAuth" contract="ServiceAuthReference.IAuth" bindingType="basicHttpBinding" address="http://localhost:8733/Design_Time_Addresses/Server.ServerLibs/AuthServiceServ/" bindingConfiguration="BasicHttpBinding_IAuth">
+    <endpoint name="BasicHttpBinding_IAuth" contract="AuthServiceRef.IAuth" bindingType="basicHttpBinding" address="http://localhost:8733/Design_Time_Addresses/Server.ServerLibs/AuthServiceServ/" bindingConfiguration="BasicHttpBinding_IAuth">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://localhost:8733/Design_Time_Addresses/Server.ServerLibs/AuthServiceServ/</serializedValue>
@@ -127,7 +127,7 @@
           <serializedValue>BasicHttpBinding_IAuth</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>ServiceAuthReference.IAuth</serializedValue>
+          <serializedValue>AuthServiceRef.IAuth</serializedValue>
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>

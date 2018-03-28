@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="88403f45-ffae-4f2f-8349-17aba270b771" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/Server.ServerLibs/AuthServiceServ/" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="83b95f26-b4c9-402b-9403-1932cc89397f" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Server.ServerLibs/AuthServiceServ/?xsd=xsd1" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="d1b5a5b2-8d6d-41bc-9d85-2d9a41468534" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Server.ServerLibs/AuthServiceServ/?xsd=xsd0" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="325b9e33-117d-464b-b4e4-de490f12a196" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Server.ServerLibs/AuthServiceServ/?xsd=xsd2" />
+    <MetadataFile FileName="AuthServiceServ.wsdl" MetadataType="Wsdl" ID="625d4701-f39e-44ab-b663-e2cb88b09e88" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Server.ServerLibs/AuthServiceServ/?wsdl" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="49e36c1d-15b5-4d7f-86a6-0fd175f54cc5" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Server.ServerLibs/AuthServiceServ/?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

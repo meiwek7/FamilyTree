@@ -12,4 +12,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="User" nillable="true" type="tns:User" />
+  <xs:simpleType name="AuthErrors">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="EverythingIsFine" />
+      <xs:enumeration value="NoSuchUser" />
+      <xs:enumeration value="IncorrectPass" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AuthErrors" nillable="true" type="tns:AuthErrors" />
 </xs:schema>

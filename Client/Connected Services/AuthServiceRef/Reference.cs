@@ -8,33 +8,39 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Client.ServiceAuthReference {
+namespace Client.AuthServiceRef {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceAuthReference.IAuth")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="AuthServiceRef.IAuth")]
     public interface IAuth {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuth/Auth", ReplyAction="http://tempuri.org/IAuth/AuthResponse")]
-        bool Auth(BasicLib.User user);
+        BasicLib.AuthErrors Auth(BasicLib.User user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuth/Auth", ReplyAction="http://tempuri.org/IAuth/AuthResponse")]
-        System.Threading.Tasks.Task<bool> AuthAsync(BasicLib.User user);
+        System.Threading.Tasks.Task<BasicLib.AuthErrors> AuthAsync(BasicLib.User user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuth/Initialize", ReplyAction="http://tempuri.org/IAuth/InitializeResponse")]
         BasicLib.User Initialize();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuth/Initialize", ReplyAction="http://tempuri.org/IAuth/InitializeResponse")]
         System.Threading.Tasks.Task<BasicLib.User> InitializeAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuth/RegisterUser", ReplyAction="http://tempuri.org/IAuth/RegisterUserResponse")]
+        bool RegisterUser();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuth/RegisterUser", ReplyAction="http://tempuri.org/IAuth/RegisterUserResponse")]
+        System.Threading.Tasks.Task<bool> RegisterUserAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IAuthChannel : Client.ServiceAuthReference.IAuth, System.ServiceModel.IClientChannel {
+    public interface IAuthChannel : Client.AuthServiceRef.IAuth, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class AuthClient : System.ServiceModel.ClientBase<Client.ServiceAuthReference.IAuth>, Client.ServiceAuthReference.IAuth {
+    public partial class AuthClient : System.ServiceModel.ClientBase<Client.AuthServiceRef.IAuth>, Client.AuthServiceRef.IAuth {
         
         public AuthClient() {
         }
@@ -55,11 +61,11 @@ namespace Client.ServiceAuthReference {
                 base(binding, remoteAddress) {
         }
         
-        public bool Auth(BasicLib.User user) {
+        public BasicLib.AuthErrors Auth(BasicLib.User user) {
             return base.Channel.Auth(user);
         }
         
-        public System.Threading.Tasks.Task<bool> AuthAsync(BasicLib.User user) {
+        public System.Threading.Tasks.Task<BasicLib.AuthErrors> AuthAsync(BasicLib.User user) {
             return base.Channel.AuthAsync(user);
         }
         
@@ -69,6 +75,14 @@ namespace Client.ServiceAuthReference {
         
         public System.Threading.Tasks.Task<BasicLib.User> InitializeAsync() {
             return base.Channel.InitializeAsync();
+        }
+        
+        public bool RegisterUser() {
+            return base.Channel.RegisterUser();
+        }
+        
+        public System.Threading.Tasks.Task<bool> RegisterUserAsync() {
+            return base.Channel.RegisterUserAsync();
         }
     }
 }

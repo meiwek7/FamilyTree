@@ -10,8 +10,16 @@ namespace BasicLib
     public interface IAuth
     {
         [OperationContract]
-        bool Auth(User user);
+        AuthErrors Auth(User user);
         [OperationContract]
         User Initialize();
+        [OperationContract]
+        bool RegisterUser();
+    }
+    public enum AuthErrors
+    {
+        EverythingIsFine = 0,
+        NoSuchUser = 1,
+        IncorrectPass = 2
     }
 }

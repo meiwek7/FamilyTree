@@ -38,11 +38,19 @@ namespace Client.ViewModel
             } }
         private void ExecuteEnterCommand(object param)
         {
-            var result = ConLogic.Proxy.Auth(user);
-            if (result == true)
-                WindowViewLoaderService.Show(typeof(MainWindowViewModel));
-            else
-                PopupPass = true;
+            AuthErrors result = ConLogic.Proxy.Auth(user);
+            switch (result)
+            {
+                case AuthErrors.EverythingIsFine:
+                    WindowViewLoaderService.Show(typeof(MainWindowViewModel));
+                    break;
+                case AuthErrors.IncorrectPass:
+                    PopupPass = true;
+                    break;
+                case AuthErrors.NoSuchUser:
+                    PopupMail = true;
+                    break;
+            }
         }
         private bool CanExecuteEnterCommand(object param)
         {
@@ -63,7 +71,7 @@ namespace Client.ViewModel
         }
 
         public bool PopupPass { get {return popupPass;  }    set { popupPass = value; OnPropertyChanged("PopupPass"); } }
-        public bool PopupMail { get { return popupMail; }    set { popupMail = value; } }
+        public bool PopupMail { get { return popupMail; }    set { popupMail = value; OnPropertyChanged("PopupMail"); } }
 
         private void ExecuteRegisterCommand(object obj)
         {
