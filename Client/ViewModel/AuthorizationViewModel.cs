@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Controls;
 using Client.View;
 using Client.ViewModel.Behaviors;
+using System.Windows.Controls.Primitives;
 
 namespace Client.ViewModel
 {
@@ -17,11 +18,12 @@ namespace Client.ViewModel
         User user;
         RelayCommand _enterCommand;
         RelayCommand _registerCommand;
+        bool popupPass = false;
+        bool popupMail = false;
 
         public AuthorizationViewModel()
         {
             user = new User();
-            
         }
 
         public User User { get { return user; } set { user = value; } }
@@ -37,12 +39,17 @@ namespace Client.ViewModel
         private void ExecuteEnterCommand(object param)
         {
             var result = ConLogic.Proxy.Auth(user);
+            if (result == true)
+                WindowViewLoaderService.Show(typeof(MainWindowViewModel));
+            else
+                PopupPass = true;
         }
         private bool CanExecuteEnterCommand(object param)
         {
             return true;
         }
         #endregion
+
         public ICommand RegisterCommand
         {
             get
@@ -54,6 +61,10 @@ namespace Client.ViewModel
                 return _registerCommand;
             }
         }
+
+        public bool PopupPass { get {return popupPass;  }    set { popupPass = value; OnPropertyChanged("PopupPass"); } }
+        public bool PopupMail { get { return popupMail; }    set { popupMail = value; } }
+
         private void ExecuteRegisterCommand(object obj)
         {
             WindowViewLoaderService.Show(typeof(RegisterViewModel));
