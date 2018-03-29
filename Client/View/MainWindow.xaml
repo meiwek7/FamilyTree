@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Client"
         xmlns:myCtrls="clr-namespace:Client"
+        xmlns:UserCtrl="clr-namespace:Client.View"
         mc:Ignorable="d"
         Title="Family Tree | Main Menu" Height="600" Width="1000" MinWidth="1000" MinHeight="600">
-    
-    
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition  Height="60px"></RowDefinition>
@@ -16,8 +16,8 @@
             <RowDefinition Height="50px"></RowDefinition>
         </Grid.RowDefinitions>
 
-        
-        
+
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3*"></ColumnDefinition>
             <ColumnDefinition Width="0.7*"></ColumnDefinition>
@@ -41,6 +41,26 @@
                 <ImageBrush ImageSource="Resources\family_tree.jpg"/>
             </Label.Background>
         </Label>
+        <ListBox Grid.Column="0"
+                 Grid.Row="1"
+                 Grid.ColumnSpan="3"
+                 Background="Transparent">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Canvas ScrollViewer.HorizontalScrollBarVisibility="Auto"/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <UserCtrl:Character_UserControl1 Width="60" Height="80" Canvas.Left="{Binding Path=User.left}" Canvas.Top="{Binding Path=User.top}">
+                        
+                    </UserCtrl:Character_UserControl1>
+                </DataTemplate>
+                
+            </ListBox.ItemTemplate>
+
+            
+        </ListBox>
 
 
 
