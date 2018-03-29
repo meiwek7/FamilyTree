@@ -10,6 +10,11 @@ namespace BasicLib
     [DataContract]
     public class Character
     {
+        public Character(string Name, string Surname)
+        {
+            this.FirstName = Name;
+            this.LastName = Surname;
+        }
         [DataMember]
         private int id;
         [DataMember]
@@ -43,7 +48,9 @@ namespace BasicLib
         [DataMember]
         private string photo;
         [DataMember]
-        private List<User> successor; 
+        private List<User> successor;
+        private int left;
+        private int top;
 
         public int Id { get { return id; } set { id = value; } }
         public string Nationality { get { return nationality; } set { nationality = value; } }
@@ -62,6 +69,8 @@ namespace BasicLib
         public string Biography { get { return biography; } set { biography = value; } }
         public string Photo { get { return photo; } set { photo = value; } }
         public List<User> Successor { get { return successor; } set { successor = value; } }
+        public int Top { get { return top; } set { top = value;} }
+        public int Left { get { return left; } set { left = value; } }
 
 
     }

@@ -24,8 +24,7 @@ namespace BasicLib
         private System.DateTime lastLogIn;
         [DataMember]
         private string accessLevelType;
-        private int left;
-        private int right;
+        
 
        
         public User()
@@ -46,7 +45,6 @@ namespace BasicLib
         public string PhoneNumber { get { return phoneNumber; } set { phoneNumber = value; } }
         public DateTime LastLogIn { get { return lastLogIn; } set { lastLogIn = value; } }
         public string AccessLevelType { get { return accessLevelType; } set { accessLevelType = value; } }
-        public int Right { get { return right; } set { right = value; } }
-        public int Left { get { return left; } set { left = value; } }
+       
     }
     }

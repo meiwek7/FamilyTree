@@ -5,10 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Client"
         xmlns:myCtrls="clr-namespace:Client"
-        xmlns:UserCtrl="clr-namespace:Client.View"
+        xmlns:UserCtrl = "clr-namespace:Client.View"
+        xmlns:vm = "clr-namespace:Client.ViewModel"
         mc:Ignorable="d"
         Title="Family Tree | Main Menu" Height="600" Width="1000" MinWidth="1000" MinHeight="600">
-
+    <Window.DataContext>
+        <vm:MainWindowViewModel></vm:MainWindowViewModel>
+    </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition  Height="60px"></RowDefinition>
@@ -44,19 +47,27 @@
         <ListBox Grid.Column="0"
                  Grid.Row="1"
                  Grid.ColumnSpan="3"
-                 Background="Transparent">
+                 Background="Transparent"
+                 ItemsSource="{Binding Path=Characters}">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <Canvas ScrollViewer.HorizontalScrollBarVisibility="Auto"/>
+                    <!--<WrapPanel></WrapPanel>-->
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
+            <ListBox.ItemContainerStyle>
+                <Style TargetType='{x:Type Control }'>
+                    <Setter Property="Canvas.Left" Value = "{Binding Path=Left}"/>
+                    <Setter Property="Canvas.Top" Value = "{Binding Path=Top}" />
+                </Style>
+            </ListBox.ItemContainerStyle>
+            
+            
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <UserCtrl:Character_UserControl1 Width="60" Height="80" Canvas.Left="{Binding Path=User.left}" Canvas.Top="{Binding Path=User.top}">
-                        
+                    <UserCtrl:Character_UserControl1 Width="60" Height="80" Canvas.Left="50" Canvas.Top="50">
                     </UserCtrl:Character_UserControl1>
                 </DataTemplate>
-                
             </ListBox.ItemTemplate>
 
             
