@@ -45,6 +45,7 @@
     <Compile Include="Character.cs" />
     <Compile Include="House.cs" />
     <Compile Include="IAuth.cs" />
+    <Compile Include="IMain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>

@@ -12,7 +12,7 @@ namespace BasicLib
         private int houseKeeper;
         private string history;
         private string coatOfArms;
-
+    //    private List<User> housemembers;
         public int Id
         {
             get
@@ -77,5 +77,16 @@ namespace BasicLib
                 coatOfArms = value;
             }
         }
+        //public List<User>
+        //{
+        //    get
+        //         {
+
+        //         }
+        //    set
+        //         {
+
+        //         }           
+        //}
     }
 }
