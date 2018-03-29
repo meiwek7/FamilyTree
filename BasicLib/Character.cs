@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Runtime.Serialization;
 
+
 namespace BasicLib
 {
     [DataContract]
@@ -41,6 +42,8 @@ namespace BasicLib
         private string biography;
         [DataMember]
         private string photo;
+        [DataMember]
+        private List<User> successor; 
 
         public int Id { get { return id; } set { id = value; } }
         public string Nationality { get { return nationality; } set { nationality = value; } }
@@ -58,6 +61,7 @@ namespace BasicLib
         public DateTime DeathDate { get { return deathDate; } set { deathDate = value; } }
         public string Biography { get { return biography; } set { biography = value; } }
         public string Photo { get { return photo; } set { photo = value; } }
+        public List<User> Successor { get { return successor; } set { successor = value; } }
 
 
     }
