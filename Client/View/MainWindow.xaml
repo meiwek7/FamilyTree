@@ -59,20 +59,26 @@
 
             <ListBox.ItemContainerStyle>
                 <Style TargetType='{x:Type Control }'>
-                    <Setter Property = "Canvas.Left"  Value = "{Binding Path = Left   }"/>
-                    <Setter Property = "Canvas.Top"   Value = "{Binding Path = Top    }" />
+                    <Setter Property = "Canvas.Left"  Value = "{Binding Path = Left}"/>
+                    <Setter Property = "Canvas.Top"   Value = "{Binding Path = Top}" />
                 </Style>
             </ListBox.ItemContainerStyle>
 
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <UserCtrl:Character_UserControl1 Width  ="80"
-                                                     Height ="100"
-                                                     >
-                    </UserCtrl:Character_UserControl1>
+                    <Border Background="Transparent">
+                        <Grid>
+                            <UserCtrl:Character_UserControl1 Width  ="80"
+                                                         Height ="100">
+                            </UserCtrl:Character_UserControl1>
+                            <Line X1="65" Y1="50"
+                              X2="190" Y2="60"
+                              Stroke="Red"
+                              StrokeThickness="4"/>
+                        </Grid>
+                    </Border>
                 </DataTemplate>
             </ListBox.ItemTemplate>
-
         </ListBox>
 
         <Button Name="button_bloodline" Grid.Row="0" Grid.Column="0" FontSize="20" Height="35" Width="135" Foreground="White" Background="Transparent">Родословная</Button>
