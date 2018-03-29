@@ -19,8 +19,6 @@
             <RowDefinition Height="50px"></RowDefinition>
         </Grid.RowDefinitions>
 
-
-
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3*"></ColumnDefinition>
             <ColumnDefinition Width="0.7*"></ColumnDefinition>
@@ -44,38 +42,38 @@
                 <ImageBrush ImageSource="Resources\family_tree.jpg"/>
             </Label.Background>
         </Label>
+
         <ListBox Grid.Column="0"
                  Grid.Row="1"
                  Grid.ColumnSpan="3"
                  Background="Transparent"
-                 ItemsSource="{Binding Path=Characters}">
+                 ItemsSource="{Binding Path=Characters}"
+                 Name="ListBoxCharacters">
+
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <Canvas ScrollViewer.HorizontalScrollBarVisibility="Auto"/>
-                    <!--<WrapPanel></WrapPanel>-->
+                    <Canvas ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                            ScrollViewer.VerticalScrollBarVisibility="Auto"/>
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
+
             <ListBox.ItemContainerStyle>
                 <Style TargetType='{x:Type Control }'>
-                    <Setter Property="Canvas.Left" Value = "{Binding Path=Left}"/>
-                    <Setter Property="Canvas.Top" Value = "{Binding Path=Top}" />
+                    <Setter Property = "Canvas.Left"  Value = "{Binding Path = Left   }"/>
+                    <Setter Property = "Canvas.Top"   Value = "{Binding Path = Top    }" />
                 </Style>
             </ListBox.ItemContainerStyle>
-            
-            
+
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <UserCtrl:Character_UserControl1 Width="60" Height="80" Canvas.Left="50" Canvas.Top="50">
+                    <UserCtrl:Character_UserControl1 Width  ="80"
+                                                     Height ="100"
+                                                     >
                     </UserCtrl:Character_UserControl1>
                 </DataTemplate>
             </ListBox.ItemTemplate>
 
-            
         </ListBox>
-
-
-
-
 
         <Button Name="button_bloodline" Grid.Row="0" Grid.Column="0" FontSize="20" Height="35" Width="135" Foreground="White" Background="Transparent">Родословная</Button>
         <Button Name="button_log" Grid.Row="0" Grid.Column="2" FontSize="20" Height="35" Width="135" Foreground="White" Background="Transparent">Записи</Button>
