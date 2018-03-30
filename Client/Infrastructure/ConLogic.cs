@@ -6,19 +6,22 @@ using System.Threading.Tasks;
 using System.ServiceModel;
 using BasicLib;
 using Client.AuthServiceRef;
+using Client.MainServiceRef;
 
 namespace Client.Infrastructure
 {
     static class ConLogic
     {
-        static AuthClient proxy;
-        //static  proxy;
+        static AuthClient authproxy;
+        static MainClient mainproxy;
 
         static ConLogic()
         {
-            proxy = new AuthClient();
+            authproxy = new AuthClient();
+            mainproxy = new MainClient();
         }
 
-        public static AuthClient Proxy { get { return proxy; } private set { proxy = value; } }
+        public static AuthClient AuthProxy { get { return authproxy; } private set { authproxy = value; } }
+        public static MainClient MainProxy { get { return mainproxy; } private set { mainproxy = value; } }
     }
 }

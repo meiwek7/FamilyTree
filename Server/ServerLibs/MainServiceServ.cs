@@ -13,11 +13,36 @@ namespace Server.ServerLibs
     {
         public BasicLib.House getHouse(BasicLib.User incomingUser)
         {
+            incomingUser = new BasicLib.User("lol", "bol");
+            incomingUser.CharacterId = 1;
             using (FamilyTreeEntities db = new FamilyTreeEntities())
             {
-                var tmp = db.SelectSameHouseMembers(incomingUser.CharacterId);
-                //db.CharacterFullInfo.Where(x => x.id == );
-                return null;
+                var ProcResults = db.SelectSameHouseMembers(incomingUser.CharacterId).ToList();
+                BasicLib.House House = new BasicLib.House();
+                foreach (var item in ProcResults)
+                {
+                    House.HouseMembers.Add(new BasicLib.Character()
+                    {
+                        Id = item.id,
+                        FirstName = item.firstName,
+                        SecondName = item.secondName,
+                        LastName = item.lastName,
+                        Nationality = item.nationality,
+                        BirthCountry = item.birthCountry,
+                        DeathCountry = item.deathCountry,
+                        LivingCountry = item.livingCountry,
+                        BirthPlace = item.birthPlace,
+                        DeathPlace = item.deathPlace,
+                        LivingPlace = item.deathPlace,
+                        Religious = item.religious,
+                        BirthDate = (DateTime)item.birthDate,
+                        DeathDate = (DateTime)item.deathDate,
+                        Biography = item.biography,
+                        Photo = null,
+                        Successor = null
+                    });
+                }
+                return House;
             }
         }
 

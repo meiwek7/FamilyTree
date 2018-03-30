@@ -5,16 +5,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
+using Client.Infrastructure;
 
 namespace Client.ViewModel
 {
     class MainWindowViewModel:ViewModelBase
     {
+        House house;
         ObservableCollection<Character> characters;
         public MainWindowViewModel()
         {
             characters = new ObservableCollection<Character>();
-            InitializeCharacters();
+            house = InitializeCharacters();
             //Character NewChar1 = new Character("Vasya", "Pupkin");
             //Character NewChar2 = new Character("Anton", "Chetkiy");
             //NewChar1.Top = 10;
@@ -25,12 +27,13 @@ namespace Client.ViewModel
             //characters.Add(NewChar2);
         }
 
-        private ObservableCollection<Character>InitializeCharacters()
+        private House InitializeCharacters()
         {
-
-            return new ObservableCollection<Character>();
+            var tmp = ConLogic.MainProxy.getHouse(new User());
+            return tmp;
         }
 
         public ObservableCollection<Character> Characters { get{ return characters; } set { characters = value; OnPropertyChanged("Characters"); } }
+        public House House { get { return house; } set { house = value; OnPropertyChanged("House"); } }
     }
 }

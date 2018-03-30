@@ -56,7 +56,7 @@ namespace Client.ViewModel
 
         private void ExecuteRegisterCommand(object obj)
         {
-            RegisterResult result = ConLogic.Proxy.RegisterUser(futureUser);
+            RegisterResult result = ConLogic.AuthProxy.RegisterUser(futureUser);
             switch (result)
             {
                 case RegisterResult.UserRegSuccess:

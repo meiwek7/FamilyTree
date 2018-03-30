@@ -14,6 +14,7 @@ namespace Server
         static void Main(string[] args)
         {
             Console.Title = "SERVER";
+            new MainServiceServ().getHouse(new BasicLib.User());
             using (FamilyTreeEntities db = new FamilyTreeEntities())
             {
                 Console.WriteLine("Список Юзеров:");
@@ -25,10 +26,13 @@ namespace Server
             }
             Console.WriteLine();
             ServiceHost host = new ServiceHost(typeof(AuthServiceServ));
+            ServiceHost host2 = new ServiceHost(typeof(MainServiceServ));
             host.Open();
+            host2.Open();
             Console.WriteLine("Приложение готово к приему сообщений.");
             Console.ReadKey();
             host.Close();
+            host2.Close();
         }
     }
 }

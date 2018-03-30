@@ -38,7 +38,7 @@ namespace Client.ViewModel
             } }
         private void ExecuteEnterCommand(object param)
         {
-            AuthErrors result = ConLogic.Proxy.Auth(user);
+            AuthErrors result = ConLogic.AuthProxy.Auth(user);
             switch (result)
             {
                 case AuthErrors.EverythingIsFine:

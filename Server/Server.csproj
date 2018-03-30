@@ -56,110 +56,110 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccessLevel.cs">
-      <DependentUpon>FamilyTreeDataModel.tt</DependentUpon>
+      <DependentUpon>FamilyTreeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Character.cs">
-      <DependentUpon>FamilyTreeDataModel.tt</DependentUpon>
+      <DependentUpon>FamilyTreeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="CharacterBiography.cs">
-      <DependentUpon>FamilyTreeDataModel.tt</DependentUpon>
+      <DependentUpon>FamilyTreeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="CharacterBirthCountry.cs">
-      <DependentUpon>FamilyTreeDataModel.tt</DependentUpon>
+      <DependentUpon>FamilyTreeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="CharacterBirthDate.cs">
-      <DependentUpon>FamilyTreeDataModel.tt</DependentUpon>
+      <DependentUpon>FamilyTreeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="CharacterBirthPlace.cs">
-      <DependentUpon>FamilyTreeDataModel.tt</DependentUpon>
+      <DependentUpon>FamilyTreeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="CharacterDeathCountry.cs">
-      <DependentUpon>FamilyTreeDataModel.tt</DependentUpon>
+      <DependentUpon>FamilyTreeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="CharacterDeathDate.cs">
-      <DependentUpon>FamilyTreeDataModel.tt</DependentUpon>
+      <DependentUpon>FamilyTreeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="CharacterDeathPlace.cs">
-      <DependentUpon>FamilyTreeDataModel.tt</DependentUpon>
+      <DependentUpon>FamilyTreeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="CharacterFirstName.cs">
-      <DependentUpon>FamilyTreeDataModel.tt</DependentUpon>
+      <DependentUpon>FamilyTreeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="CharacterFullInfo.cs">
-      <DependentUpon>FamilyTreeDataModel.tt</DependentUpon>
+      <DependentUpon>FamilyTreeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="CharacterLastName.cs">
-      <DependentUpon>FamilyTreeDataModel.tt</DependentUpon>
+      <DependentUpon>FamilyTreeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="CharacterLivingCountry.cs">
-      <DependentUpon>FamilyTreeDataModel.tt</DependentUpon>
+      <DependentUpon>FamilyTreeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="CharacterLivingPlace.cs">
-      <DependentUpon>FamilyTreeDataModel.tt</DependentUpon>
+      <DependentUpon>FamilyTreeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="CharacterNationality.cs">
-      <DependentUpon>FamilyTreeDataModel.tt</DependentUpon>
+      <DependentUpon>FamilyTreeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="CharacterPhoto.cs">
-      <DependentUpon>FamilyTreeDataModel.tt</DependentUpon>
+      <DependentUpon>FamilyTreeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="CharacterReligious.cs">
-      <DependentUpon>FamilyTreeDataModel.tt</DependentUpon>
+      <DependentUpon>FamilyTreeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="CharacterSecondName.cs">
-      <DependentUpon>FamilyTreeDataModel.tt</DependentUpon>
+      <DependentUpon>FamilyTreeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Country.cs">
-      <DependentUpon>FamilyTreeDataModel.tt</DependentUpon>
+      <DependentUpon>FamilyTreeEDM.tt</DependentUpon>
     </Compile>
-    <Compile Include="FamilyTreeDataModel.Context.cs">
+    <Compile Include="FamilyTreeEDM.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>FamilyTreeDataModel.Context.tt</DependentUpon>
+      <DependentUpon>FamilyTreeEDM.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="FamilyTreeDataModel.cs">
+    <Compile Include="FamilyTreeEDM.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>FamilyTreeDataModel.tt</DependentUpon>
+      <DependentUpon>FamilyTreeEDM.tt</DependentUpon>
     </Compile>
-    <Compile Include="FamilyTreeDataModel.Designer.cs">
+    <Compile Include="FamilyTreeEDM.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>FamilyTreeDataModel.edmx</DependentUpon>
+      <DependentUpon>FamilyTreeEDM.edmx</DependentUpon>
     </Compile>
     <Compile Include="House.cs">
-      <DependentUpon>FamilyTreeDataModel.tt</DependentUpon>
+      <DependentUpon>FamilyTreeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="HouseCharacter.cs">
-      <DependentUpon>FamilyTreeDataModel.tt</DependentUpon>
+      <DependentUpon>FamilyTreeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Logs.cs">
-      <DependentUpon>FamilyTreeDataModel.tt</DependentUpon>
+      <DependentUpon>FamilyTreeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Nationality.cs">
-      <DependentUpon>FamilyTreeDataModel.tt</DependentUpon>
+      <DependentUpon>FamilyTreeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Place.cs">
-      <DependentUpon>FamilyTreeDataModel.tt</DependentUpon>
+      <DependentUpon>FamilyTreeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RelativeCharacter.cs">
-      <DependentUpon>FamilyTreeDataModel.tt</DependentUpon>
+      <DependentUpon>FamilyTreeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="RelativeType.cs">
-      <DependentUpon>FamilyTreeDataModel.tt</DependentUpon>
+      <DependentUpon>FamilyTreeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Religious.cs">
-      <DependentUpon>FamilyTreeDataModel.tt</DependentUpon>
+      <DependentUpon>FamilyTreeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="SelectSameHouseMembers_Result.cs">
-      <DependentUpon>FamilyTreeDataModel.tt</DependentUpon>
+      <DependentUpon>FamilyTreeEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="ServerLibs\AuthServiceServ.cs" />
     <Compile Include="ServerLibs\MainServiceServ.cs" />
     <Compile Include="User.cs">
-      <DependentUpon>FamilyTreeDataModel.tt</DependentUpon>
+      <DependentUpon>FamilyTreeEDM.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -167,12 +167,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <EntityDeploy Include="FamilyTreeDataModel.edmx">
+    <EntityDeploy Include="FamilyTreeEDM.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>FamilyTreeDataModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>FamilyTreeEDM.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="FamilyTreeDataModel.edmx.diagram">
-      <DependentUpon>FamilyTreeDataModel.edmx</DependentUpon>
+    <None Include="FamilyTreeEDM.edmx.diagram">
+      <DependentUpon>FamilyTreeEDM.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
@@ -183,15 +183,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="FamilyTreeDataModel.Context.tt">
+    <Content Include="FamilyTreeEDM.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>FamilyTreeDataModel.edmx</DependentUpon>
-      <LastGenOutput>FamilyTreeDataModel.Context.cs</LastGenOutput>
+      <DependentUpon>FamilyTreeEDM.edmx</DependentUpon>
+      <LastGenOutput>FamilyTreeEDM.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="FamilyTreeDataModel.tt">
+    <Content Include="FamilyTreeEDM.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>FamilyTreeDataModel.edmx</DependentUpon>
-      <LastGenOutput>FamilyTreeDataModel.cs</LastGenOutput>
+      <DependentUpon>FamilyTreeEDM.edmx</DependentUpon>
+      <LastGenOutput>FamilyTreeEDM.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

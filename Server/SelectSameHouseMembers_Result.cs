@@ -29,8 +29,5 @@ namespace Server
         public Nullable<System.DateTime> deathDate { get; set; }
         public string biography { get; set; }
         public byte[] photo { get; set; }
-        public int id1 { get; set; }
-        public int houseId { get; set; }
-        public int characterId { get; set; }
     }
 }
