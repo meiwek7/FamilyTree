@@ -30,10 +30,30 @@ namespace Client.ViewModel
         private House InitializeCharacters()
         {
             var tmp = ConLogic.MainProxy.getHouse(new User());
+            //foreach (var item in tmp.HouseMembers)
+            //{ 
+            //}
             return tmp;
         }
 
-        public ObservableCollection<Character> Characters { get{ return characters; } set { characters = value; OnPropertyChanged("Characters"); } }
+        public ObservableCollection<Character> Characters {
+            get
+            {
+                if (characters == null || characters.Count == 0)
+                {
+                    foreach (var item in House.HouseMembers)
+                    {
+                        characters.Add(item);
+                    }
+                }
+                return characters;
+            }
+            set
+            {
+                characters = value;
+                OnPropertyChanged("Characters");
+            }
+        }
         public House House { get { return house; } set { house = value; OnPropertyChanged("House"); } }
     }
 }

@@ -47,22 +47,23 @@
                  Grid.Row="1"
                  Grid.ColumnSpan="3"
                  Background="Transparent"
-                 ItemsSource="{Binding Path=house.Characters}"
+                 ItemsSource="{Binding Path=Characters}"
                  Name="ListBoxCharacters">
 
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <Canvas ScrollViewer.HorizontalScrollBarVisibility="Auto"
-                            ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+                    <!--<Canvas ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                            ScrollViewer.VerticalScrollBarVisibility="Auto"/>-->
+                    <StackPanel Margin="10"></StackPanel>
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
 
-            <ListBox.ItemContainerStyle>
+            <!--<ListBox.ItemContainerStyle>
                 <Style TargetType='{x:Type Control }'>
                     <Setter Property = "Canvas.Left"  Value = "{Binding Path = Left}"/>
                     <Setter Property = "Canvas.Top"   Value = "{Binding Path = Top}" />
                 </Style>
-            </ListBox.ItemContainerStyle>
+            </ListBox.ItemContainerStyle>-->
 
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -71,10 +72,10 @@
                             <UserCtrl:Character_UserControl1 Width  ="80"
                                                          Height ="100">
                             </UserCtrl:Character_UserControl1>
-                            <Line X1="65" Y1="50"
+                            <!--<Line X1="65" Y1="50"
                               X2="190" Y2="60"
                               Stroke="Red"
-                              StrokeThickness="4"/>
+                              StrokeThickness="4"/>-->
                         </Grid>
                     </Border>
                 </DataTemplate>

@@ -13,6 +13,11 @@ namespace BasicLib
         private string history;
         private string coatOfArms;
         private List<Character> houseMembers;
+        public House()
+        {
+            houseMembers = new List<Character>();
+        }
+        
         public int Id
         {
             get
