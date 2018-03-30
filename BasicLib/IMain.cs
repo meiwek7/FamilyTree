@@ -11,8 +11,8 @@ namespace BasicLib
     public interface IMain
     {
         [OperationContract]
-        House getHouse(User);
+        House getHouse(User incomingUser);
         [OperationContract]
-
+        void getLogs();
     }
 }
