@@ -12,7 +12,8 @@ namespace Client.Infrastructure
     static class ConLogic
     {
         static AuthClient proxy;
-        
+        //static  proxy;
+
         static ConLogic()
         {
             proxy = new AuthClient();

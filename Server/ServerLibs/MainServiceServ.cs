@@ -13,8 +13,12 @@ namespace Server.ServerLibs
     {
         public BasicLib.House getHouse(BasicLib.User incomingUser)
         {
-
-            throw new NotImplementedException();
+            using (FamilyTreeEntities db = new FamilyTreeEntities())
+            {
+                var tmp = db.SelectSameHouseMembers(incomingUser.CharacterId);
+                //db.CharacterFullInfo.Where(x => x.id == );
+                return null;
+            }
         }
 
         public void getLogs()

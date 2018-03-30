@@ -1,7 +1,8 @@
 CREATE VIEW CharacterFullInfo
 AS
-SELECT 
-CharacterFirstName.firstName
+SELECT
+Character.id
+,CharacterFirstName.firstName
 ,CharacterSecondName.secondName
 ,CharacterLastName.lastName
 ,CharacterNationality.nationality

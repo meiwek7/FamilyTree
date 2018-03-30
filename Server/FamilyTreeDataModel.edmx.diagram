@@ -4,34 +4,35 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3cf77358dffc4af58960892649cd491c" Name="Diagram1" ZoomLevel="40">
-        <EntityTypeShape EntityType="FamilyTreeModel.AccessLevel" Width="1.5" PointX="0.5" PointY="24.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="FamilyTreeModel.Character" Width="1.5" PointX="8.625" PointY="23" IsExpanded="true" />
-        <EntityTypeShape EntityType="FamilyTreeModel.CharacterBiography" Width="1.5" PointX="24.5" PointY="30.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="FamilyTreeModel.CharacterBirthCountry" Width="1.5" PointX="24.5" PointY="33.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="FamilyTreeModel.CharacterBirthDate" Width="1.5" PointX="24.5" PointY="27.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="FamilyTreeModel.CharacterBirthPlace" Width="1.5" PointX="27.5" PointY="30.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="FamilyTreeModel.CharacterDeathCountry" Width="1.5" PointX="27.5" PointY="33.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="FamilyTreeModel.CharacterDeathDate" Width="1.5" PointX="27.5" PointY="27.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="FamilyTreeModel.CharacterDeathPlace" Width="1.5" PointX="24.5" PointY="36.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="FamilyTreeModel.CharacterFirstName" Width="1.5" PointX="24.5" PointY="24.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="FamilyTreeModel.CharacterLastName" Width="1.5" PointX="27.5" PointY="36.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="FamilyTreeModel.CharacterLivingCountry" Width="1.5" PointX="30.5" PointY="30.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="FamilyTreeModel.CharacterLivingPlace" Width="1.5" PointX="27.5" PointY="24.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="FamilyTreeModel.CharacterNationality" Width="1.5" PointX="30.5" PointY="33.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="FamilyTreeModel.CharacterPhoto" Width="1.5" PointX="30.5" PointY="27.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="FamilyTreeModel.CharacterReligious" Width="1.5" PointX="30.5" PointY="36.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="FamilyTreeModel.CharacterSecondName" Width="1.5" PointX="30.5" PointY="24.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="FamilyTreeModel.Country" Width="1.5" PointX="28.25" PointY="21.375" IsExpanded="true" />
+      <Diagram DiagramId="86f24e642c0e42ee988915dda90b94eb" Name="Diagram1">
+        <EntityTypeShape EntityType="FamilyTreeModel.AccessLevel" Width="1.5" PointX="0.75" PointY="29.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.Character" Width="1.5" PointX="5.25" PointY="24.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.CharacterBiography" Width="1.5" PointX="7.5" PointY="29" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.CharacterBirthCountry" Width="1.5" PointX="7.5" PointY="31.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.CharacterBirthDate" Width="1.5" PointX="7.5" PointY="26" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.CharacterBirthPlace" Width="1.5" PointX="10.5" PointY="28.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.CharacterDeathCountry" Width="1.5" PointX="10.5" PointY="31.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.CharacterDeathDate" Width="1.5" PointX="10.5" PointY="26" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.CharacterDeathPlace" Width="1.5" PointX="7.5" PointY="34.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.CharacterFirstName" Width="1.5" PointX="7.5" PointY="23" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.CharacterLastName" Width="1.5" PointX="10.5" PointY="35" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.CharacterLivingCountry" Width="1.5" PointX="13.5" PointY="28.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.CharacterLivingPlace" Width="1.5" PointX="10.5" PointY="22.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.CharacterNationality" Width="1.5" PointX="13.5" PointY="31.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.CharacterPhoto" Width="1.5" PointX="13.5" PointY="26" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.CharacterReligious" Width="1.5" PointX="13.5" PointY="34.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.CharacterSecondName" Width="1.5" PointX="13.5" PointY="23" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.Country" Width="1.5" PointX="11.25" PointY="20.125" IsExpanded="true" />
         <EntityTypeShape EntityType="FamilyTreeModel.House" Width="1.5" PointX="7.5" PointY="68.625" IsExpanded="true" />
         <EntityTypeShape EntityType="FamilyTreeModel.HouseCharacter" Width="1.5" PointX="9.75" PointY="46.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="FamilyTreeModel.Logs" Width="1.5" PointX="16.875" PointY="24.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="FamilyTreeModel.Nationality" Width="1.5" PointX="28.25" PointY="39.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="FamilyTreeModel.Place" Width="3.75" PointX="25.25" PointY="17.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="FamilyTreeModel.RelativeCharacter" Width="1.5" PointX="24.5" PointY="20.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="FamilyTreeModel.RelativeType" Width="1.5" PointX="12.375" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.Logs" Width="1.5" PointX="5.25" PointY="30.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.Nationality" Width="1.5" PointX="11.25" PointY="38.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.Place" Width="1.5" PointX="8.25" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.RelativeCharacter" Width="1.5" PointX="7.5" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.RelativeType" Width="1.5" PointX="5.25" PointY="19.625" IsExpanded="true" />
         <EntityTypeShape EntityType="FamilyTreeModel.Religious" Width="1.5" PointX="11.25" PointY="41.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="FamilyTreeModel.User" Width="1.5" PointX="3" PointY="20" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.User" Width="1.5" PointX="3" PointY="28.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.CharacterFullInfo" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="FamilyTreeModel.User_fk1" ManuallyRouted="false" />
         <AssociationConnector Association="FamilyTreeModel.Character_fk0" ManuallyRouted="false" />
         <AssociationConnector Association="FamilyTreeModel.CharacterBiography_fk0" ManuallyRouted="false" />

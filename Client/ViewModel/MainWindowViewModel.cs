@@ -14,14 +14,21 @@ namespace Client.ViewModel
         public MainWindowViewModel()
         {
             characters = new ObservableCollection<Character>();
-            Character NewChar1 = new Character("Vasya", "Pupkin");
-            Character NewChar2 = new Character("Anton", "Chetkiy");
-            NewChar1.Top = 10;
-            NewChar1.Left = 10;
-            NewChar2.Top = 10;
-            NewChar2.Left = 200;
-            characters.Add(NewChar1);
-            characters.Add(NewChar2);
+            InitializeCharacters();
+            //Character NewChar1 = new Character("Vasya", "Pupkin");
+            //Character NewChar2 = new Character("Anton", "Chetkiy");
+            //NewChar1.Top = 10;
+            //NewChar1.Left = 10;
+            //NewChar2.Top = 10;
+            //NewChar2.Left = 200;
+            //characters.Add(NewChar1);
+            //characters.Add(NewChar2);
+        }
+
+        private ObservableCollection<Character>InitializeCharacters()
+        {
+
+            return new ObservableCollection<Character>();
         }
 
         public ObservableCollection<Character> Characters { get{ return characters; } set { characters = value; OnPropertyChanged("Characters"); } }
