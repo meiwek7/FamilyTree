@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Client.ViewModel
 {
-    class CharacterWindowViewModel
+    class CharacterWindowViewModel:ViewModelBase
     {
 
     }
