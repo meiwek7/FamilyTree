@@ -36,9 +36,23 @@ namespace Server.ServerLibs
             return AuthErrors.EverythingIsFine;
         }
 
-        public BasicLib.User Initialize()
+        public BasicLib.User Initialize(BasicLib.User incomingUser)
         {
-            throw new NotImplementedException();
+            BasicLib.User outgoingUser = new BasicLib.User();
+            using (FamilyTreeEntities db = new FamilyTreeEntities())
+            {
+                var dbUser = db.User.Where(x => x.email == incomingUser.Email).ToList().First();
+                if (db.User == null)
+                    throw new Exception("DB Doesn`t contain such user");
+                outgoingUser = new BasicLib.User();
+                outgoingUser.Email = dbUser.email;
+                outgoingUser.CharacterId        = (int)dbUser.characterId;
+                outgoingUser.Password           = dbUser.password        ;
+                outgoingUser.PhoneNumber        = dbUser.phoneNumber     ;
+                outgoingUser.LastLogIn          = dbUser.lastLogIn       ;
+                outgoingUser.AccessLevelType    = dbUser.accessLevelType ;
+            }
+            return outgoingUser;
         }
 
         public RegisterResult RegisterUser(BasicLib.User user)

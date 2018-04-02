@@ -21,8 +21,9 @@ namespace Client
             WindowViewLoaderService.Register(typeof(MainWindow), typeof(MainWindowViewModel) );
             WindowViewLoaderService.Register(typeof(Register), typeof(RegisterViewModel) );
             WindowViewLoaderService.Register(typeof(Authorization), typeof(AuthorizationViewModel) );
-            Authorization mainWindow = new Authorization();
-            mainWindow.Show();
+            //Authorization mainWindow = new Authorization();
+            WindowViewLoaderService.Show(typeof(AuthorizationViewModel));
+            //mainWindow.Show();
         }
     }
 }

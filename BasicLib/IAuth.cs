@@ -12,7 +12,7 @@ namespace BasicLib
         [OperationContract]
         AuthErrors Auth(User user);
         [OperationContract]
-        User Initialize();
+        User Initialize(User incomingUser);
         [OperationContract]
         RegisterResult RegisterUser(User user);
     }
