@@ -19,9 +19,9 @@ namespace Client
         {
             base.OnStartup(e);
             WindowViewLoaderService.Register(typeof(MainWindow), typeof(MainWindowViewModel) );
-            WindowViewLoaderService.Register(typeof(Register), typeof(RegisterViewModel) );
+            WindowViewLoaderService.Register(typeof(Register), typeof(CharacterWindowViewModel) );
             WindowViewLoaderService.Register(typeof(Authorization), typeof(AuthorizationViewModel) );
-            Authorization mainWindow = new Authorization();
+            Character_Info mainWindow = new Character_Info();
             mainWindow.Show();
         }
     }

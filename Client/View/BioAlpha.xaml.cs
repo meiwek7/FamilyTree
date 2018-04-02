@@ -15,18 +15,13 @@ using System.Windows.Shapes;
 namespace Client.View
 {
     /// <summary>
-    /// Interaction logic for Character_Info.xaml
+    /// Interaction logic for BioAlpha.xaml
     /// </summary>
-    public partial class Character_Info : Window
+    public partial class BioAlpha : Window
     {
-        public Character_Info()
+        public BioAlpha()
         {
             InitializeComponent();
-        }
-
-        private void tb_lastname_SourceUpdated(object sender, DataTransferEventArgs e)
-        {
-
         }
     }
 }
