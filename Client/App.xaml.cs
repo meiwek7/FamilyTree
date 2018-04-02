@@ -19,12 +19,11 @@ namespace Client
         {
             base.OnStartup(e);
             WindowViewLoaderService.Register(typeof(MainWindow), typeof(MainWindowViewModel) );
-            WindowViewLoaderService.Register(typeof(Register), typeof(RegisterViewModel) );
+            WindowViewLoaderService.Register(typeof(Register), typeof(CharacterWindowViewModel) );
             WindowViewLoaderService.Register(typeof(Authorization), typeof(AuthorizationViewModel) );
             WindowViewLoaderService.Register(typeof(Character_UserControl1), typeof(Character_UserControlViewModel));
             //Authorization mainWindow = new Authorization();
             WindowViewLoaderService.Show(typeof(AuthorizationViewModel));
-            
             //mainWindow.Show();
         }
     }
