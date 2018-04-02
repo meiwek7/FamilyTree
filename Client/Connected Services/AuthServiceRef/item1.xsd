@@ -17,27 +17,29 @@
   </xs:element>
   <xs:element name="Initialize">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/BasicLib" minOccurs="0" name="incomingUser" nillable="true" type="q3:User" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="InitializeResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/BasicLib" minOccurs="0" name="InitializeResult" nillable="true" type="q3:User" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/BasicLib" minOccurs="0" name="InitializeResult" nillable="true" type="q4:User" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="RegisterUser">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/BasicLib" minOccurs="0" name="user" nillable="true" type="q4:User" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/BasicLib" minOccurs="0" name="user" nillable="true" type="q5:User" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="RegisterUserResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/BasicLib" minOccurs="0" name="RegisterUserResult" type="q5:RegisterResult" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/BasicLib" minOccurs="0" name="RegisterUserResult" type="q6:RegisterResult" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

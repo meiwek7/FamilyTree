@@ -77,6 +77,7 @@
     <Compile Include="ViewModel\AuthorizationViewModel.cs" />
     <Compile Include="ViewModel\Behaviors\PasswordBehavior.cs" />
     <Compile Include="ViewModel\CharacterWindowViewModel.cs" />
+    <Compile Include="ViewModel\Character_UserControlViewModel.cs" />
     <Compile Include="ViewModel\RegisterViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="ViewModel\WindowViewLoaderService.cs" />

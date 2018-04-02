@@ -10,6 +10,7 @@ using Client.Infrastructure;
 namespace Client.ViewModel
 {
     class CharacterWindowViewModel : ViewModelBase
+
     {
         RelayCommand _biographyCommand;
         Character curChar;

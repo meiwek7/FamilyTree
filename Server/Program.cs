@@ -14,7 +14,7 @@ namespace Server
         static void Main(string[] args)
         {
             Console.Title = "SERVER";
-            //new MainServiceServ().getHouse(new BasicLib.User());
+            //new AuthServiceServ().Initialize(new BasicLib.User("meiwek7@mail.ru","12345"));
             using (FamilyTreeEntities db = new FamilyTreeEntities())
             {
                 Console.WriteLine("Список Юзеров:");

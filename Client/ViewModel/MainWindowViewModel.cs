@@ -12,11 +12,10 @@ namespace Client.ViewModel
     class MainWindowViewModel:ViewModelBase
     {
         House house;
-        ObservableCollection<Character> characters;
+
         public MainWindowViewModel()
         {
-            characters = new ObservableCollection<Character>();
-            house = InitializeCharacters();
+            //characters = new ObservableCollection<Character>();
             //Character NewChar1 = new Character("Vasya", "Pupkin");
             //Character NewChar2 = new Character("Anton", "Chetkiy");
             //NewChar1.Top = 10;
@@ -29,31 +28,35 @@ namespace Client.ViewModel
 
         private House InitializeCharacters()
         {
-            var tmp = ConLogic.MainProxy.getHouse(new User());
-            //foreach (var item in tmp.HouseMembers)
-            //{ 
-            //}
-            return tmp;
+            var tmp = (WindowViewLoaderService.getContext(typeof(AuthorizationViewModel)) as AuthorizationViewModel).User;
+            var house = ConLogic.MainProxy.getHouse((WindowViewLoaderService.getContext(typeof(AuthorizationViewModel))as AuthorizationViewModel).User);
+            return house;
         }
 
-        public ObservableCollection<Character> Characters {
+        public List<Character> Characters {
             get
             {
-                if (characters == null || characters.Count == 0)
-                {
-                    foreach (var item in House.HouseMembers)
-                    {
-                        characters.Add(item);
-                    }
-                }
-                return characters;
+                return House.HouseMembers;
             }
             set
             {
-                characters = value;
+                House.HouseMembers = value;
                 OnPropertyChanged("Characters");
             }
         }
-        public House House { get { return house; } set { house = value; OnPropertyChanged("House"); } }
+
+        public House House {
+            get {
+                if (house == null)
+                    {
+                    house = InitializeCharacters();
+                }
+                return house;
+            }
+            set {
+                house = value;
+                OnPropertyChanged("House");
+            }
+        }
     }
 }
