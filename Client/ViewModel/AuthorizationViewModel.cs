@@ -42,7 +42,7 @@ namespace Client.ViewModel
             switch (result)
             {
                 case AuthErrors.EverythingIsFine:
-                    user = ConLogic.AuthProxy.Initialize();
+                    user = ConLogic.AuthProxy.Initialize(user);
                     WindowViewLoaderService.Show(typeof(MainWindowViewModel));
                     break;
                 case AuthErrors.IncorrectPass:

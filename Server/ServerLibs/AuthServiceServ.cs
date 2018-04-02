@@ -46,6 +46,8 @@ namespace Server.ServerLibs
                     throw new Exception("DB Doesn`t contain such user");
                 outgoingUser = new BasicLib.User();
                 outgoingUser.Email = dbUser.email;
+                if (db.User == null)
+                    throw new Exception("Server error");
                 outgoingUser.CharacterId        = (int)dbUser.characterId;
                 outgoingUser.Password           = dbUser.password        ;
                 outgoingUser.PhoneNumber        = dbUser.phoneNumber     ;

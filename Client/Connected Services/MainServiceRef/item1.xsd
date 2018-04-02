@@ -17,16 +17,38 @@
       <xs:element minOccurs="0" name="CoatOfArms" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="History" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="HouseKeeper" type="xs:int" />
-      <xs:element minOccurs="0" name="HouseMembers" nillable="true" type="tns:ArrayOfUser" />
+      <xs:element minOccurs="0" name="HouseMembers" nillable="true" type="tns:ArrayOfCharacter" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="House" nillable="true" type="tns:House" />
-  <xs:complexType name="ArrayOfUser">
+  <xs:complexType name="ArrayOfCharacter">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="User" nillable="true" type="tns:User" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Character" nillable="true" type="tns:Character" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfUser" nillable="true" type="tns:ArrayOfUser" />
+  <xs:element name="ArrayOfCharacter" nillable="true" type="tns:ArrayOfCharacter" />
+  <xs:complexType name="Character">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="biography" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="birthCountry" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="birthDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="birthPlace" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="deathCountry" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="deathDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="deathPlace" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="firstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="lastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="livingCountry" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="livingPlace" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nationality" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="photo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="religious" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="secondName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="successor" nillable="true" type="tns:ArrayOfCharacter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Character" nillable="true" type="tns:Character" />
 </xs:schema>

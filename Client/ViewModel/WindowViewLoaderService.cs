@@ -29,8 +29,8 @@ namespace Client.ViewModel
 
         static public object getContext(ViewModelBase WindowViewModel)
         {
-
-            return VMContexts[WindowViewModel as ViewModelBase] 
+            var tmp = VMContexts.Keys.Where(x => x.GetType() == WindowViewModel.GetType()).First();
+            return tmp;
         }
     }
 }

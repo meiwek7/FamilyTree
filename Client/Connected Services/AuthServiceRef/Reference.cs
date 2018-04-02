@@ -22,10 +22,10 @@ namespace Client.AuthServiceRef {
         System.Threading.Tasks.Task<BasicLib.AuthErrors> AuthAsync(BasicLib.User user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuth/Initialize", ReplyAction="http://tempuri.org/IAuth/InitializeResponse")]
-        BasicLib.User Initialize();
+        BasicLib.User Initialize(BasicLib.User incomingUser);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuth/Initialize", ReplyAction="http://tempuri.org/IAuth/InitializeResponse")]
-        System.Threading.Tasks.Task<BasicLib.User> InitializeAsync();
+        System.Threading.Tasks.Task<BasicLib.User> InitializeAsync(BasicLib.User incomingUser);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuth/RegisterUser", ReplyAction="http://tempuri.org/IAuth/RegisterUserResponse")]
         BasicLib.RegisterResult RegisterUser(BasicLib.User user);
@@ -69,12 +69,12 @@ namespace Client.AuthServiceRef {
             return base.Channel.AuthAsync(user);
         }
         
-        public BasicLib.User Initialize() {
-            return base.Channel.Initialize();
+        public BasicLib.User Initialize(BasicLib.User incomingUser) {
+            return base.Channel.Initialize(incomingUser);
         }
         
-        public System.Threading.Tasks.Task<BasicLib.User> InitializeAsync() {
-            return base.Channel.InitializeAsync();
+        public System.Threading.Tasks.Task<BasicLib.User> InitializeAsync(BasicLib.User incomingUser) {
+            return base.Channel.InitializeAsync(incomingUser);
         }
         
         public BasicLib.RegisterResult RegisterUser(BasicLib.User user) {
