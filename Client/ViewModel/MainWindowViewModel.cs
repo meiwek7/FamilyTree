@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using Client.Infrastructure;
+using Client.Model;
 
 namespace Client.ViewModel
 {
@@ -33,14 +34,20 @@ namespace Client.ViewModel
             return house;
         }
 
-        public List<Character> Characters {
+        public List<ClientCharacter> Characters {
             get
             {
-                return House.HouseMembers;
+                List<ClientCharacter> tmp= new List<ClientCharacter>();
+                foreach (var item in House.HouseMembers)
+                {
+                    tmp.Add(new ClientCharacter(item));
+                }
+                //return House.HouseMembers;
+                return tmp;
             }
             set
             {
-                House.HouseMembers = value;
+                //House.HouseMembers = value;
                 OnPropertyChanged("Characters");
             }
         }

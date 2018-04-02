@@ -10,9 +10,9 @@
              d:DesignHeight="130"
              d:DesignWidth="80"
              Name="UserCtrl">
-    <UserControl.DataContext>
+    <!--<UserControl.DataContext>
         <vm:Character_UserControlViewModel></vm:Character_UserControlViewModel>
-    </UserControl.DataContext>
+    </UserControl.DataContext>-->
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="5*"></RowDefinition>
@@ -30,11 +30,11 @@
                  Background="Black"
                  Name="CharName"
                  Text="{Binding Path=FirstName}"/>
-        <i:Interaction.Triggers>
-            <i:EventTrigger EventName="MouseDoubleClick">
-                <i:InvokeCommandAction
-                            Command="{Binding SummonCharacter_Info}" CommandParameter="{Binding ElementName=UserCtrl}"/>
-            </i:EventTrigger>
-        </i:Interaction.Triggers>
     </Grid>
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="MouseDoubleClick">
+            <i:InvokeCommandAction
+                            Command="{Binding SummonCharacter_Info}" CommandParameter="{Binding ElementName=UserCtrl}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
 </UserControl>
