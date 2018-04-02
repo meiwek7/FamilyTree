@@ -13,7 +13,5 @@ namespace Client.ViewModel
         {
 
         }
-
-        
     }
 }

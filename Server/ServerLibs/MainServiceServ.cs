@@ -13,8 +13,6 @@ namespace Server.ServerLibs
     {
         public BasicLib.House getHouse(BasicLib.User incomingUser)
         {
-            //incomingUser = new BasicLib.User("lol", "bol");
-            //incomingUser.CharacterId = 1;
             using (FamilyTreeEntities db = new FamilyTreeEntities())
             {
                 var ProcResults = db.SelectSameHouseMembers(incomingUser.CharacterId).ToList();

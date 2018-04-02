@@ -13,20 +13,21 @@ namespace Client.ViewModel
     {
         RelayCommand _biographyCommand;
         Character curChar;
-                public Character CurChar
-                {
-                    get
-                    {
-                        //if(curChar==null)
-                        
-                        return curChar;
-                    }
+        public Character CurChar
+        {
+            get
+            {
+                //if(curChar==null)
+                
+                return curChar;
+            }
 
-                    set
-                    {
-                        curChar = value;
-                    }
-                }
+            set
+            {
+                curChar = value;
+                OnPropertyChanged("CurChar");
+            }
+        }
         #region Biography
         public ICommand BiographyCommand
                {

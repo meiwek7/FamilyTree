@@ -45,6 +45,7 @@ namespace Server.ServerLibs
                 if (db.User == null)
                     throw new Exception("DB Doesn`t contain such user");
                 outgoingUser = new BasicLib.User();
+                outgoingUser.Id = dbUser.id;
                 outgoingUser.Email = dbUser.email;
                 if (db.User == null)
                     throw new Exception("Server error");
@@ -68,7 +69,20 @@ namespace Server.ServerLibs
                 NewUser.lastLogIn = DateTime.Now;
                 db.User.Add(NewUser);
                 db.SaveChanges();
-                Console.WriteLine("{0} - Успешно зарегистрирован в системе Password: {1}", user.Email,user.Password);
+                Console.WriteLine("{0} - Успешно зарегистрирован в системе Password: {1}", user.Email, user.Password);
+                //-------------------------------------
+                //Добавляем нового чара
+                Server.Character NewChar = new Server.Character();
+                NewChar.creator = db.User.Where(x => x.email == user.Email).First().id;
+                db.Character.Add(NewChar);
+                db.SaveChanges();
+                //------------------------------------
+                //Добавляем юзеру ссылку на чара
+                var tmpUser = db.User.Where(x => x.email == user.Email).First();
+                var tmpCharacter = db.Character.Where(x => x.creator == tmpUser.id).First().id;
+                tmpUser.characterId = tmpCharacter;
+                db.SaveChanges();
+                //------------------------------------
             }
             return RegisterResult.UserRegSuccess;
             return RegisterResult.SomethingWentWrong;

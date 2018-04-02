@@ -23,21 +23,11 @@ namespace Client.ViewModel
 
         public AuthorizationViewModel()
         {
-            //var tmp = WindowViewLoaderService.VMContexts.Keys.Where(x => x.GetType() == this.GetType()).First();
-            //WindowViewLoaderService.VMContexts.Add(this,);
             user = new User();
         }
-
-        private void InitializeContext()
-        {
-            var tmp =(WindowViewLoaderService.VMContexts.Keys.Where(x => x.GetType() == this.GetType()).First()) as AuthorizationViewModel;
-            tmp.User = user;
-            //tmp.User
-        }
-
+        
         public User User { get { return user; } set { user = value; } }
-
-        #region Enter
+        #region EnterCommand
         public ICommand EnterCommand { get {
                 if(_enterCommand==null)
                 {
@@ -52,7 +42,7 @@ namespace Client.ViewModel
             {
                 case AuthErrors.EverythingIsFine:
                     user = ConLogic.AuthProxy.Initialize(user);
-                    this.InitializeContext();
+                    //this.InitializeContext();
                     WindowViewLoaderService.Show(typeof(MainWindowViewModel));
                     break;
                 case AuthErrors.IncorrectPass:
@@ -73,7 +63,7 @@ namespace Client.ViewModel
                 return true;
         }
         #endregion
-
+        #region RegisterCommand
         public ICommand RegisterCommand
         {
             get
@@ -85,13 +75,12 @@ namespace Client.ViewModel
                 return _registerCommand;
             }
         }
-
-        public bool PopupPass { get {return popupPass;  }    set { popupPass = value; OnPropertyChanged("PopupPass"); } }
-        public bool PopupMail { get { return popupMail; }    set { popupMail = value; OnPropertyChanged("PopupMail"); } }
-
         private void ExecuteRegisterCommand(object obj)
         {
             WindowViewLoaderService.Show(typeof(RegisterViewModel));
         }
+        #endregion
+        public bool PopupPass { get {return popupPass;  }    set { popupPass = value; OnPropertyChanged("PopupPass"); } }
+        public bool PopupMail { get { return popupMail; }    set { popupMail = value; OnPropertyChanged("PopupMail"); } }
     }
 }

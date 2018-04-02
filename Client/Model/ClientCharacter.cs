@@ -14,10 +14,11 @@ namespace Client.Model
     {
         public ClientCharacter()
         {
+
         }
-        public ClientCharacter(Character ch):base()
+        public ClientCharacter(Character ch):base(ch)
         {
-            this.FirstName = ch.FirstName;
+
         }
         private RelayCommand summonCharacter_Info;
 
@@ -36,6 +37,8 @@ namespace Client.Model
         private void ExecuteSummonCharacter_Info(object param)
         {
             WindowViewLoaderService.Show(typeof(CharacterWindowViewModel));
+            var tmpCharVVM = WindowViewLoaderService.getContext(typeof(CharacterWindowViewModel)) as CharacterWindowViewModel;
+            tmpCharVVM.CurChar = this as Character;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

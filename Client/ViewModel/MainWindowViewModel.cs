@@ -13,7 +13,7 @@ namespace Client.ViewModel
     class MainWindowViewModel:ViewModelBase
     {
         House house;
-
+        List<ClientCharacter> characters;
         public MainWindowViewModel()
         {
             //characters = new ObservableCollection<Character>();
@@ -29,21 +29,26 @@ namespace Client.ViewModel
 
         private House InitializeCharacters()
         {
-            var tmp = (WindowViewLoaderService.getContext(typeof(AuthorizationViewModel)) as AuthorizationViewModel).User;
-            var house = ConLogic.MainProxy.getHouse((WindowViewLoaderService.getContext(typeof(AuthorizationViewModel))as AuthorizationViewModel).User);
+            var AuthCntxttmp = (WindowViewLoaderService.getContext(typeof(AuthorizationViewModel)) as AuthorizationViewModel);
+            var tmpUser = AuthCntxttmp.User;
+            var house = ConLogic.MainProxy.getHouse(tmpUser);
             return house;
         }
 
         public List<ClientCharacter> Characters {
             get
             {
-                List<ClientCharacter> tmp= new List<ClientCharacter>();
-                foreach (var item in House.HouseMembers)
+                if(characters == null)
                 {
-                    tmp.Add(new ClientCharacter(item));
+                    List<ClientCharacter> tmp = new List<ClientCharacter>();
+                    foreach (var item in House.HouseMembers)
+                    {
+                        tmp.Add(new ClientCharacter(item));
+                    }
+                    characters = tmp;
                 }
                 //return House.HouseMembers;
-                return tmp;
+                return characters;
             }
             set
             {

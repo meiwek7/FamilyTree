@@ -10,7 +10,7 @@
         mc:Ignorable="d"
         Title="Family Tree | Registration" Height="150" Width="300" MinHeight="150" MaxHeight="300" MinWidth="300" MaxWidth="450" Name="RegisterView">
     <Window.DataContext>
-        <reg:CharacterWindowViewModel></reg:CharacterWindowViewModel>
+        <reg:RegisterViewModel></reg:RegisterViewModel>
     </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>

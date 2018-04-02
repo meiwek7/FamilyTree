@@ -14,10 +14,24 @@ namespace BasicLib
         {
 
         }
-        public Character(string Name, string Surname)
+        public Character(Character chr)
         {
-            this.FirstName = Name;
-            this.LastName = Surname;
+            this.id                 = chr.Id                    ;
+            this.nationality        = chr.Nationality           ;
+            this.birthCountry       = chr.BirthCountry          ;
+            this.deathCountry       = chr.DeathCountry          ;
+            this.livingCountry      = chr.LivingCountry         ;
+            this.birthPlace         = chr.BirthPlace            ;
+            this.deathPlace         = chr.DeathPlace            ;
+            this.livingPlace        = chr.LivingPlace           ;
+            this.religious          = chr.Religious             ;
+            this.firstName          = chr.FirstName             ;
+            this.secondName         = chr.SecondName            ;
+            this.lastName           = chr.LastName              ;
+            this.birthDate          = chr.BirthDate             ;
+            this.deathDate          = chr.DeathDate             ;
+            this.biography          = chr.Biography             ;
+            this.photo              = chr.Photo                 ;
         }
         [DataMember]
         private int id;
@@ -69,13 +83,14 @@ namespace BasicLib
         public string SecondName { get { return secondName; } set { secondName = value; } }
         public string LastName { get { return lastName; } set { lastName = value; } }
         public DateTime BirthDate { get { return birthDate; } set { birthDate = value; } }
-        public DateTime DeathDate { get { return deathDate; } set { deathDate = value; } }
+        public DateTime DeathDate { get
+            {
+                return deathDate;
+            } set { deathDate = value; } }
         public string Biography { get { return biography; } set { biography = value; } }
         public string Photo { get { return photo; } set { photo = value; } }
         public List<Character> Successor { get { return successor; } set { successor = value; } }
         public int Top { get { return top; } set { top = value;} }
         public int Left { get { return left; } set { left = value; } }
-
-
     }
 }

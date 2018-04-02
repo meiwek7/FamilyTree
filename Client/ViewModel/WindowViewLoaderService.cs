@@ -18,13 +18,13 @@ namespace Client.ViewModel
             RegTypes.Add(TypeofView, TypeofViewModel);
         }
 
-        static public void Show(Type ChildViewModel)
+        static public void Show(Type ViewModelType)
         {
-            Type NewWindowType = RegTypes[ChildViewModel];
-            //VMContexts.Add(NewWindowType, RegTypes[NewWindowType].);
-            var NewWindow = Activator.CreateInstance(NewWindowType);
-            VMContexts.Add((Activator.CreateInstance(ChildViewModel) as ViewModelBase), NewWindow as Window);
-            (NewWindow as Window).Show();
+            Type NewWindowType = RegTypes[ViewModelType];
+            var NewWindow = Activator.CreateInstance(NewWindowType) as Window;
+            var tmpContext  = (NewWindow as Window).DataContext as ViewModelBase;
+            VMContexts.Add(tmpContext, NewWindow);
+            NewWindow.Show();
         }
 
         static public object getContext(Type WindowViewModelType)

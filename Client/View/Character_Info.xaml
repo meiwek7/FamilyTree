@@ -42,8 +42,6 @@
             </Label.Background>
         </Label>
 
-        
-        
         <Label Grid.Column="1">
             <Label.Background>
                 <ImageBrush ImageSource="Resources\Rurick.PNG"></ImageBrush>
@@ -62,26 +60,19 @@
         <Label Grid.Row="11" Grid.Column="0" Foreground="White">Дата Смерти</Label>
         <Label Grid.Row="12" Grid.Column="0" Foreground="White">Место Смерти</Label>
         <Label Grid.Row="13" Grid.Column="0" Foreground="White">Страна Смерти</Label>
-
-        
-        <Button  Grid.Row="14" Grid.Column="0" Grid.ColumnSpan="3" Width="100" Command="{Binding Path=BiographyCommand}">Биография</Button>
-
-        <TextBox Name="tb_lastname" Text="{Binding Path=CurChar.LastName}"  Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White" ></TextBox>
-        <TextBox Name="tb_firstname" Text="{Binding Path=CurChar.FirstName}" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>
-        <TextBox Name="tb_secondname" Text="{Binding Path=CurChar.SecondName}" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>
-        <TextBox Name="tb_livingcountry" Text="{Binding Path=CurChar.LivingCountry}" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>
-        <TextBox Name="tb_religious" Text="{Binding Path=CurChar.Religious}" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>
-        <TextBox Name="tb_datebirth" Text="{Binding Path=CurChar.BirthDate}" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>
-        <TextBox Name="tb_nationality" Text="{Binding Path=CurChar.Nationality}" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>
-        <TextBox Name="tb_birthplace" Text="{Binding Path=CurChar.BirthPlace}" Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>
-        <TextBox Name="tb_birthcountry" Text="{Binding Path=CurChar.BirthCountry}" Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>
-        <TextBox Name="tb_deathdate" Text="{Binding Path=CurChar.DeathDate}" Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>
-        <TextBox Name="tb_deathplace" Text="{Binding Path=CurChar.DeathPlace}" Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>
-        <TextBox Name="tb_deathcountry" Text="{Binding Path=CurChar.DeathCountry}" Grid.Row="13" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>
-
-
-
-        
-        
+        <Button  Grid.Row="14" Grid.Column="0" Grid.ColumnSpan="1" Width="100" Command="{Binding Path=BiographyCommand}">Биография</Button>
+        <Button  Grid.Row="14" Grid.Column="2" Grid.ColumnSpan="1" Width="100" Command="{Binding Path=BiographyCommand}">Save</Button>
+        <TextBox Name="tb_lastname" Text="{Binding Path=CurChar.LastName, UpdateSourceTrigger=PropertyChanged}"  Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White" ></TextBox>
+        <TextBox Name="tb_firstname" Text="{Binding Path=CurChar.FirstName, UpdateSourceTrigger=PropertyChanged}" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>
+        <TextBox Name="tb_secondname" Text="{Binding Path=CurChar.SecondName, UpdateSourceTrigger=PropertyChanged}" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>
+        <TextBox Name="tb_livingcountry" Text="{Binding Path=CurChar.LivingCountry, UpdateSourceTrigger=PropertyChanged}" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>
+        <TextBox Name="tb_religious" Text="{Binding Path=CurChar.Religious, UpdateSourceTrigger=PropertyChanged}" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>
+        <TextBox Name="tb_datebirth" Text="{Binding Path=CurChar.BirthDate, UpdateSourceTrigger=PropertyChanged}" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>
+        <TextBox Name="tb_nationality" Text="{Binding Path=CurChar.Nationality, UpdateSourceTrigger=PropertyChanged}" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>
+        <TextBox Name="tb_birthplace" Text="{Binding Path=CurChar.BirthPlace, UpdateSourceTrigger=PropertyChanged}" Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>
+        <TextBox Name="tb_birthcountry" Text="{Binding Path=CurChar.BirthCountry, UpdateSourceTrigger=PropertyChanged}" Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>
+        <TextBox Name="tb_deathdate" Text="{Binding Path=CurChar.DeathDate, UpdateSourceTrigger=PropertyChanged}" Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>
+        <TextBox Name="tb_deathplace" Text="{Binding Path=CurChar.DeathPlace, UpdateSourceTrigger=PropertyChanged}" Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>
+        <TextBox Name="tb_deathcountry" Text="{Binding Path=CurChar.DeathCountry, UpdateSourceTrigger=PropertyChanged}" Grid.Row="13" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>
     </Grid>
 </Window>
