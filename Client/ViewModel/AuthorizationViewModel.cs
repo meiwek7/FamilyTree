@@ -23,7 +23,16 @@ namespace Client.ViewModel
 
         public AuthorizationViewModel()
         {
+            //var tmp = WindowViewLoaderService.VMContexts.Keys.Where(x => x.GetType() == this.GetType()).First();
+            //WindowViewLoaderService.VMContexts.Add(this,);
             user = new User();
+        }
+
+        private void InitializeContext()
+        {
+            var tmp =(WindowViewLoaderService.VMContexts.Keys.Where(x => x.GetType() == this.GetType()).First()) as AuthorizationViewModel;
+            tmp.User = user;
+            //tmp.User
         }
 
         public User User { get { return user; } set { user = value; } }
@@ -43,6 +52,7 @@ namespace Client.ViewModel
             {
                 case AuthErrors.EverythingIsFine:
                     user = ConLogic.AuthProxy.Initialize(user);
+                    this.InitializeContext();
                     WindowViewLoaderService.Show(typeof(MainWindowViewModel));
                     break;
                 case AuthErrors.IncorrectPass:

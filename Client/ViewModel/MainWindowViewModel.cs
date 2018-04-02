@@ -28,7 +28,8 @@ namespace Client.ViewModel
 
         private House InitializeCharacters()
         {
-            var house = ConLogic.MainProxy.getHouse((WindowViewLoaderService.getContext(new AuthorizationViewModel()) as AuthorizationViewModel).User);
+            var tmp = (WindowViewLoaderService.getContext(typeof(AuthorizationViewModel)) as AuthorizationViewModel).User;
+            var house = ConLogic.MainProxy.getHouse((WindowViewLoaderService.getContext(typeof(AuthorizationViewModel))as AuthorizationViewModel).User);
             return house;
         }
 
