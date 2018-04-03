@@ -83,6 +83,20 @@ namespace Server.ServerLibs
                 tmpUser.characterId = tmpCharacter;
                 db.SaveChanges();
                 //------------------------------------
+                //------------------------------------
+                //Добавляем в табличку House и в табличку HouseUser
+                var tmpHouse = new House();
+                tmpHouse.houseKeeper = tmpCharacter;
+                tmpHouse.name = user.Email.ToString();
+                db.House.Add(tmpHouse);
+                db.SaveChanges();
+                //------------------------------------
+                //Запихиваем юзера в дом
+                var tmpHouseChar = new HouseCharacter();
+                tmpHouseChar.houseId     =      db.House.Where(x => x.name == user.Email).First().id;
+                tmpHouseChar.characterId = tmpCharacter;
+                db.HouseCharacter.Add(tmpHouseChar);
+                db.SaveChanges();
             }
             return RegisterResult.UserRegSuccess;
             return RegisterResult.SomethingWentWrong;

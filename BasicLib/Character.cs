@@ -82,11 +82,22 @@ namespace BasicLib
         public string FirstName { get { return firstName; } set { firstName = value; } }
         public string SecondName { get { return secondName; } set { secondName = value; } }
         public string LastName { get { return lastName; } set { lastName = value; } }
-        public DateTime BirthDate { get { return birthDate; } set { birthDate = value; } }
-        public DateTime DeathDate { get
-            {
+        public DateTime BirthDate {
+            get {
+                return birthDate;
+            }
+            set {
+                birthDate = value;
+            }
+        }
+        public DateTime DeathDate {
+            get {
                 return deathDate;
-            } set { deathDate = value; } }
+            }
+            set {
+                deathDate = value;
+            }
+        }
         public string Biography { get { return biography; } set { biography = value; } }
         public string Photo { get { return photo; } set { photo = value; } }
         public List<Character> Successor { get { return successor; } set { successor = value; } }
