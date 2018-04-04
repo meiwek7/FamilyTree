@@ -6,15 +6,13 @@ using System.Threading.Tasks;
 using BasicLib;
 using System.Windows.Input;
 using Client.Infrastructure;
+using System.Windows;
 
 namespace Client.ViewModel
 {
     class CharacterWindowViewModel : ViewModelBase
     {
         RelayCommand _biographyCommand;
-        RelayCommand onClosingCommand;
-        String dateBirth;
-        String dateDeath;
         Character curChar;
         public Character CurChar
         {
@@ -43,39 +41,15 @@ namespace Client.ViewModel
                         return _biographyCommand;
                     }
                 }
-        void ExecuteBiographyCommand(object bio)
-        {
-            WindowViewLoaderService.Show(typeof(CharacterWindowViewModel));
-        }
-        #endregion
-        public ICommand OnClosing
-        {
-            get
-            {
-                if (onClosingCommand == null)
+                void ExecuteBiographyCommand(object bio)
                 {
-                    onClosingCommand = new RelayCommand(ExecuteOnClosing);
+            MessageBox.Show("Следующий спринт!");
+                    // НАПИСАТЬ ФУНКЦИОНАЛ
                 }
-                return onClosingCommand;
-            }
-        }
-
-        public string DateBirth { get { return dateBirth; } set { dateBirth = value; } }
-        public string DateDeath {
-            get {
-                if(curChar.DeathDate==DateTime.MinValue)
-                    return "StillAlive";
-                else
-                    curChar.DeathDate
-            }
-            set {
-                dateDeath = value;
-            }
-        }
-
-        void ExecuteOnClosing(object param)
-        {
-            WindowViewLoaderService.closeWindow(this);
-        }
-    }
+             }
+    #endregion
 }
+
+
+
+

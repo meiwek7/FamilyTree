@@ -60,6 +60,7 @@ namespace Client.ViewModel
             switch (result)
             {
                 case RegisterResult.UserRegSuccess:
+                    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                     (obj as Register).Close();
                     break;
                 case RegisterResult.SomethingWentWrong:

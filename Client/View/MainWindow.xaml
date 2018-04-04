@@ -21,7 +21,7 @@
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3*"></ColumnDefinition>
-            <ColumnDefinition Width="0.7*"></ColumnDefinition>
+            <ColumnDefinition Width="100px"></ColumnDefinition>
             <ColumnDefinition Width="3*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
@@ -70,7 +70,7 @@
                     <Border Background="Transparent">
                         <Grid>
                             <UserCtrl:Character_UserControl1 Width  ="80"
-                                                         Height ="100">
+                                                         Height ="125">
                             </UserCtrl:Character_UserControl1>
                             <!--<Line X1="65" Y1="50"
                               X2="190" Y2="60"
@@ -82,11 +82,61 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <Button Name="button_bloodline" Grid.Row="0" Grid.Column="0" FontSize="20" Height="35" Width="135" Foreground="White" Background="Transparent">Родословная</Button>
-        <Button Name="button_log" Grid.Row="0" Grid.Column="2" FontSize="20" Height="35" Width="135" Foreground="White" Background="Transparent">Записи</Button>
-        <Button Name="button_add" Grid.Row="3" Grid.Column="0" Height="35" Width="100" Foreground="White" Background="Transparent">Добавить</Button>
-        <Button Name="button_editing" Grid.Row="3" Grid.Column="1" Height="35" Width="100" Foreground="White" Background="Transparent">Редактировать</Button>
-        <Button Name="print" Grid.Row="3" Grid.Column="2" Height="35" Width="100" Foreground="White" Background="Transparent">Печать</Button>
+        <Button 
+            Name="button_bloodline" 
+            Grid.Row="0" Grid.Column="0" 
+            FontSize="20" 
+            Height="35" Width="135" 
+            Foreground="White" 
+            Background="Transparent"
+            Content="Родословная"
+            ></Button>
+        
+        <Button 
+            Name="button_log" 
+            Grid.Row="0" 
+            Grid.Column="2" 
+            FontSize="20" 
+            Height="35" 
+            Width="135" 
+            Foreground="White" 
+            Background="Transparent"
+            Content="Записи"
+            Command="{Binding Path=_logCommand}"
+            ></Button>
+        
+        <Button 
+            Name="button_add"
+            Command="{Binding Path=_addCommand}"
+            Grid.Row="3" Grid.Column="0" 
+            Height="35" 
+            Width="100" 
+            Foreground="White" 
+            Background="Transparent"
+            Content="Добавить"
+            ></Button>
+        
+        <Button 
+            Name="button_editing"
+            Grid.Row="3"
+            Grid.Column="1"
+            Height="35"
+            Width="100"
+            Foreground="White"
+            Background="Transparent"
+            Content="Редактировать"
+            ></Button>
+        
+        <Button
+            Name="print" 
+            Grid.Row="3"
+            Grid.Column="2"
+            Height="35"
+            Width="100"
+            Foreground="White"
+            Background="Transparent"
+            Content="Печать"
+            ></Button>
 
     </Grid>
 </Window>

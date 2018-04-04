@@ -8,65 +8,112 @@
         xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         xmlns:reg="clr-namespace:Client.ViewModel"
         mc:Ignorable="d"
-        Title="Family Tree | Registration" Height="150" Width="300" MinHeight="150" MaxHeight="300" MinWidth="300" MaxWidth="450" Name="RegisterView">
+        Title="Family Tree | Registration"
+        Height="220"
+        Width="350"
+        ResizeMode ="NoResize"
+        Name="RegisterView">
     <Window.DataContext>
         <reg:RegisterViewModel></reg:RegisterViewModel>
     </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="30px"></RowDefinition>
-            <RowDefinition Height="1*"></RowDefinition>
-            <RowDefinition Height="1*"></RowDefinition>
-            <RowDefinition Height="1*"></RowDefinition>
-        </Grid.RowDefinitions>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+            </Grid.RowDefinitions>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="62*"></ColumnDefinition>
-            <ColumnDefinition Width="62*"></ColumnDefinition>
-            <ColumnDefinition Width="45px"></ColumnDefinition>
-            <ColumnDefinition Width="62"></ColumnDefinition>
-            <ColumnDefinition Width="61*"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="60px"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
 
-        <Label Grid.Row="0" Grid.RowSpan="4" Grid.ColumnSpan="5">
+            <Label Grid.Row="0" Grid.RowSpan="4" Grid.ColumnSpan="7">
             <Label.Background>
                 <ImageBrush ImageSource="Resources\bg_1.jpg"></ImageBrush>
             </Label.Background>
         </Label>
 
-        <Label Grid.ColumnSpan="5">
+        <Label Grid.ColumnSpan="7">
             <Label.Background>
                 <ImageBrush ImageSource="Resources\bg_darkwood_2.jpg"></ImageBrush>
             </Label.Background>
         </Label>
 
-        <Label Grid.Column="2">
+        <Label Grid.Column="3">
             <Label.Background>
                 <ImageBrush ImageSource="Resources\family_tree.jpg"></ImageBrush>
             </Label.Background>
         </Label>
 
 
-        <Label Grid.Row="1" Foreground="White" HorizontalAlignment="Center">Email</Label>
-        <Label Grid.Row="2" Foreground="White" HorizontalAlignment="Center">Password</Label>
+        <Label 
+            Grid.Row="1"
+            Grid.ColumnSpan="2"
+            Foreground="White"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Content="Email"
+               FontSize="16"
+            
+            ></Label>
+        <Label 
+            Grid.Row="2"
+            Grid.ColumnSpan="2"
+            Foreground="White"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Content="Password"
+               FontSize="16"
+            
+            ></Label>
 
-        <TextBox Margin="0,0,5,0" Name="tb_email" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Foreground="White" Background="Transparent"
-                 Text="{Binding Path=FutureUser.Email, UpdateSourceTrigger=PropertyChanged}"
+        <TextBox             
+            Margin="5"
+            Grid.Row="1"
+            Grid.Column="2"
+            Grid.ColumnSpan="5"
+            Name="tb_email" 
+            Foreground="White"
+            Background="Transparent"
+            VerticalContentAlignment="Center"
+            Text="{Binding Path=FutureUser.Email, UpdateSourceTrigger=PropertyChanged}"
                  ></TextBox>
-        <PasswordBox Margin="0,0,5,0"  Name="tb_password" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" Foreground="White" Background="Transparent">
+        <PasswordBox 
+            Margin="5"
+            Grid.Row="2"
+            Grid.Column="2"
+            Grid.ColumnSpan="5"
+            Foreground="White"
+            Background="Transparent"
+            VerticalContentAlignment="Center"
+            Name="tb_password" >
             <i:Interaction.Behaviors>
                     <Behaviors:PasswordBehavior Password="{Binding Path=FutureUser.Password, Mode=TwoWay}"/>
             </i:Interaction.Behaviors>
         </PasswordBox>
 
-        <Button Name="b_cancel" Margin="5,5,5,5" Grid.Row="3" Grid.ColumnSpan="2" Background="Transparent" Foreground="White" Command="{Binding Path=CloseCommand}" CommandParameter="{Binding ElementName=RegisterView}">Cancel</Button>
+        <Button Name="b_cancel" 
+                Margin="5,5,5,5" 
+                Grid.Row="3" 
+                Grid.ColumnSpan="3" 
+                Background="Transparent" 
+                Foreground="White" 
+                Command="{Binding Path=CloseCommand}" 
+                CommandParameter="{Binding ElementName=RegisterView}"
+                Content="Cancel"
+                ></Button>
         <Button Name="b_register"
                 Margin="5,5,5,5"
                 Grid.Row="3"
-                Grid.Column="3"
-                Grid.ColumnSpan="2"
-                Background="Transparent"
-                Foreground="White"
+                Grid.Column="4"
+                Grid.ColumnSpan="7" 
                 Command="{Binding Path=RegisterCommand}"
                 CommandParameter="{Binding ElementName=RegisterView}"
                 >

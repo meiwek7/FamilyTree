@@ -14,5 +14,6 @@ namespace BasicLib
         House getHouse(User incomingUser);
         [OperationContract]
         void getLogs();
+
     }
 }

@@ -5,7 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Client.View"
         xmlns:vm="clr-namespace:Client.ViewModel"
-        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         mc:Ignorable="d"
         Title="Familty Tree | Character Info" Height="550" Width="350" MinHeight="550" MinWidth="350" MaxHeight="550" MaxWidth="350">
     <Window.DataContext>
@@ -76,10 +75,4 @@
         <TextBox Name="tb_deathplace" Text="{Binding Path=CurChar.DeathPlace, UpdateSourceTrigger=PropertyChanged}" Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>
         <TextBox Name="tb_deathcountry" Text="{Binding Path=CurChar.DeathCountry, UpdateSourceTrigger=PropertyChanged}" Grid.Row="13" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>
     </Grid>
-    <i:Interaction.Triggers>
-        <i:EventTrigger EventName="Closing">
-            <i:InvokeCommandAction
-                            Command="{Binding OnClosing}"/>
-        </i:EventTrigger>
-    </i:Interaction.Triggers>
 </Window>

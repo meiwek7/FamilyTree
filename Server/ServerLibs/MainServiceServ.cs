@@ -87,29 +87,6 @@ namespace Server.ServerLibs
             return false;
         }
 
-        public void InsertNewUser()
-        {
-            using (FamilyTreeEntities db = new FamilyTreeEntities())
-            {
-                //Добавить запись в Таблицу Чаров
-                db.Character
-                //Добавить запись в КроссТаблицу ЧарДом
-
-                //Вернуть новый дом в контекст
-            }
-        }
-
-        public void ChangeUser(BasicLib.House House)
-        {
-            //Выбрать существующего юзера
-
-            //Изменить
-            
-            //Сохранить
-
-            //Вернуть новый контекст
-        }
-
         public void getLogs()
         {
 

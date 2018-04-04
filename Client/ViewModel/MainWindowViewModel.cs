@@ -7,13 +7,20 @@ using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using Client.Infrastructure;
 using Client.Model;
+using System.Windows.Input;
+using System.Windows;
 
 namespace Client.ViewModel
 {
     class MainWindowViewModel:ViewModelBase
     {
         House house;
+        User futureUser;
         List<ClientCharacter> characters;
+
+        RelayCommand addCommand;
+        RelayCommand logCommand;
+
         public MainWindowViewModel()
         {
             //characters = new ObservableCollection<Character>();
@@ -26,6 +33,8 @@ namespace Client.ViewModel
             //characters.Add(NewChar1);
             //characters.Add(NewChar2);
         }
+
+        public User FutureUser { get { return futureUser; } set { futureUser = value; } }
 
         private House InitializeCharacters()
         {
@@ -70,5 +79,49 @@ namespace Client.ViewModel
                 OnPropertyChanged("House");
             }
         }
+
+        #region _addCommand
+
+        public ICommand _addCommand
+        {
+            get
+            {
+                if (addCommand == null)
+                {
+                    addCommand = new RelayCommand(ExecuteAddCommand);
+                }
+                return addCommand;
+            }
+        }
+
+        private void ExecuteAddCommand(object obj)
+        {
+            WindowViewLoaderService.Show(typeof(CharacterWindowViewModel));
+            var tmp = WindowViewLoaderService.getContext(typeof(CharacterWindowViewModel)) as CharacterWindowViewModel;
+            var CC = tmp.CurChar;
+
+        }
+        #endregion
+
+
+        #region _logCommand
+
+        public ICommand _logCommand
+        {
+            get
+            {
+                if (logCommand == null)
+                {
+                    logCommand = new RelayCommand(ExecuteLogCommand);
+                }
+                return logCommand;
+            }
+        }
+
+        private void ExecuteLogCommand(object obj)
+        {
+            MessageBox.Show("Скоро!");
+        }
+        #endregion
     }
 }

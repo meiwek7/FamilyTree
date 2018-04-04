@@ -98,11 +98,8 @@ namespace Server.ServerLibs
                 db.HouseCharacter.Add(tmpHouseChar);
                 db.SaveChanges();
             }
-            
             return RegisterResult.UserRegSuccess;
             return RegisterResult.SomethingWentWrong;
         }
-
-        
     }
 }
