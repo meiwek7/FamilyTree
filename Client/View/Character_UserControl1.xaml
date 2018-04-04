@@ -7,7 +7,7 @@
              xmlns:vm="clr-namespace:Client.ViewModel"
              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
              mc:Ignorable="d" 
-             d:DesignHeight="130"
+             d:DesignHeight="135"
              d:DesignWidth="80"
              Name="UserCtrl">
     <!--<UserControl.DataContext>
@@ -24,17 +24,18 @@
                 <ImageBrush ImageSource="Resources\Rurick.PNG"></ImageBrush>
             </Label.Background>
         </Label>
-        <TextBox Grid.Row="1"
+        <Label Grid.Row="1"
                  HorizontalContentAlignment="Center"
                  Foreground="White"
-                 Background="Black"
+                 Background="Transparent"
                  Name="CharName"
-                 Text="{Binding Path=FirstName}"/>
+                 Content="{Binding Path=FirstName}"/>
     </Grid>
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="MouseDoubleClick">
             <i:InvokeCommandAction
-                            Command="{Binding SummonCharacter_Info}"/>
+                            Command="{Binding SummonCharacter_Info}"
+                            CommandParameter="{Binding ElementName=UserCtrl}"/>
         </i:EventTrigger>
     </i:Interaction.Triggers>
 </UserControl>

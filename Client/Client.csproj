@@ -85,8 +85,8 @@
     <Compile Include="View\Authorization.xaml.cs">
       <DependentUpon>Authorization.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\BioAlpha.xaml.cs">
-      <DependentUpon>BioAlpha.xaml</DependentUpon>
+    <Compile Include="View\Biography.xaml.cs">
+      <DependentUpon>Biography.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -98,9 +98,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\BioAlpha.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="View\Biography.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\Character_Info.xaml">
       <SubType>Designer</SubType>

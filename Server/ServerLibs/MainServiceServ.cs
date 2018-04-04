@@ -86,7 +86,6 @@ namespace Server.ServerLibs
             }
             return false;
         }
-
         public void InsertNewCharacter()
         {
             using (FamilyTreeEntities db = new FamilyTreeEntities())

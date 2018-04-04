@@ -6,15 +6,27 @@ using System.Threading.Tasks;
 using BasicLib;
 using System.Windows.Input;
 using Client.Infrastructure;
+using System.Windows;
 
 namespace Client.ViewModel
 {
     class CharacterWindowViewModel : ViewModelBase
     {
+        public string DateBirth { get { return dateBirth; } set { dateBirth = value; } }
+        public string DateDeath {
+            get {
+                if (curChar.DeathDate == DateTime.MinValue || curChar.DeathDate == null)
+                    return "StillAlive";
+                else
+                    dateDeath = CurChar.DeathDate.ToShortDateString();
+                return "StillAlive";
+            }
+            set {
+                dateDeath = value;
+                OnPropertyChanged("DateDeath");
+            }
+        }
         RelayCommand _biographyCommand;
-        RelayCommand onClosingCommand;
-        String dateBirth;
-        String dateDeath;
         Character curChar;
         public CharacterWindowViewModel()
         {
@@ -47,41 +59,11 @@ namespace Client.ViewModel
                         return _biographyCommand;
                     }
                 }
-        void ExecuteBiographyCommand(object bio)
-        {
-            WindowViewLoaderService.Show(typeof(CharacterWindowViewModel));
-        }
-        #endregion
-        public ICommand OnClosing
-        {
-            get
-            {
-                if (onClosingCommand == null)
+                void ExecuteBiographyCommand(object bio)
                 {
-                    onClosingCommand = new RelayCommand(ExecuteOnClosing);
+            MessageBox.Show("Следующий спринт!");
+                    // НАПИСАТЬ ФУНКЦИОНАЛ
                 }
-                return onClosingCommand;
-            }
-        }
-
-        public string DateBirth { get { return dateBirth; } set { dateBirth = value; } }
-        public string DateDeath {
-            get {
-                if (curChar.DeathDate == DateTime.MinValue || curChar.DeathDate == null)
-                    return "StillAlive";
-                else
-                    dateDeath = CurChar.DeathDate.ToShortDateString();
-                return "StillAlive";
-            }
-            set {
-                dateDeath = value;
-                OnPropertyChanged("DateDeath");
-            }
-        }
-
-        void ExecuteOnClosing(object param)
-        {
-            WindowViewLoaderService.closeWindow(this);
-        }
-    }
+             }
+    #endregion
 }

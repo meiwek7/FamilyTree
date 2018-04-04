@@ -32,11 +32,5 @@ namespace Client.ViewModel
             var tmp = VMContexts.Keys.Where(x => x.GetType() == WindowViewModelType).First();
             return tmp;
         }
-
-        static public void closeWindow(ViewModelBase vm)
-        {
-            var tmpvm = VMContexts.Where(x => x.Key.GetType() == vm.GetType()).First().Key;
-            VMContexts.Remove(tmpvm);
-        }
     }
 }
