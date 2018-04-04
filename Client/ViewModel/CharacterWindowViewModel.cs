@@ -13,6 +13,8 @@ namespace Client.ViewModel
     {
         RelayCommand _biographyCommand;
         RelayCommand onClosingCommand;
+        String dateBirth;
+        String dateDeath;
         Character curChar;
         public Character CurChar
         {
@@ -57,6 +59,20 @@ namespace Client.ViewModel
                 return onClosingCommand;
             }
         }
+
+        public string DateBirth { get { return dateBirth; } set { dateBirth = value; } }
+        public string DateDeath {
+            get {
+                if(curChar.DeathDate==DateTime.MinValue)
+                    return "StillAlive";
+                else
+                    curChar.DeathDate
+            }
+            set {
+                dateDeath = value;
+            }
+        }
+
         void ExecuteOnClosing(object param)
         {
             WindowViewLoaderService.closeWindow(this);

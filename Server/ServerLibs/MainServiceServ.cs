@@ -99,9 +99,15 @@ namespace Server.ServerLibs
             }
         }
 
-        public void ChangeUser()
+        public void ChangeUser(BasicLib.House House)
         {
+            //Выбрать существующего юзера
 
+            //Изменить
+            
+            //Сохранить
+
+            //Вернуть новый контекст
         }
 
         public void getLogs()
