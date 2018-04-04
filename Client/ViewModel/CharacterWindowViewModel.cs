@@ -12,8 +12,26 @@ namespace Client.ViewModel
 {
     class CharacterWindowViewModel : ViewModelBase
     {
+        public string DateBirth { get { return dateBirth; } set { dateBirth = value; } }
+        public string DateDeath {
+            get {
+                if (curChar.DeathDate == DateTime.MinValue || curChar.DeathDate == null)
+                    return "StillAlive";
+                else
+                    dateDeath = CurChar.DeathDate.ToShortDateString();
+                return "StillAlive";
+            }
+            set {
+                dateDeath = value;
+                OnPropertyChanged("DateDeath");
+            }
+        }
         RelayCommand _biographyCommand;
         Character curChar;
+        public CharacterWindowViewModel()
+        {
+            curChar = new Character();
+        }
         public Character CurChar
         {
             get
@@ -49,7 +67,3 @@ namespace Client.ViewModel
              }
     #endregion
 }
-
-
-
-

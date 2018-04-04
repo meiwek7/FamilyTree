@@ -71,7 +71,7 @@
         <TextBox Name="tb_nationality" Text="{Binding Path=CurChar.Nationality, UpdateSourceTrigger=PropertyChanged}" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>
         <TextBox Name="tb_birthplace" Text="{Binding Path=CurChar.BirthPlace, UpdateSourceTrigger=PropertyChanged}" Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>
         <TextBox Name="tb_birthcountry" Text="{Binding Path=CurChar.BirthCountry, UpdateSourceTrigger=PropertyChanged}" Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>
-        <TextBox Name="tb_deathdate" Text="{Binding Path=CurChar.DeathDate, UpdateSourceTrigger=PropertyChanged}" Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>
+        <TextBox Name="tb_deathdate" Text="{Binding Path=DateDeath, UpdateSourceTrigger=PropertyChanged}" Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>
         <TextBox Name="tb_deathplace" Text="{Binding Path=CurChar.DeathPlace, UpdateSourceTrigger=PropertyChanged}" Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>
         <TextBox Name="tb_deathcountry" Text="{Binding Path=CurChar.DeathCountry, UpdateSourceTrigger=PropertyChanged}" Grid.Row="13" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>
     </Grid>
