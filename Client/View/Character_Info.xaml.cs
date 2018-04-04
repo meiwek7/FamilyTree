@@ -23,10 +23,5 @@ namespace Client.View
         {
             InitializeComponent();
         }
-
-        private void tb_lastname_SourceUpdated(object sender, DataTransferEventArgs e)
-        {
-
-        }
     }
 }

@@ -34,7 +34,7 @@
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="MouseDoubleClick">
             <i:InvokeCommandAction
-                            Command="{Binding SummonCharacter_Info}" CommandParameter="{Binding ElementName=UserCtrl}"/>
+                            Command="{Binding SummonCharacter_Info}"/>
         </i:EventTrigger>
     </i:Interaction.Triggers>
 </UserControl>

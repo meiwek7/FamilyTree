@@ -12,6 +12,7 @@ namespace Client.ViewModel
     class CharacterWindowViewModel : ViewModelBase
     {
         RelayCommand _biographyCommand;
+        RelayCommand onClosingCommand;
         Character curChar;
         public Character CurChar
         {
@@ -40,14 +41,25 @@ namespace Client.ViewModel
                         return _biographyCommand;
                     }
                 }
-                void ExecuteBiographyCommand(object bio)
+        void ExecuteBiographyCommand(object bio)
+        {
+            WindowViewLoaderService.Show(typeof(CharacterWindowViewModel));
+        }
+        #endregion
+        public ICommand OnClosing
+        {
+            get
+            {
+                if (onClosingCommand == null)
                 {
-                    WindowViewLoaderService.Show(typeof(CharacterWindowViewModel));
+                    onClosingCommand = new RelayCommand(ExecuteOnClosing);
                 }
-             }
-    #endregion
+                return onClosingCommand;
+            }
+        }
+        void ExecuteOnClosing(object param)
+        {
+            WindowViewLoaderService.closeWindow(this);
+        }
+    }
 }
-
-
-
-
