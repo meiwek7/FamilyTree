@@ -87,12 +87,12 @@ namespace Server.ServerLibs
             return false;
         }
 
-        public void InsertNewUser()
+        public void InsertNewCharacter()
         {
             using (FamilyTreeEntities db = new FamilyTreeEntities())
             {
                 //Добавить запись в Таблицу Чаров
-                db.Character
+                //db.Character;
                 //Добавить запись в КроссТаблицу ЧарДом
 
                 //Вернуть новый дом в контекст

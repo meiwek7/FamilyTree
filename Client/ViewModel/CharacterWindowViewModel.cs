@@ -16,6 +16,10 @@ namespace Client.ViewModel
         String dateBirth;
         String dateDeath;
         Character curChar;
+        public CharacterWindowViewModel()
+        {
+            curChar = new Character();
+        }
         public Character CurChar
         {
             get
@@ -63,13 +67,15 @@ namespace Client.ViewModel
         public string DateBirth { get { return dateBirth; } set { dateBirth = value; } }
         public string DateDeath {
             get {
-                if(curChar.DeathDate==DateTime.MinValue)
+                if (curChar.DeathDate == DateTime.MinValue || curChar.DeathDate == null)
                     return "StillAlive";
                 else
-                    curChar.DeathDate
+                    dateDeath = CurChar.DeathDate.ToShortDateString();
+                return "StillAlive";
             }
             set {
                 dateDeath = value;
+                OnPropertyChanged("DateDeath");
             }
         }
 
