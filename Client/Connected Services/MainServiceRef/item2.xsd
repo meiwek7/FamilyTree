@@ -25,4 +25,17 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="InsertNewCharacter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/BasicLib" minOccurs="0" name="curUser" nillable="true" type="q3:User" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/BasicLib" minOccurs="0" name="incHs" nillable="true" type="q4:House" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertNewCharacterResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

@@ -26,6 +26,12 @@ namespace Client.MainServiceRef {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMain/getLogs", ReplyAction="http://tempuri.org/IMain/getLogsResponse")]
         System.Threading.Tasks.Task getLogsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMain/InsertNewCharacter", ReplyAction="http://tempuri.org/IMain/InsertNewCharacterResponse")]
+        void InsertNewCharacter(BasicLib.User curUser, BasicLib.House incHs);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMain/InsertNewCharacter", ReplyAction="http://tempuri.org/IMain/InsertNewCharacterResponse")]
+        System.Threading.Tasks.Task InsertNewCharacterAsync(BasicLib.User curUser, BasicLib.House incHs);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -69,6 +75,14 @@ namespace Client.MainServiceRef {
         
         public System.Threading.Tasks.Task getLogsAsync() {
             return base.Channel.getLogsAsync();
+        }
+        
+        public void InsertNewCharacter(BasicLib.User curUser, BasicLib.House incHs) {
+            base.Channel.InsertNewCharacter(curUser, incHs);
+        }
+        
+        public System.Threading.Tasks.Task InsertNewCharacterAsync(BasicLib.User curUser, BasicLib.House incHs) {
+            return base.Channel.InsertNewCharacterAsync(curUser, incHs);
         }
     }
 }

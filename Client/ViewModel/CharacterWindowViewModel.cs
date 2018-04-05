@@ -12,6 +12,8 @@ namespace Client.ViewModel
 {
     class CharacterWindowViewModel : ViewModelBase
     {
+        string dateDeath;
+        string dateBirth;
         public string DateBirth { get { return dateBirth; } set { dateBirth = value; } }
         public string DateDeath {
             get {

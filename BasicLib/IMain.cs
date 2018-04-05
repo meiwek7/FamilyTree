@@ -14,6 +14,8 @@ namespace BasicLib
         House getHouse(User incomingUser);
         [OperationContract]
         void getLogs();
+        [OperationContract]
+        void InsertNewCharacter(BasicLib.User curUser, BasicLib.House incHs);
 
     }
 }

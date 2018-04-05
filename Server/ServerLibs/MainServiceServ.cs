@@ -86,19 +86,25 @@ namespace Server.ServerLibs
             }
             return false;
         }
-        public void InsertNewCharacter()
+        public void InsertNewCharacter(BasicLib.User curUser, BasicLib.House incHs)
         {
             using (FamilyTreeEntities db = new FamilyTreeEntities())
             {
                 //Добавить запись в Таблицу Чаров
-                //db.Character;
+                Server.Character newChar = new Server.Character();
+                newChar.creator = curUser.Id;
+                db.Character.Add(newChar);
+                db.SaveChanges();
                 //Добавить запись в КроссТаблицу ЧарДом
-
-                //Вернуть новый дом в контекст
+                Server.HouseCharacter HoCh = new HouseCharacter();
+                HoCh.houseId = db.House.Where(x => x.houseKeeper == curUser.CharacterId).ToList().First().id;
+                HoCh.characterId = db.Character.Where(x => x.creator == curUser.Id).ToList().Last().id;
+                db.HouseCharacter.Add(HoCh);
+                db.SaveChanges();
             }
         }
 
-        public void ChangeUser(BasicLib.House House)
+        public void ChangeUser(BasicLib.User incUser)
         {
             //Выбрать существующего юзера
 

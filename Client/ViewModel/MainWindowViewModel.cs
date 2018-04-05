@@ -62,6 +62,7 @@ namespace Client.ViewModel
             set
             {
                 //House.HouseMembers = value;
+                characters = value;
                 OnPropertyChanged("Characters");
             }
         }
@@ -96,10 +97,14 @@ namespace Client.ViewModel
 
         private void ExecuteAddCommand(object obj)
         {
-            WindowViewLoaderService.Show(typeof(CharacterWindowViewModel));
-            var tmp = WindowViewLoaderService.getContext(typeof(CharacterWindowViewModel)) as CharacterWindowViewModel;
-            var CC = tmp.CurChar;
-
+            //WindowViewLoaderService.Show(typeof(CharacterWindowViewModel));
+            //var tmp = WindowViewLoaderService.getContext(typeof(CharacterWindowViewModel)) as CharacterWindowViewModel;
+            //var CC = tmp.CurChar;
+            var AuthCntxttmp = (WindowViewLoaderService.getContext(typeof(AuthorizationViewModel)) as AuthorizationViewModel);
+            var tmpUser = AuthCntxttmp.User;
+            /*house = */ConLogic.MainProxy.InsertNewCharacter(tmpUser, house);
+            House = null;
+            Characters = null; 
         }
         #endregion
 
