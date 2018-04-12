@@ -32,6 +32,36 @@ namespace Client.MainServiceRef {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMain/InsertNewCharacter", ReplyAction="http://tempuri.org/IMain/InsertNewCharacterResponse")]
         System.Threading.Tasks.Task InsertNewCharacterAsync(BasicLib.User curUser, BasicLib.House incHs);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMain/GetAllCountries", ReplyAction="http://tempuri.org/IMain/GetAllCountriesResponse")]
+        string[] GetAllCountries();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMain/GetAllCountries", ReplyAction="http://tempuri.org/IMain/GetAllCountriesResponse")]
+        System.Threading.Tasks.Task<string[]> GetAllCountriesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMain/GetAllReligious", ReplyAction="http://tempuri.org/IMain/GetAllReligiousResponse")]
+        string[] GetAllReligious();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMain/GetAllReligious", ReplyAction="http://tempuri.org/IMain/GetAllReligiousResponse")]
+        System.Threading.Tasks.Task<string[]> GetAllReligiousAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMain/GetAllPlaces", ReplyAction="http://tempuri.org/IMain/GetAllPlacesResponse")]
+        string[] GetAllPlaces();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMain/GetAllPlaces", ReplyAction="http://tempuri.org/IMain/GetAllPlacesResponse")]
+        System.Threading.Tasks.Task<string[]> GetAllPlacesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMain/GetAllNationality", ReplyAction="http://tempuri.org/IMain/GetAllNationalityResponse")]
+        string[] GetAllNationality();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMain/GetAllNationality", ReplyAction="http://tempuri.org/IMain/GetAllNationalityResponse")]
+        System.Threading.Tasks.Task<string[]> GetAllNationalityAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMain/ChangeChar", ReplyAction="http://tempuri.org/IMain/ChangeCharResponse")]
+        void ChangeChar(BasicLib.User incUser, BasicLib.Character incCharacter);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMain/ChangeChar", ReplyAction="http://tempuri.org/IMain/ChangeCharResponse")]
+        System.Threading.Tasks.Task ChangeCharAsync(BasicLib.User incUser, BasicLib.Character incCharacter);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -83,6 +113,46 @@ namespace Client.MainServiceRef {
         
         public System.Threading.Tasks.Task InsertNewCharacterAsync(BasicLib.User curUser, BasicLib.House incHs) {
             return base.Channel.InsertNewCharacterAsync(curUser, incHs);
+        }
+        
+        public string[] GetAllCountries() {
+            return base.Channel.GetAllCountries();
+        }
+        
+        public System.Threading.Tasks.Task<string[]> GetAllCountriesAsync() {
+            return base.Channel.GetAllCountriesAsync();
+        }
+        
+        public string[] GetAllReligious() {
+            return base.Channel.GetAllReligious();
+        }
+        
+        public System.Threading.Tasks.Task<string[]> GetAllReligiousAsync() {
+            return base.Channel.GetAllReligiousAsync();
+        }
+        
+        public string[] GetAllPlaces() {
+            return base.Channel.GetAllPlaces();
+        }
+        
+        public System.Threading.Tasks.Task<string[]> GetAllPlacesAsync() {
+            return base.Channel.GetAllPlacesAsync();
+        }
+        
+        public string[] GetAllNationality() {
+            return base.Channel.GetAllNationality();
+        }
+        
+        public System.Threading.Tasks.Task<string[]> GetAllNationalityAsync() {
+            return base.Channel.GetAllNationalityAsync();
+        }
+        
+        public void ChangeChar(BasicLib.User incUser, BasicLib.Character incCharacter) {
+            base.Channel.ChangeChar(incUser, incCharacter);
+        }
+        
+        public System.Threading.Tasks.Task ChangeCharAsync(BasicLib.User incUser, BasicLib.Character incCharacter) {
+            return base.Channel.ChangeCharAsync(incUser, incCharacter);
         }
     }
 }

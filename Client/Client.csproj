@@ -85,9 +85,6 @@
     <Compile Include="View\Authorization.xaml.cs">
       <DependentUpon>Authorization.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Biography.xaml.cs">
-      <DependentUpon>Biography.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
@@ -95,10 +92,6 @@
       <DependentUpon>Register.xaml</DependentUpon>
     </Compile>
     <Page Include="View\Authorization.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\Biography.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -168,6 +161,9 @@
     <None Include="Connected Services\MainServiceRef\item2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\MainServiceRef\item3.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\MainServiceRef\MainServiceServ.wsdl" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\BasicLib.House.datasource" />
@@ -202,7 +198,9 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="View\Resources\znak-voprosa1.png" />
+  </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\AuthServiceRef\" />
     <WCFMetadataStorage Include="Connected Services\MainServiceRef\" />
@@ -236,6 +234,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Resources\image_58a807e70acb9.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

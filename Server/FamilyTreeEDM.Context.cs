@@ -133,5 +133,87 @@ namespace Server
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectSameHouseMembers_Result>("SelectSameHouseMembers", characteridParameter);
         }
+    
+        public virtual int ChangeChar(Nullable<int> characterId, Nullable<int> userId, string firstName, string secondName, string lastName, string nationality, string birthCountry, string deathCountry, string livingCountry, string birthPlace, string deathPlace, string livingPalce, string religious, Nullable<System.DateTime> birthDate, Nullable<System.DateTime> deathDate, string biography, byte[] photo)
+        {
+            var characterIdParameter = characterId.HasValue ?
+                new ObjectParameter("CharacterId", characterId) :
+                new ObjectParameter("CharacterId", typeof(int));
+    
+            var userIdParameter = userId.HasValue ?
+                new ObjectParameter("UserId", userId) :
+                new ObjectParameter("UserId", typeof(int));
+    
+            var firstNameParameter = firstName != null ?
+                new ObjectParameter("firstName", firstName) :
+                new ObjectParameter("firstName", typeof(string));
+    
+            var secondNameParameter = secondName != null ?
+                new ObjectParameter("secondName", secondName) :
+                new ObjectParameter("secondName", typeof(string));
+    
+            var lastNameParameter = lastName != null ?
+                new ObjectParameter("lastName", lastName) :
+                new ObjectParameter("lastName", typeof(string));
+    
+            var nationalityParameter = nationality != null ?
+                new ObjectParameter("nationality", nationality) :
+                new ObjectParameter("nationality", typeof(string));
+    
+            var birthCountryParameter = birthCountry != null ?
+                new ObjectParameter("birthCountry", birthCountry) :
+                new ObjectParameter("birthCountry", typeof(string));
+    
+            var deathCountryParameter = deathCountry != null ?
+                new ObjectParameter("deathCountry", deathCountry) :
+                new ObjectParameter("deathCountry", typeof(string));
+    
+            var livingCountryParameter = livingCountry != null ?
+                new ObjectParameter("livingCountry", livingCountry) :
+                new ObjectParameter("livingCountry", typeof(string));
+    
+            var birthPlaceParameter = birthPlace != null ?
+                new ObjectParameter("birthPlace", birthPlace) :
+                new ObjectParameter("birthPlace", typeof(string));
+    
+            var deathPlaceParameter = deathPlace != null ?
+                new ObjectParameter("deathPlace", deathPlace) :
+                new ObjectParameter("deathPlace", typeof(string));
+    
+            var livingPalceParameter = livingPalce != null ?
+                new ObjectParameter("livingPalce", livingPalce) :
+                new ObjectParameter("livingPalce", typeof(string));
+    
+            var religiousParameter = religious != null ?
+                new ObjectParameter("religious", religious) :
+                new ObjectParameter("religious", typeof(string));
+    
+            var birthDateParameter = birthDate.HasValue ?
+                new ObjectParameter("birthDate", birthDate) :
+                new ObjectParameter("birthDate", typeof(System.DateTime));
+    
+            var deathDateParameter = deathDate.HasValue ?
+                new ObjectParameter("deathDate", deathDate) :
+                new ObjectParameter("deathDate", typeof(System.DateTime));
+    
+            var biographyParameter = biography != null ?
+                new ObjectParameter("biography", biography) :
+                new ObjectParameter("biography", typeof(string));
+    
+            var photoParameter = photo != null ?
+                new ObjectParameter("photo", photo) :
+                new ObjectParameter("photo", typeof(byte[]));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ChangeChar", characterIdParameter, userIdParameter, firstNameParameter, secondNameParameter, lastNameParameter, nationalityParameter, birthCountryParameter, deathCountryParameter, livingCountryParameter, birthPlaceParameter, deathPlaceParameter, livingPalceParameter, religiousParameter, birthDateParameter, deathDateParameter, biographyParameter, photoParameter);
+        }
+    
+        public virtual ObjectResult<GetCharRelatives_Result> GetCharRelatives(Nullable<int> incomingCharacterID)
+        {
+            var incomingCharacterIDParameter = incomingCharacterID.HasValue ?
+                new ObjectParameter("incomingCharacterID", incomingCharacterID) :
+                new ObjectParameter("incomingCharacterID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetCharRelatives_Result>("GetCharRelatives", incomingCharacterIDParameter);
+        }
     }
 }

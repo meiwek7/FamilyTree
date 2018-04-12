@@ -69,7 +69,7 @@ namespace Server.ServerLibs
                 chr.LivingCountry = item.livingCountry;
                 chr.BirthPlace = item.birthPlace;
                 chr.DeathPlace = item.deathPlace;
-                chr.LivingPlace = item.deathPlace;
+                chr.LivingPlace = item.livingPalce;//OchepyatkaTut!!!
                 chr.Religious = item.religious;
                 if (item.birthDate == null)
                     chr.BirthDate = DateTime.MinValue;
@@ -86,6 +86,7 @@ namespace Server.ServerLibs
             }
             return false;
         }
+
         public void InsertNewCharacter(BasicLib.User curUser, BasicLib.House incHs)
         {
             using (FamilyTreeEntities db = new FamilyTreeEntities())
@@ -104,15 +105,89 @@ namespace Server.ServerLibs
             }
         }
 
-        public void ChangeUser(BasicLib.User incUser)
+        public List<string> GetAllCountries()
+        {
+            List<string> Countries = new List<string>();
+            using (FamilyTreeEntities db = new FamilyTreeEntities())
+            {
+                foreach (var item in db.Country.ToList())
+                {
+                    Countries.Add(item.name);
+                }
+            }
+            return Countries;
+        }
+
+        public List<string> GetAllPlaces()
+        {
+            List<string> Places = new List<string>();
+            using (FamilyTreeEntities db = new FamilyTreeEntities())
+            {
+                foreach (var item in db.Place.ToList())
+                {
+                    Places.Add(item.name);
+                }
+            }
+            return Places;
+        }
+
+        public List<string> GetAllReligious()
+        {
+            List<string> Religious = new List<string>();
+            using (FamilyTreeEntities db = new FamilyTreeEntities())
+            {
+                foreach (var item in db.Religious.ToList())
+                {
+                    Religious.Add(item.name);
+                }
+            }
+            return Religious;
+        }
+
+        public List<string> GetAllNationality()
+        {
+            List<string> Nationality = new List<string>();
+            using (FamilyTreeEntities db = new FamilyTreeEntities())
+            {
+                foreach (var item in db.Nationality.ToList())
+                {
+                    Nationality.Add(item.name);
+                }
+            }
+            return Nationality;
+        }
+
+        public void ChangeChar(BasicLib.User incUser, BasicLib.Character incCharacter)
         {
             //Выбрать существующего юзера
 
             //Изменить
-            
+
             //Сохранить
 
             //Вернуть новый контекст
+            using (FamilyTreeEntities db = new FamilyTreeEntities())
+            {
+                db.ChangeChar(incCharacter.Id,
+                    incUser.Id,
+                    incCharacter.FirstName,
+                    incCharacter.SecondName,
+                    incCharacter.LastName,
+                    incCharacter.Nationality,
+                    incCharacter.BirthCountry,
+                    incCharacter.DeathCountry,
+                    incCharacter.LivingCountry,
+                    incCharacter.BirthPlace,
+                    incCharacter.DeathPlace,
+                    incCharacter.LivingPlace,
+                    incCharacter.Religious,
+                    incCharacter.BirthDate,
+                    incCharacter.DeathDate,
+                    incCharacter.Biography,
+                    null
+                    );
+                db.SaveChanges();
+            }
         }
 
         public void getLogs()

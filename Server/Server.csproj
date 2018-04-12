@@ -127,6 +127,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FamilyTreeEDM.edmx</DependentUpon>
     </Compile>
+    <Compile Include="GetCharRelatives_Result.cs">
+      <DependentUpon>FamilyTreeEDM.tt</DependentUpon>
+    </Compile>
     <Compile Include="House.cs">
       <DependentUpon>FamilyTreeEDM.tt</DependentUpon>
     </Compile>

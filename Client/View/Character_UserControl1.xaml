@@ -7,7 +7,7 @@
              xmlns:vm="clr-namespace:Client.ViewModel"
              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
              mc:Ignorable="d" 
-             d:DesignHeight="135"
+             d:DesignHeight="160"
              d:DesignWidth="80"
              Name="UserCtrl">
     <!--<UserControl.DataContext>
@@ -16,12 +16,12 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="5*"></RowDefinition>
-            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1.4*"></RowDefinition>
         </Grid.RowDefinitions>
 
         <Label>
             <Label.Background>
-                <ImageBrush ImageSource="Resources\Rurick.PNG"></ImageBrush>
+                <ImageBrush ImageSource="{Binding Path=Image}"></ImageBrush>
             </Label.Background>
         </Label>
         <Label Grid.Row="1"

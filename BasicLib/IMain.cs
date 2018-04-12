@@ -16,6 +16,15 @@ namespace BasicLib
         void getLogs();
         [OperationContract]
         void InsertNewCharacter(BasicLib.User curUser, BasicLib.House incHs);
-
+        [OperationContract]
+        List<string> GetAllCountries();
+        [OperationContract]
+        List<string> GetAllReligious();
+        [OperationContract]
+        List<string> GetAllPlaces();
+        [OperationContract]
+        List<string> GetAllNationality();
+        [OperationContract]
+        void ChangeChar(BasicLib.User incUser, BasicLib.Character incCharacter);
     }
 }

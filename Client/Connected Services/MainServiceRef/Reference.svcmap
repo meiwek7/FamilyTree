@@ -22,11 +22,12 @@
     <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/Server.ServerLibs/MainServiceServ/" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
+    <MetadataFile FileName="MainServiceServ.wsdl" MetadataType="Wsdl" ID="4b35a8ae-5a03-4d29-ac08-33a0c3a3a94b" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Server.ServerLibs/MainServiceServ/?wsdl" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="248aa01f-485d-47c8-8961-1ce68550c602" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Server.ServerLibs/MainServiceServ/?xsd=xsd0" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="0730f50e-c12e-42d0-b039-745acb0a383c" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Server.ServerLibs/MainServiceServ/?disco" />
+    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="df6f9056-134f-41c9-b911-e3449865e13a" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Server.ServerLibs/MainServiceServ/?xsd=xsd3" />
     <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="ad26fd47-2619-4b08-beab-1a4477f5dccd" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Server.ServerLibs/MainServiceServ/?xsd=xsd1" />
     <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="171afad2-a976-4880-8b67-ec156822b484" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Server.ServerLibs/MainServiceServ/?xsd=xsd2" />
-    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="0730f50e-c12e-42d0-b039-745acb0a383c" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Server.ServerLibs/MainServiceServ/?disco" />
-    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="248aa01f-485d-47c8-8961-1ce68550c602" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Server.ServerLibs/MainServiceServ/?xsd=xsd0" />
-    <MetadataFile FileName="MainServiceServ.wsdl" MetadataType="Wsdl" ID="4b35a8ae-5a03-4d29-ac08-33a0c3a3a94b" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Server.ServerLibs/MainServiceServ/?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

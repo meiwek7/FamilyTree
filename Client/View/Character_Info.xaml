@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Client.View"
         xmlns:vm="clr-namespace:Client.ViewModel"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         mc:Ignorable="d"
-        Title="Familty Tree | Character Info" Height="550" Width="350" MinHeight="550" MinWidth="350" MaxHeight="550" MaxWidth="350">
+        Title="Familty Tree | Character Info" Height="550" Width="400" MinHeight="650" MinWidth="350" MaxHeight="550" MaxWidth="1000">
     <Window.DataContext>
         <vm:CharacterWindowViewModel></vm:CharacterWindowViewModel>
     </Window.DataContext>
     <Grid>
-
         <Grid.RowDefinitions>
             <RowDefinition Height="5*"></RowDefinition>
             <RowDefinition Height="0.3*"></RowDefinition>
@@ -28,51 +28,87 @@
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
         </Grid.RowDefinitions>
-
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.5*"></ColumnDefinition>
             <ColumnDefinition Width="1*"></ColumnDefinition>
             <ColumnDefinition Width="1*"></ColumnDefinition>
             <ColumnDefinition Width="1*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-
-        <Label Grid.ColumnSpan="3" Grid.RowSpan="15">
+        <Label Grid.ColumnSpan="4" Grid.RowSpan="18">
             <Label.Background>
                 <ImageBrush ImageSource="Resources\bg_darkwood_2.jpg"></ImageBrush>
             </Label.Background>
         </Label>
-
-        <Label Grid.Column="1">
+        <Label Grid.Column="1" Grid.ColumnSpan="2" Margin="20,10,20,5">
             <Label.Background>
-                <ImageBrush ImageSource="Resources\Rurick.PNG"></ImageBrush>
+                <ImageBrush ImageSource="{Binding Path=Image, UpdateSourceTrigger=PropertyChanged}"></ImageBrush>
             </Label.Background>
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseDoubleClick">
+                    <i:InvokeCommandAction
+                            Command="{Binding ChangeURLPicture}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
         </Label>
-
         <Label Grid.Row="2" Grid.Column="0" Foreground="White" >Фамилия</Label>
         <Label Grid.Row="3" Grid.Column="0" Foreground="White">Имя</Label>
         <Label Grid.Row="4" Grid.Column="0" Foreground="White">Отчество</Label>
-        <Label Grid.Row="5" Grid.Column="0" Foreground="White">Проживание</Label>
-        <Label Grid.Row="6" Grid.Column="0" Foreground="White">Религия</Label>
-        <Label Grid.Row="7" Grid.Column="0" Foreground="White">Дата Рождения</Label>
-        <Label Grid.Row="8" Grid.Column="0" Foreground="White">Национальность</Label>
-        <Label Grid.Row="9" Grid.Column="0" Foreground="White">Место Рождения</Label>
-        <Label Grid.Row="10" Grid.Column="0" Foreground="White">Страна Рождения</Label>
-        <Label Grid.Row="11" Grid.Column="0" Foreground="White">Дата Смерти</Label>
-        <Label Grid.Row="12" Grid.Column="0" Foreground="White">Место Смерти</Label>
-        <Label Grid.Row="13" Grid.Column="0" Foreground="White">Страна Смерти</Label>
-        <Button  Grid.Row="14" Grid.Column="0" Grid.ColumnSpan="1" Width="100" Command="{Binding Path=BiographyCommand}">Биография</Button>
-        <Button  Grid.Row="14" Grid.Column="2" Grid.ColumnSpan="1" Width="100" Command="{Binding Path=BiographyCommand}">Save</Button>
-        <TextBox Name="tb_lastname" Text="{Binding Path=CurChar.LastName, UpdateSourceTrigger=PropertyChanged}"  Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White" ></TextBox>
-        <TextBox Name="tb_firstname" Text="{Binding Path=CurChar.FirstName, UpdateSourceTrigger=PropertyChanged}" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>
-        <TextBox Name="tb_secondname" Text="{Binding Path=CurChar.SecondName, UpdateSourceTrigger=PropertyChanged}" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>
-        <TextBox Name="tb_livingcountry" Text="{Binding Path=CurChar.LivingCountry, UpdateSourceTrigger=PropertyChanged}" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>
-        <TextBox Name="tb_religious" Text="{Binding Path=CurChar.Religious, UpdateSourceTrigger=PropertyChanged}" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>
-        <TextBox Name="tb_datebirth" Text="{Binding Path=CurChar.BirthDate, UpdateSourceTrigger=PropertyChanged}" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>
-        <TextBox Name="tb_nationality" Text="{Binding Path=CurChar.Nationality, UpdateSourceTrigger=PropertyChanged}" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>
-        <TextBox Name="tb_birthplace" Text="{Binding Path=CurChar.BirthPlace, UpdateSourceTrigger=PropertyChanged}" Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>
-        <TextBox Name="tb_birthcountry" Text="{Binding Path=CurChar.BirthCountry, UpdateSourceTrigger=PropertyChanged}" Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>
-        <TextBox Name="tb_deathdate" Text="{Binding Path=DateDeath, UpdateSourceTrigger=PropertyChanged}" Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>
-        <TextBox Name="tb_deathplace" Text="{Binding Path=CurChar.DeathPlace, UpdateSourceTrigger=PropertyChanged}" Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>
-        <TextBox Name="tb_deathcountry" Text="{Binding Path=CurChar.DeathCountry, UpdateSourceTrigger=PropertyChanged}" Grid.Row="13" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>
+        <Label Grid.Row="5" Grid.Column="0" Foreground="White">Страна проживания</Label>
+        <Label Grid.Row="6" Grid.Column="0" Foreground="White">Место проживания</Label>
+        <Label Grid.Row="7" Grid.Column="0" Foreground="White">Религия</Label>
+        <Label Grid.Row="8" Grid.Column="0" Foreground="White">Дата Рождения</Label>
+        <Label Grid.Row="9" Grid.Column="0" Foreground="White">Национальность</Label>
+        <Label Grid.Row="10" Grid.Column="0" Foreground="White">Место Рождения</Label>
+        <Label Grid.Row="11" Grid.Column="0" Foreground="White">Страна Рождения</Label>
+        <Label Grid.Row="12" Grid.Column="0" Foreground="White">Дата Смерти</Label>
+        
+        <Label Grid.Row="13" Grid.Column="0" Foreground="White">Место Смерти</Label>
+        <Label Grid.Row="14" Grid.Column="0" Foreground="White">Страна Смерти</Label>
+        <Label Grid.Row="15" Grid.Column="0" Foreground="White">Биография</Label>
+        <!--<Button  Grid.Row="14" Grid.Column="0" Grid.ColumnSpan="1" Width="100" Command="{Binding Path=BiographyCommand}">Биография</Button>-->
+        <Button  Grid.Row="17" Grid.Column="1" Grid.ColumnSpan="2" Margin="3" Command="{Binding Path=SaveCommand}">Save</Button>
+        <TextBox Name="tb_lastname" Text="{Binding Path=CurChar.LastName, UpdateSourceTrigger=PropertyChanged}"  Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Background="Transparent" Foreground="White" ></TextBox>
+        <TextBox Name="tb_firstname" Text="{Binding Path=CurChar.FirstName, UpdateSourceTrigger=PropertyChanged}" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" Background="Transparent" Foreground="White"></TextBox>
+        <TextBox Name="tb_secondname" Text="{Binding Path=CurChar.SecondName, UpdateSourceTrigger=PropertyChanged}" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" Background="Transparent" Foreground="White"></TextBox>
+        <ComboBox Name="cb_livingcountry"  Grid.Row="5" Grid.Column="1" ItemsSource="{Binding Path=Countries}" SelectedItem="{Binding Path=CurChar.LivingCountry, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2"></ComboBox>
+        <Button Name="b_addcountry"  Grid.Row="5" Grid.Column="3" Content="Add"></Button>
+        <!--<ComboBox Name="cb_livingplace"  Grid.Row="6" Grid.Column="1" ItemsSource="{Binding Path=Places}" SelectedItem="{Binding Path=CurChar.LivingPlace, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2"></ComboBox>-->
+        <ComboBox Name="cb_livingplace" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" ItemsSource="{Binding Path=Places}" SelectedItem="{Binding Path=CurChar.LivingPlace, UpdateSourceTrigger=PropertyChanged}"></ComboBox>
+        <Button Name="b_addplace" Grid.Row="6" Grid.Column="3" Content="Add"></Button>
+        <!--<TextBox Name="tb_datebirth" Text="{Binding Path=CurChar.BirthDate, UpdateSourceTrigger=PropertyChanged}" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>-->
+        <ComboBox Name="cb_religion"  Grid.Row="7" Grid.Column="1" ItemsSource="{Binding Path=Religious}" SelectedItem="{Binding Path=CurChar.Religious, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2"></ComboBox>
+        <Button Name="b_addreligion" Grid.Row="7" Grid.Column="3" Content="Add"></Button>
+        <DatePicker Name="p_datebirth" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="3" SelectedDate="{Binding Path=CurChar.BirthDate}"></DatePicker>
+        <!--<TextBox Name="tb_nationality" Text="{Binding Path=CurChar.Nationality, UpdateSourceTrigger=PropertyChanged}" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>-->
+        
+        <!--<TextBox Name="tb_birthplace" Text="{Binding Path=CurChar.BirthPlace, UpdateSourceTrigger=PropertyChanged}" Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>-->
+        <ComboBox Name="cb_nationality" Grid.Row="9" Grid.Column="1" ItemsSource="{Binding Path=Nationality}" SelectedItem="{Binding Path=CurChar.Nationality}" Grid.ColumnSpan="2"></ComboBox>
+        <Button Name="b_nationality" Grid.Row="9" Grid.Column="3" Content="Add"></Button>
+        <!--<TextBox Name="tb_birthcountry" Text="{Binding Path=CurChar.BirthCountry, UpdateSourceTrigger=PropertyChanged}" Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>-->
+        <ComboBox Name="cb_birthplace" Grid.Row="10" Grid.Column="1" ItemsSource="{Binding Path=Places}" SelectedItem="{Binding Path=CurChar.BirthPlace}" Grid.ColumnSpan="2"></ComboBox>
+        <Button  Name="b_addbirthplace"  Grid.Row="10" Grid.Column="3" Content="Add"></Button>
+        <ComboBox Name="cb_birthcountry" Grid.Row="11" Grid.Column="1" ItemsSource="{Binding Path=Countries}" SelectedItem="{Binding Path=CurChar.BirthCountry}" Grid.ColumnSpan="2"></ComboBox>
+        <Button  Name="b_addbirthcountry"  Grid.Row="11" Grid.Column="3" Content="Add"></Button>
+        <!--<TextBox Name="tb_deathdate" Text="{Binding Path=DateDeath, UpdateSourceTrigger=PropertyChanged}" Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>-->
+        <!--<ComboBox Grid.Row="11" Grid.Column="1" ItemsSource="{Binding}"></ComboBox>-->
+        <!--<ComboBox Grid.Row="11" Grid.Column="2" ItemsSource="{Binding}"></ComboBox>-->
+        <!--<ComboBox Grid.Row="11" Grid.Column="3" ItemsSource="{Binding}"></ComboBox>-->
+        <DatePicker Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="3" SelectedDate="{Binding Path=DateDeath}"></DatePicker>
+        <ComboBox Grid.Row="13" Grid.Column="1" ItemsSource="{Binding Places}" SelectedItem="{Binding Path=CurChar.DeathPlace}" Grid.ColumnSpan="2"></ComboBox>
+        <Button  Grid.Row="13" Grid.Column="3" Content="Add"></Button>
+        <ComboBox Grid.Row="14" Grid.Column="1" ItemsSource="{Binding Countries}" SelectedItem="{Binding Path=CurChar.DeathCountry}" Grid.ColumnSpan="2"></ComboBox>
+        <Button  Grid.Row="14" Grid.Column="3" Content="Add"></Button>
+        <!--<TextBox Name="tb_deathplace" Text="{Binding Path=CurChar.DeathPlace, UpdateSourceTrigger=PropertyChanged}" Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>-->
+        <!--<TextBox Name="tb_deathcountry" Text="{Binding Path=CurChar.DeathCountry, UpdateSourceTrigger=PropertyChanged}" Grid.Row="13" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>-->
+        <TextBox Name="tb_biography" Text="{Binding Path=CurChar.Biography, UpdateSourceTrigger=PropertyChanged}" Grid.Row="15" Grid.Column="1" Grid.ColumnSpan="3" Background="Transparent" Foreground="White"></TextBox>
     </Grid>
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Closing">
+            <i:InvokeCommandAction
+                            Command="{Binding Closing_Info}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
 </Window>
