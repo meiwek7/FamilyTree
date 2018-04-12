@@ -85,7 +85,7 @@
         <Button  Name="b_addbirthplace"  Grid.Row="10" Grid.Column="3" Content="Add"></Button>
         <ComboBox Name="cb_birthcountry" Grid.Row="11" Grid.Column="1" ItemsSource="{Binding Path=Countries}" SelectedItem="{Binding Path=CurChar.BirthCountry}" Grid.ColumnSpan="2"></ComboBox>
         <Button  Name="b_addbirthcountry"  Grid.Row="11" Grid.Column="3" Content="Add"></Button>
-        <DatePicker Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="2" SelectedDate="{Binding Path=DateDeath, UpdateSourceTrigger=PropertyChanged}"></DatePicker>
+        <DatePicker Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="2" SelectedDate="{Binding Path=DeathDate, UpdateSourceTrigger=PropertyChanged}"></DatePicker>
         <Button Grid.Column="3" Grid.Row="12" Content="Clean" Command="{Binding Path=CleanDeathDate}"/>
         <ComboBox Grid.Row="13" Grid.Column="1" ItemsSource="{Binding Places}" SelectedItem="{Binding Path=CurChar.DeathPlace}" Grid.ColumnSpan="2"></ComboBox>
         <Button  Grid.Row="13" Grid.Column="3" Content="Add"></Button>

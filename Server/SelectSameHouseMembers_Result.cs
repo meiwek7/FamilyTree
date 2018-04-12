@@ -23,11 +23,11 @@ namespace Server
         public string livingCountry { get; set; }
         public string birthPlace { get; set; }
         public string deathPlace { get; set; }
-        public string livingPalce { get; set; }
+        public string livingPlace { get; set; }
         public string religious { get; set; }
         public Nullable<System.DateTime> birthDate { get; set; }
         public Nullable<System.DateTime> deathDate { get; set; }
         public string biography { get; set; }
-        public byte[] photo { get; set; }
+        public string photo { get; set; }
     }
 }

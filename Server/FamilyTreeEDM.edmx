@@ -119,7 +119,7 @@
             <PropertyRef Name="changeId" />
           </Key>
           <Property Name="characterId" Type="int" />
-          <Property Name="photo" Type="image" Nullable="false" />
+          <Property Name="photo" Type="varchar(max)" Nullable="false" />
           <Property Name="changeId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="CharacterReligious">
@@ -230,12 +230,12 @@
           <Property Name="livingCountry" Type="varchar" MaxLength="30" />
           <Property Name="birthPlace" Type="varchar" MaxLength="30" />
           <Property Name="deathPlace" Type="varchar" MaxLength="30" />
-          <Property Name="livingPalce" Type="varchar" MaxLength="30" />
+          <Property Name="livingPlace" Type="varchar" MaxLength="30" />
           <Property Name="religious" Type="varchar" MaxLength="30" />
           <Property Name="birthDate" Type="date" />
           <Property Name="deathDate" Type="date" />
           <Property Name="biography" Type="varchar(max)" />
-          <Property Name="photo" Type="image" />
+          <Property Name="photo" Type="varchar(max)" />
         </EntityType>
         <Association Name="Character_fk0">
           <End Role="User" Type="Self.User" Multiplicity="1" />
@@ -825,12 +825,12 @@
           <Parameter Name="livingCountry" Type="varchar" Mode="In" />
           <Parameter Name="birthPlace" Type="varchar" Mode="In" />
           <Parameter Name="deathPlace" Type="varchar" Mode="In" />
-          <Parameter Name="livingPalce" Type="varchar" Mode="In" />
+          <Parameter Name="livingPlace" Type="varchar" Mode="In" />
           <Parameter Name="religious" Type="varchar" Mode="In" />
           <Parameter Name="birthDate" Type="date" Mode="In" />
           <Parameter Name="deathDate" Type="date" Mode="In" />
           <Parameter Name="biography" Type="varchar(max)" Mode="In" />
-          <Parameter Name="photo" Type="image" Mode="In" />
+          <Parameter Name="photo" Type="varchar(max)" Mode="In" />
         </Function>
         <Function Name="GetCharRelatives" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="incomingCharacterID" Type="int" Mode="In" />
@@ -846,7 +846,7 @@
           <Parameter Name="livingCountry" Type="varchar" Mode="In" />
           <Parameter Name="birthPlace" Type="varchar" Mode="In" />
           <Parameter Name="deathPlace" Type="varchar" Mode="In" />
-          <Parameter Name="livingPalce" Type="varchar" Mode="In" />
+          <Parameter Name="livingPlace" Type="varchar" Mode="In" />
           <Parameter Name="religious" Type="varchar" Mode="In" />
           <Parameter Name="birthDate" Type="date" Mode="In" />
           <Parameter Name="deathDate" Type="date" Mode="In" />
@@ -896,7 +896,7 @@
     [CharacterFullInfo].[livingCountry] AS [livingCountry], 
     [CharacterFullInfo].[birthPlace] AS [birthPlace], 
     [CharacterFullInfo].[deathPlace] AS [deathPlace], 
-    [CharacterFullInfo].[livingPalce] AS [livingPalce], 
+    [CharacterFullInfo].[livingPlace] AS [livingPlace], 
     [CharacterFullInfo].[religious] AS [religious], 
     [CharacterFullInfo].[birthDate] AS [birthDate], 
     [CharacterFullInfo].[deathDate] AS [deathDate], 
@@ -1269,7 +1269,7 @@
             <PropertyRef Name="changeId" />
           </Key>
           <Property Name="characterId" Type="Int32" />
-          <Property Name="photo" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="changeId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Character" Relationship="Self.CharacterPhoto_fk0" FromRole="CharacterPhoto" ToRole="Character" />
           <NavigationProperty Name="Logs" Relationship="Self.CharacterPhoto_fk1" FromRole="CharacterPhoto" ToRole="Logs" />
@@ -1421,12 +1421,12 @@
           <Property Name="livingCountry" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="birthPlace" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="deathPlace" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="livingPalce" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="livingPlace" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="religious" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="birthDate" Type="DateTime" Precision="0" />
           <Property Name="deathDate" Type="DateTime" Precision="0" />
           <Property Name="biography" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="User_fk1">
           <End Role="AccessLevel" Type="Self.AccessLevel" Multiplicity="1" />
@@ -2237,12 +2237,12 @@
             <Parameter Name="livingCountry" Mode="In" Type="String" />
             <Parameter Name="birthPlace" Mode="In" Type="String" />
             <Parameter Name="deathPlace" Mode="In" Type="String" />
-            <Parameter Name="livingPalce" Mode="In" Type="String" />
+            <Parameter Name="livingPlace" Mode="In" Type="String" />
             <Parameter Name="religious" Mode="In" Type="String" />
             <Parameter Name="birthDate" Mode="In" Type="DateTime" />
             <Parameter Name="deathDate" Mode="In" Type="DateTime" />
             <Parameter Name="biography" Mode="In" Type="String" />
-            <Parameter Name="photo" Mode="In" Type="Binary" />
+            <Parameter Name="photo" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetCharRelatives" ReturnType="Collection(FamilyTreeModel.GetCharRelatives_Result)">
             <Parameter Name="incomingCharacterID" Mode="In" Type="Int32" />
@@ -2258,7 +2258,7 @@
             <Parameter Name="livingCountry" Mode="In" Type="String" />
             <Parameter Name="birthPlace" Mode="In" Type="String" />
             <Parameter Name="deathPlace" Mode="In" Type="String" />
-            <Parameter Name="livingPalce" Mode="In" Type="String" />
+            <Parameter Name="livingPlace" Mode="In" Type="String" />
             <Parameter Name="religious" Mode="In" Type="String" />
             <Parameter Name="birthDate" Mode="In" Type="DateTime" />
             <Parameter Name="deathDate" Mode="In" Type="DateTime" />
@@ -2287,12 +2287,12 @@
           <Property Type="String" Name="livingCountry" Nullable="true" MaxLength="30" />
           <Property Type="String" Name="birthPlace" Nullable="true" MaxLength="30" />
           <Property Type="String" Name="deathPlace" Nullable="true" MaxLength="30" />
-          <Property Type="String" Name="livingPalce" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="livingPlace" Nullable="true" MaxLength="30" />
           <Property Type="String" Name="religious" Nullable="true" MaxLength="30" />
           <Property Type="DateTime" Name="birthDate" Nullable="true" />
           <Property Type="DateTime" Name="deathDate" Nullable="true" />
           <Property Type="String" Name="biography" Nullable="true" />
-          <Property Type="Binary" Name="photo" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="photo" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -2548,7 +2548,7 @@
                 <ScalarProperty Name="livingCountry" ColumnName="livingCountry" />
                 <ScalarProperty Name="birthPlace" ColumnName="birthPlace" />
                 <ScalarProperty Name="deathPlace" ColumnName="deathPlace" />
-                <ScalarProperty Name="livingPalce" ColumnName="livingPalce" />
+                <ScalarProperty Name="livingPlace" ColumnName="livingPlace" />
                 <ScalarProperty Name="religious" ColumnName="religious" />
                 <ScalarProperty Name="birthDate" ColumnName="birthDate" />
                 <ScalarProperty Name="deathDate" ColumnName="deathDate" />
@@ -2583,7 +2583,7 @@
                 <ScalarProperty Name="livingCountry" ColumnName="livingCountry" />
                 <ScalarProperty Name="birthPlace" ColumnName="birthPlace" />
                 <ScalarProperty Name="deathPlace" ColumnName="deathPlace" />
-                <ScalarProperty Name="livingPalce" ColumnName="livingPalce" />
+                <ScalarProperty Name="livingPlace" ColumnName="livingPlace" />
                 <ScalarProperty Name="religious" ColumnName="religious" />
                 <ScalarProperty Name="birthDate" ColumnName="birthDate" />
                 <ScalarProperty Name="deathDate" ColumnName="deathDate" />

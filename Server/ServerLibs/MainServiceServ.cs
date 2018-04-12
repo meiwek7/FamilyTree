@@ -69,7 +69,7 @@ namespace Server.ServerLibs
                 chr.LivingCountry = item.livingCountry;
                 chr.BirthPlace = item.birthPlace;
                 chr.DeathPlace = item.deathPlace;
-                chr.LivingPlace = item.livingPalce;//OchepyatkaTut!!!
+                chr.LivingPlace = item.livingPlace;//OchepyatkaTut!!!
                 chr.Religious = item.religious;
                 if (item.birthDate == null)
                     chr.BirthDate = DateTime.MinValue;
@@ -80,7 +80,7 @@ namespace Server.ServerLibs
                 else
                     chr.DeathDate = (DateTime)item.deathDate;
                 chr.Biography = item.biography;
-                chr.Photo = null;
+                chr.Photo = item.photo;
                 chr.Successor = null;
                 House.HouseMembers.Add(chr);
             }
@@ -186,7 +186,7 @@ namespace Server.ServerLibs
                     incCharacter.DeathDate,
                     //DateTime.MinValue,
                     incCharacter.Biography,
-                    null
+                    incCharacter.Photo
                     );
                 //var tmp1 = db.ChangeChar(incCharacter.Id,
                 //    incUser.Id,

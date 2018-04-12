@@ -4,14 +4,32 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Client.View"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:vm="clr-namespace:Client.ViewModel"
         mc:Ignorable="d"
-        Title="EnterHere" Height="82.075" Width="300" ResizeMode ="NoResize">
+        Title="EnterHere" Height="100" Width="300" ResizeMode ="NoResize">
+    <Window.DataContext>
+        <vm:EnterSmallWindowViewModel></vm:EnterSmallWindowViewModel>
+    </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
         </Grid.RowDefinitions>
         <TextBox Text="{Binding Path=Text}" Grid.Row="0" Margin="20,2,20,2"></TextBox>
-        <Button Grid.Row="1" Margin="50,5,50,5" Content="OK"></Button>
+        <Button Grid.Row="1" Margin="50,5,50,5" Content="OK">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Click">
+                    <i:InvokeCommandAction
+                            Command="{Binding OK_Com}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </Button>
     </Grid>
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Closing">
+            <i:InvokeCommandAction
+                            Command="{Binding ClosingCommand}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
 </Window>

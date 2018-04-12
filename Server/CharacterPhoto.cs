@@ -15,7 +15,7 @@ namespace Server
     public partial class CharacterPhoto
     {
         public Nullable<int> characterId { get; set; }
-        public byte[] photo { get; set; }
+        public string photo { get; set; }
         public int changeId { get; set; }
     
         public virtual Character Character { get; set; }

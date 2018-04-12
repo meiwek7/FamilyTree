@@ -12,7 +12,8 @@ namespace BasicLib
     {
         public Character()
         {
-
+            Successor = new List<Character>();
+            Spouse = new Character();
         }
         public Character(Character chr)
         {
@@ -32,6 +33,8 @@ namespace BasicLib
             this.deathDate          = chr.DeathDate             ;
             this.biography          = chr.Biography             ;
             this.photo              = chr.Photo                 ;
+            this.Spouse             = chr.Spouse                ;
+            this.Successor          = chr.Successor             ;
         }
         [DataMember]
         private int id;
@@ -65,8 +68,9 @@ namespace BasicLib
         private string biography;
         [DataMember]
         private string photo;
-        [DataMember]
-        private List<Character> successor;
+        List<Character> successor;
+        Character spouse;
+        
         private int left;
         private int top;
 
@@ -101,6 +105,7 @@ namespace BasicLib
         public string Biography { get { return biography; } set { biography = value; } }
         public string Photo { get { return photo; } set { photo = value; } }
         public List<Character> Successor { get { return successor; } set { successor = value; } }
+        public Character Spouse { get { return spouse; }set { spouse = value; } }
         public int Top { get { return top; } set { top = value;} }
         public int Left { get { return left; } set { left = value; } }
     }

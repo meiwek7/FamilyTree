@@ -56,7 +56,7 @@ namespace Server
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<CharacterFullInfo> CharacterFullInfo { get; set; }
     
-        public virtual int ChangeChar(Nullable<int> characterId, Nullable<int> userId, string firstName, string secondName, string lastName, string nationality, string birthCountry, string deathCountry, string livingCountry, string birthPlace, string deathPlace, string livingPalce, string religious, Nullable<System.DateTime> birthDate, Nullable<System.DateTime> deathDate, string biography, byte[] photo)
+        public virtual int ChangeChar(Nullable<int> characterId, Nullable<int> userId, string firstName, string secondName, string lastName, string nationality, string birthCountry, string deathCountry, string livingCountry, string birthPlace, string deathPlace, string livingPlace, string religious, Nullable<System.DateTime> birthDate, Nullable<System.DateTime> deathDate, string biography, string photo)
         {
             var characterIdParameter = characterId.HasValue ?
                 new ObjectParameter("CharacterId", characterId) :
@@ -102,9 +102,9 @@ namespace Server
                 new ObjectParameter("deathPlace", deathPlace) :
                 new ObjectParameter("deathPlace", typeof(string));
     
-            var livingPalceParameter = livingPalce != null ?
-                new ObjectParameter("livingPalce", livingPalce) :
-                new ObjectParameter("livingPalce", typeof(string));
+            var livingPlaceParameter = livingPlace != null ?
+                new ObjectParameter("livingPlace", livingPlace) :
+                new ObjectParameter("livingPlace", typeof(string));
     
             var religiousParameter = religious != null ?
                 new ObjectParameter("religious", religious) :
@@ -124,9 +124,9 @@ namespace Server
     
             var photoParameter = photo != null ?
                 new ObjectParameter("photo", photo) :
-                new ObjectParameter("photo", typeof(byte[]));
+                new ObjectParameter("photo", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ChangeChar", characterIdParameter, userIdParameter, firstNameParameter, secondNameParameter, lastNameParameter, nationalityParameter, birthCountryParameter, deathCountryParameter, livingCountryParameter, birthPlaceParameter, deathPlaceParameter, livingPalceParameter, religiousParameter, birthDateParameter, deathDateParameter, biographyParameter, photoParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ChangeChar", characterIdParameter, userIdParameter, firstNameParameter, secondNameParameter, lastNameParameter, nationalityParameter, birthCountryParameter, deathCountryParameter, livingCountryParameter, birthPlaceParameter, deathPlaceParameter, livingPlaceParameter, religiousParameter, birthDateParameter, deathDateParameter, biographyParameter, photoParameter);
         }
     
         public virtual ObjectResult<GetCharRelatives_Result> GetCharRelatives(Nullable<int> incomingCharacterID)
@@ -138,7 +138,7 @@ namespace Server
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetCharRelatives_Result>("GetCharRelatives", incomingCharacterIDParameter);
         }
     
-        public virtual int InsertNewChar(Nullable<int> userId, string firstName, string secondName, string lastName, string nationality, string birthCountry, string deathCountry, string livingCountry, string birthPlace, string deathPlace, string livingPalce, string religious, Nullable<System.DateTime> birthDate, Nullable<System.DateTime> deathDate, string biography, string photo)
+        public virtual int InsertNewChar(Nullable<int> userId, string firstName, string secondName, string lastName, string nationality, string birthCountry, string deathCountry, string livingCountry, string birthPlace, string deathPlace, string livingPlace, string religious, Nullable<System.DateTime> birthDate, Nullable<System.DateTime> deathDate, string biography, string photo)
         {
             var userIdParameter = userId.HasValue ?
                 new ObjectParameter("UserId", userId) :
@@ -180,9 +180,9 @@ namespace Server
                 new ObjectParameter("deathPlace", deathPlace) :
                 new ObjectParameter("deathPlace", typeof(string));
     
-            var livingPalceParameter = livingPalce != null ?
-                new ObjectParameter("livingPalce", livingPalce) :
-                new ObjectParameter("livingPalce", typeof(string));
+            var livingPlaceParameter = livingPlace != null ?
+                new ObjectParameter("livingPlace", livingPlace) :
+                new ObjectParameter("livingPlace", typeof(string));
     
             var religiousParameter = religious != null ?
                 new ObjectParameter("religious", religious) :
@@ -204,7 +204,7 @@ namespace Server
                 new ObjectParameter("photo", photo) :
                 new ObjectParameter("photo", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("InsertNewChar", userIdParameter, firstNameParameter, secondNameParameter, lastNameParameter, nationalityParameter, birthCountryParameter, deathCountryParameter, livingCountryParameter, birthPlaceParameter, deathPlaceParameter, livingPalceParameter, religiousParameter, birthDateParameter, deathDateParameter, biographyParameter, photoParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("InsertNewChar", userIdParameter, firstNameParameter, secondNameParameter, lastNameParameter, nationalityParameter, birthCountryParameter, deathCountryParameter, livingCountryParameter, birthPlaceParameter, deathPlaceParameter, livingPlaceParameter, religiousParameter, birthDateParameter, deathDateParameter, biographyParameter, photoParameter);
         }
     
         public virtual ObjectResult<SelectSameHouseMembers_Result> SelectSameHouseMembers(Nullable<int> characterid)

@@ -17,25 +17,8 @@ namespace Client.ViewModel
         List<String> places;
         List<String> religious;
         List<String> nationality;
-        string dateDeath;
-        string dateBirth;
         Uri defaultImage;
         Uri image;
-
-        public string DateBirth { get { return dateBirth; } set { dateBirth = value; } }
-        public string DateDeath {
-            get {
-                if (curChar.DeathDate == DateTime.MinValue || curChar.DeathDate == null)
-                    return "StillAlive";
-                else
-                    dateDeath = CurChar.DeathDate.ToShortDateString();
-                return "StillAlive";
-            }
-            set {
-                dateDeath = value;
-                OnPropertyChanged("DateDeath");
-            }
-        }
         
         Character curChar;
         public CharacterWindowViewModel()
@@ -57,6 +40,8 @@ namespace Client.ViewModel
                 curChar = value;
                 Image = null;
                 OnPropertyChanged("CurChar");
+                OnPropertyChanged("BirthDate");
+                OnPropertyChanged("DeathDate");
             }
         }
 
@@ -168,7 +153,7 @@ namespace Client.ViewModel
         {
             get
             {
-                if (CurChar.Photo == null)
+                if (CurChar.Photo == null || CurChar.Photo == "")
                 {
                     //var tmp = Path.GetFullPath(DefaultImage);
                     //return Path.GetFullPath(DefaultImage);
@@ -181,7 +166,10 @@ namespace Client.ViewModel
             set
             {
                 if (value != null)
+                {
                     CurChar.Photo = value.ToString();
+                    image = value;
+                }
                 else
                     image = value;
                 OnPropertyChanged("Image");
@@ -267,6 +255,19 @@ namespace Client.ViewModel
             }
         }
 
+        public DateTime DeathDate
+        {
+            get
+            {
+                return CurChar.DeathDate;
+            }
+            set
+            {
+                CurChar.DeathDate = value;
+                OnPropertyChanged("DeathDate");
+            }
+        }
+
         ICommand changeURLPicture;
 
         public ICommand ChangeURLPicture
@@ -283,8 +284,11 @@ namespace Client.ViewModel
 
         private void ExecuteChangeURLPicture(object obj)
         {
-            
-            MessageBox.Show(Image.ToString());
+            WindowViewLoaderService.Show(typeof(EnterSmallWindowViewModel));
+            var tmpcntxt = WindowViewLoaderService.getContext(typeof(EnterSmallWindowViewModel)) as EnterSmallWindowViewModel;
+            tmpcntxt.typeOfAdds = TypeAddValue.Photo;
+            tmpcntxt.Text = CurChar.Photo;
+            //MessageBox.Show(Image.ToString());
         }
     }
 }
