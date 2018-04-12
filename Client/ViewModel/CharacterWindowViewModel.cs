@@ -180,7 +180,10 @@ namespace Client.ViewModel
             }
             set
             {
-                image = value;
+                if (value != null)
+                    CurChar.Photo = value.ToString();
+                else
+                    image = value;
                 OnPropertyChanged("Image");
             }
         }
@@ -221,11 +224,47 @@ namespace Client.ViewModel
         private void ExecuteSaveCommand(object obj)
         {
             var tmpUser = (WindowViewLoaderService.getContext(typeof(AuthorizationViewModel)) as AuthorizationViewModel).User;
-            var tmpHouse = (WindowViewLoaderService.getContext(typeof(MainWindowViewModel)) as MainWindowViewModel).House;
+            var MVContext = (WindowViewLoaderService.getContext(typeof(MainWindowViewModel)) as MainWindowViewModel);
             var tmpCharacter = new Character(CurChar);
             ConLogic.MainProxy.ChangeChar(tmpUser, tmpCharacter);
             //CurChar = null;
-            tmpHouse = null;
+            MVContext.House = null;
+            var tmp1 = MVContext.House;
+            MVContext.Characters = null;
+            var tmp2 = MVContext.Characters;
+            WindowViewLoaderService.VMContexts.Where(x => x.Key == this).ToList().First().Value.Close();
+        }
+        //CleanBirthDate
+        ICommand cleanBirthDate;
+
+        public ICommand CleanBirthDate
+        {
+            get
+            {
+                if (cleanBirthDate == null)
+                {
+                    cleanBirthDate = new RelayCommand(ExecuteCleanBirthDate);
+                }
+                return cleanBirthDate;
+            }
+        }
+
+        private void ExecuteCleanBirthDate(object obj)
+        {
+            CurChar.BirthDate = DateTime.MinValue;
+            OnPropertyChanged("BirthDate");
+        }
+
+        public DateTime BirthDate {
+            get
+            {
+                return CurChar.BirthDate;
+            }
+            set
+            {
+                CurChar.BirthDate = value;
+                OnPropertyChanged("BirthDate");
+            }
         }
 
         ICommand changeURLPicture;
@@ -244,6 +283,7 @@ namespace Client.ViewModel
 
         private void ExecuteChangeURLPicture(object obj)
         {
+            
             MessageBox.Show(Image.ToString());
         }
     }

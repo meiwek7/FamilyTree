@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Хранилище FamilyTreeModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище FamilyTreeModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="AccessLevel">
           <Key>
             <PropertyRef Name="type" />
@@ -1097,7 +1097,8 @@
             <End Role="User" EntitySet="User" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FamilyTreeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -2224,27 +2225,6 @@
             <End Role="RelativeType" EntitySet="RelativeType" />
             <End Role="RelativeCharacter" EntitySet="RelativeCharacter" />
           </AssociationSet>
-          <FunctionImport Name="InsertNewChar">
-            <Parameter Name="UserId" Mode="In" Type="Int32" />
-            <Parameter Name="firstName" Mode="In" Type="String" />
-            <Parameter Name="secondName" Mode="In" Type="String" />
-            <Parameter Name="lastName" Mode="In" Type="String" />
-            <Parameter Name="nationality" Mode="In" Type="String" />
-            <Parameter Name="birthCountry" Mode="In" Type="String" />
-            <Parameter Name="deathCountry" Mode="In" Type="String" />
-            <Parameter Name="livingCountry" Mode="In" Type="String" />
-            <Parameter Name="birthPlace" Mode="In" Type="String" />
-            <Parameter Name="deathPlace" Mode="In" Type="String" />
-            <Parameter Name="livingPalce" Mode="In" Type="String" />
-            <Parameter Name="religious" Mode="In" Type="String" />
-            <Parameter Name="birthDate" Mode="In" Type="DateTime" />
-            <Parameter Name="deathDate" Mode="In" Type="DateTime" />
-            <Parameter Name="biography" Mode="In" Type="String" />
-            <Parameter Name="photo" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SelectSameHouseMembers" ReturnType="Collection(FamilyTreeModel.SelectSameHouseMembers_Result)">
-          <Parameter Name="Characterid" Mode="In" Type="Int32" />
-          </FunctionImport>
           <FunctionImport Name="ChangeChar">
             <Parameter Name="CharacterId" Mode="In" Type="Int32" />
             <Parameter Name="UserId" Mode="In" Type="Int32" />
@@ -2267,7 +2247,35 @@
           <FunctionImport Name="GetCharRelatives" ReturnType="Collection(FamilyTreeModel.GetCharRelatives_Result)">
             <Parameter Name="incomingCharacterID" Mode="In" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="InsertNewChar">
+            <Parameter Name="UserId" Mode="In" Type="Int32" />
+            <Parameter Name="firstName" Mode="In" Type="String" />
+            <Parameter Name="secondName" Mode="In" Type="String" />
+            <Parameter Name="lastName" Mode="In" Type="String" />
+            <Parameter Name="nationality" Mode="In" Type="String" />
+            <Parameter Name="birthCountry" Mode="In" Type="String" />
+            <Parameter Name="deathCountry" Mode="In" Type="String" />
+            <Parameter Name="livingCountry" Mode="In" Type="String" />
+            <Parameter Name="birthPlace" Mode="In" Type="String" />
+            <Parameter Name="deathPlace" Mode="In" Type="String" />
+            <Parameter Name="livingPalce" Mode="In" Type="String" />
+            <Parameter Name="religious" Mode="In" Type="String" />
+            <Parameter Name="birthDate" Mode="In" Type="DateTime" />
+            <Parameter Name="deathDate" Mode="In" Type="DateTime" />
+            <Parameter Name="biography" Mode="In" Type="String" />
+            <Parameter Name="photo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectSameHouseMembers" ReturnType="Collection(FamilyTreeModel.SelectSameHouseMembers_Result)">
+            <Parameter Name="Characterid" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
+        <ComplexType Name="GetCharRelatives_Result">
+          <Property Type="Int32" Name="characterId" Nullable="false" />
+          <Property Type="Int32" Name="targetId" Nullable="false" />
+          <Property Type="String" Name="type" Nullable="false" MaxLength="30" />
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="creator" Nullable="false" />
+        </ComplexType>
         <ComplexType Name="SelectSameHouseMembers_Result">
           <Property Type="Int32" Name="id" Nullable="false" />
           <Property Type="String" Name="firstName" Nullable="true" MaxLength="50" />
@@ -2285,13 +2293,6 @@
           <Property Type="DateTime" Name="deathDate" Nullable="true" />
           <Property Type="String" Name="biography" Nullable="true" />
           <Property Type="Binary" Name="photo" Nullable="true" MaxLength="Max" />
-        </ComplexType>
-        <ComplexType Name="GetCharRelatives_Result">
-          <Property Type="Int32" Name="characterId" Nullable="false" />
-          <Property Type="Int32" Name="targetId" Nullable="false" />
-          <Property Type="String" Name="type" Nullable="false" MaxLength="30" />
-          <Property Type="Int32" Name="id" Nullable="false" />
-          <Property Type="Int32" Name="creator" Nullable="false" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -2556,6 +2557,18 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="ChangeChar" FunctionName="Хранилище FamilyTreeModel.ChangeChar" />
+          <FunctionImportMapping FunctionImportName="GetCharRelatives" FunctionName="Хранилище FamilyTreeModel.GetCharRelatives">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FamilyTreeModel.GetCharRelatives_Result">
+                <ScalarProperty Name="characterId" ColumnName="characterId" />
+                <ScalarProperty Name="targetId" ColumnName="targetId" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="creator" ColumnName="creator" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="InsertNewChar" FunctionName="Хранилище FamilyTreeModel.InsertNewChar" />
           <FunctionImportMapping FunctionImportName="SelectSameHouseMembers" FunctionName="Хранилище FamilyTreeModel.SelectSameHouseMembers">
             <ResultMapping>
@@ -2576,18 +2589,6 @@
                 <ScalarProperty Name="deathDate" ColumnName="deathDate" />
                 <ScalarProperty Name="biography" ColumnName="biography" />
                 <ScalarProperty Name="photo" ColumnName="photo" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="ChangeChar" FunctionName="Хранилище FamilyTreeModel.ChangeChar" />
-          <FunctionImportMapping FunctionImportName="GetCharRelatives" FunctionName="Хранилище FamilyTreeModel.GetCharRelatives">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="FamilyTreeModel.GetCharRelatives_Result">
-                <ScalarProperty Name="characterId" ColumnName="characterId" />
-                <ScalarProperty Name="targetId" ColumnName="targetId" />
-                <ScalarProperty Name="type" ColumnName="type" />
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="creator" ColumnName="creator" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

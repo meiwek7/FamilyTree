@@ -70,7 +70,7 @@ namespace Client.ViewModel
         public House House {
             get {
                 if (house == null)
-                    {
+                {
                     house = InitializeCharacters();
                 }
                 return house;

@@ -99,7 +99,7 @@ namespace Server.ServerLibs
                 db.SaveChanges();
             }
             return RegisterResult.UserRegSuccess;
-            return RegisterResult.SomethingWentWrong;
+            //return RegisterResult.SomethingWentWrong;
         }
     }
 }

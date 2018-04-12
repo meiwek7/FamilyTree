@@ -79,11 +79,15 @@
     <Compile Include="ViewModel\Behaviors\PasswordBehavior.cs" />
     <Compile Include="ViewModel\CharacterWindowViewModel.cs" />
     <Compile Include="ViewModel\Character_UserControlViewModel.cs" />
+    <Compile Include="ViewModel\EnterSmallWindowViewModel.cs" />
     <Compile Include="ViewModel\RegisterViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="ViewModel\WindowViewLoaderService.cs" />
     <Compile Include="View\Authorization.xaml.cs">
       <DependentUpon>Authorization.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EnterSmallWindow.xaml.cs">
+      <DependentUpon>EnterSmallWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -115,6 +119,10 @@
     <Compile Include="View\Character_UserControl1.xaml.cs">
       <DependentUpon>Character_UserControl1.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\EnterSmallWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

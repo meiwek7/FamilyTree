@@ -135,7 +135,7 @@
             Width="100"
             Foreground="White"
             Background="Transparent"
-            Content="Печать"
+            Content="Удалить"
             ></Button>
 
     </Grid>

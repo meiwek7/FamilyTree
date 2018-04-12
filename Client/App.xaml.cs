@@ -23,6 +23,7 @@ namespace Client
             WindowViewLoaderService.Register(typeof(Authorization), typeof(AuthorizationViewModel) );
             WindowViewLoaderService.Register(typeof(Character_UserControl1), typeof(Character_UserControlViewModel));
             WindowViewLoaderService.Register(typeof(Character_Info), typeof(CharacterWindowViewModel));
+            WindowViewLoaderService.Register(typeof(EnterSmallWindow), typeof(EnterSmallWindowViewModel));
             //Authorization mainWindow = new Authorization();
             WindowViewLoaderService.Show(typeof(AuthorizationViewModel));
             //mainWindow.Show();

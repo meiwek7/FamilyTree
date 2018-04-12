@@ -168,7 +168,7 @@ namespace Server.ServerLibs
             //Вернуть новый контекст
             using (FamilyTreeEntities db = new FamilyTreeEntities())
             {
-                db.ChangeChar(incCharacter.Id,
+                var tmp1 = db.ChangeChar(incCharacter.Id,
                     incUser.Id,
                     incCharacter.FirstName,
                     incCharacter.SecondName,
@@ -182,10 +182,32 @@ namespace Server.ServerLibs
                     incCharacter.LivingPlace,
                     incCharacter.Religious,
                     incCharacter.BirthDate,
+                    //DateTime.MinValue,
                     incCharacter.DeathDate,
+                    //DateTime.MinValue,
                     incCharacter.Biography,
                     null
                     );
+                //var tmp1 = db.ChangeChar(incCharacter.Id,
+                //    incUser.Id,
+                //    "Ivanich",
+                //    null,
+                //    null,
+                //    null,
+                //    null,
+                //    null,
+                //    null,
+                //    null,
+                //    null,
+                //    null,
+                //    null,
+                //    //incCharacter.BirthDate,
+                //    null,
+                //    //incCharacter.DeathDate,
+                //    null,
+                //    null,
+                //    null
+                //    );
                 db.SaveChanges();
             }
         }

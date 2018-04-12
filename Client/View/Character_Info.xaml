@@ -64,45 +64,33 @@
         <Label Grid.Row="10" Grid.Column="0" Foreground="White">Место Рождения</Label>
         <Label Grid.Row="11" Grid.Column="0" Foreground="White">Страна Рождения</Label>
         <Label Grid.Row="12" Grid.Column="0" Foreground="White">Дата Смерти</Label>
-        
         <Label Grid.Row="13" Grid.Column="0" Foreground="White">Место Смерти</Label>
         <Label Grid.Row="14" Grid.Column="0" Foreground="White">Страна Смерти</Label>
         <Label Grid.Row="15" Grid.Column="0" Foreground="White">Биография</Label>
-        <!--<Button  Grid.Row="14" Grid.Column="0" Grid.ColumnSpan="1" Width="100" Command="{Binding Path=BiographyCommand}">Биография</Button>-->
         <Button  Grid.Row="17" Grid.Column="1" Grid.ColumnSpan="2" Margin="3" Command="{Binding Path=SaveCommand}">Save</Button>
         <TextBox Name="tb_lastname" Text="{Binding Path=CurChar.LastName, UpdateSourceTrigger=PropertyChanged}"  Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Background="Transparent" Foreground="White" ></TextBox>
         <TextBox Name="tb_firstname" Text="{Binding Path=CurChar.FirstName, UpdateSourceTrigger=PropertyChanged}" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" Background="Transparent" Foreground="White"></TextBox>
         <TextBox Name="tb_secondname" Text="{Binding Path=CurChar.SecondName, UpdateSourceTrigger=PropertyChanged}" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" Background="Transparent" Foreground="White"></TextBox>
         <ComboBox Name="cb_livingcountry"  Grid.Row="5" Grid.Column="1" ItemsSource="{Binding Path=Countries}" SelectedItem="{Binding Path=CurChar.LivingCountry, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2"></ComboBox>
         <Button Name="b_addcountry"  Grid.Row="5" Grid.Column="3" Content="Add"></Button>
-        <!--<ComboBox Name="cb_livingplace"  Grid.Row="6" Grid.Column="1" ItemsSource="{Binding Path=Places}" SelectedItem="{Binding Path=CurChar.LivingPlace, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2"></ComboBox>-->
         <ComboBox Name="cb_livingplace" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" ItemsSource="{Binding Path=Places}" SelectedItem="{Binding Path=CurChar.LivingPlace, UpdateSourceTrigger=PropertyChanged}"></ComboBox>
         <Button Name="b_addplace" Grid.Row="6" Grid.Column="3" Content="Add"></Button>
-        <!--<TextBox Name="tb_datebirth" Text="{Binding Path=CurChar.BirthDate, UpdateSourceTrigger=PropertyChanged}" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>-->
         <ComboBox Name="cb_religion"  Grid.Row="7" Grid.Column="1" ItemsSource="{Binding Path=Religious}" SelectedItem="{Binding Path=CurChar.Religious, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2"></ComboBox>
         <Button Name="b_addreligion" Grid.Row="7" Grid.Column="3" Content="Add"></Button>
-        <DatePicker Name="p_datebirth" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="3" SelectedDate="{Binding Path=CurChar.BirthDate}"></DatePicker>
-        <!--<TextBox Name="tb_nationality" Text="{Binding Path=CurChar.Nationality, UpdateSourceTrigger=PropertyChanged}" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>-->
-        
-        <!--<TextBox Name="tb_birthplace" Text="{Binding Path=CurChar.BirthPlace, UpdateSourceTrigger=PropertyChanged}" Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>-->
+        <DatePicker Name="p_datebirth" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2" SelectedDate="{Binding Path=BirthDate, UpdateSourceTrigger=PropertyChanged}"></DatePicker>
+        <Button Grid.Column="3" Grid.Row="8" Content="Clean" Command="{Binding Path=CleanBirthDate}"/>
         <ComboBox Name="cb_nationality" Grid.Row="9" Grid.Column="1" ItemsSource="{Binding Path=Nationality}" SelectedItem="{Binding Path=CurChar.Nationality}" Grid.ColumnSpan="2"></ComboBox>
         <Button Name="b_nationality" Grid.Row="9" Grid.Column="3" Content="Add"></Button>
-        <!--<TextBox Name="tb_birthcountry" Text="{Binding Path=CurChar.BirthCountry, UpdateSourceTrigger=PropertyChanged}" Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>-->
         <ComboBox Name="cb_birthplace" Grid.Row="10" Grid.Column="1" ItemsSource="{Binding Path=Places}" SelectedItem="{Binding Path=CurChar.BirthPlace}" Grid.ColumnSpan="2"></ComboBox>
         <Button  Name="b_addbirthplace"  Grid.Row="10" Grid.Column="3" Content="Add"></Button>
         <ComboBox Name="cb_birthcountry" Grid.Row="11" Grid.Column="1" ItemsSource="{Binding Path=Countries}" SelectedItem="{Binding Path=CurChar.BirthCountry}" Grid.ColumnSpan="2"></ComboBox>
         <Button  Name="b_addbirthcountry"  Grid.Row="11" Grid.Column="3" Content="Add"></Button>
-        <!--<TextBox Name="tb_deathdate" Text="{Binding Path=DateDeath, UpdateSourceTrigger=PropertyChanged}" Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>-->
-        <!--<ComboBox Grid.Row="11" Grid.Column="1" ItemsSource="{Binding}"></ComboBox>-->
-        <!--<ComboBox Grid.Row="11" Grid.Column="2" ItemsSource="{Binding}"></ComboBox>-->
-        <!--<ComboBox Grid.Row="11" Grid.Column="3" ItemsSource="{Binding}"></ComboBox>-->
-        <DatePicker Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="3" SelectedDate="{Binding Path=DateDeath}"></DatePicker>
+        <DatePicker Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="2" SelectedDate="{Binding Path=DateDeath, UpdateSourceTrigger=PropertyChanged}"></DatePicker>
+        <Button Grid.Column="3" Grid.Row="12" Content="Clean" Command="{Binding Path=CleanDeathDate}"/>
         <ComboBox Grid.Row="13" Grid.Column="1" ItemsSource="{Binding Places}" SelectedItem="{Binding Path=CurChar.DeathPlace}" Grid.ColumnSpan="2"></ComboBox>
         <Button  Grid.Row="13" Grid.Column="3" Content="Add"></Button>
         <ComboBox Grid.Row="14" Grid.Column="1" ItemsSource="{Binding Countries}" SelectedItem="{Binding Path=CurChar.DeathCountry}" Grid.ColumnSpan="2"></ComboBox>
         <Button  Grid.Row="14" Grid.Column="3" Content="Add"></Button>
-        <!--<TextBox Name="tb_deathplace" Text="{Binding Path=CurChar.DeathPlace, UpdateSourceTrigger=PropertyChanged}" Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>-->
-        <!--<TextBox Name="tb_deathcountry" Text="{Binding Path=CurChar.DeathCountry, UpdateSourceTrigger=PropertyChanged}" Grid.Row="13" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White"></TextBox>-->
         <TextBox Name="tb_biography" Text="{Binding Path=CurChar.Biography, UpdateSourceTrigger=PropertyChanged}" Grid.Row="15" Grid.Column="1" Grid.ColumnSpan="3" Background="Transparent" Foreground="White"></TextBox>
     </Grid>
     <i:Interaction.Triggers>
